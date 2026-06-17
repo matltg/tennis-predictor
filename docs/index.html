@@ -187,13 +187,8 @@ footer{border-top:1px solid var(--border);padding:12px 20px;font-size:10px;color
     <div class="stat-box"><div class="stat-label">Bankroll</div><div class="stat-val val-accent" id="sBankroll">—</div><div class="stat-sub">Kelly ×0.25</div></div>
   </div>
 
-  <div class="section-head"><span class="sh-title">Paris recommandés</span><div class="sh-line"></div><span class="sh-count" id="evCount">—</span></div>
+  <div class="section-head"><span class="sh-title">Matchs du jour — par tournoi</span><div class="sh-line"></div><span class="sh-count" id="evCount">—</span></div>
   <div id="evList"><div class="empty"><div class="spin"></div><div class="empty-t" style="margin-top:12px">Chargement...</div></div></div>
-
-  <div id="skipSection" style="display:none">
-    <div class="section-head" style="margin-top:28px"><span class="sh-title">Analysés — pas de valeur</span><div class="sh-line"></div><span class="sh-count" id="skipCount">—</span></div>
-    <div class="skip-list" id="skipList"></div>
-  </div>
 </div>
 
 <footer>
@@ -247,38 +242,45 @@ async function load(){
 
 function render(data){
   const matches = data.matches||[];
-  const ev    = matches.filter(m=>m.winner.ev_status==='play');
-  const skip  = matches.filter(m=>m.winner.ev_status!=='play');
-
+  const ev      = matches.filter(m=>m.winner.ev_status==='play');
   $('sTotal').textContent    = matches.length;
   $('sEV').textContent       = ev.length;
   $('sOdds').textContent     = data.summary.matches_with_odds||0;
   $('sBankroll').textContent = (data.summary.total_kelly_pct||0).toFixed(1)+'%';
-  $('evCount').textContent   = ev.length+' paris';
+  $('evCount').textContent   = matches.length+' matchs';
 
-  if(ev.length===0){
-    $('evList').innerHTML=`<div class="empty"><div class="empty-t">Aucun pari EV+ aujourd'hui</div><div>Pas d'inefficience détectée ou cotes non disponibles</div></div>`;
-  }else{
-    $('evList').innerHTML = ev.map(m=>cardHTML(m,true)).join('');
+  if(matches.length===0){
+    $('evList').innerHTML=`<div class="empty"><div class="empty-t">Aucun match aujourd'hui</div><div>Le pipeline n'a pas encore tourné ou aucun fixture disponible</div></div>`;
+    $('footStatus').textContent=`0 EV+ · ${data.summary.matches_with_odds||0} cotes · v${data.model_version}`;
+    return;
   }
 
-  if(skip.length>0){
-    $('skipSection').style.display='block';
-    $('skipCount').textContent = skip.length+' matchs';
-    $('skipList').innerHTML = skip.map(m=>{
-      const fav = m.winner.favorite==='player_a'?m.player_a:m.player_b;
-      const opp = m.winner.favorite==='player_a'?m.player_b:m.player_a;
-      const conf = STARS(m.winner.confidence||1);
-      return`<div class="skip-row">
-        <div><span class="skip-players">${fav} <span style="color:var(--text3)">vs</span> ${opp}</span> <span class="stars">${conf}</span></div>
-        <div class="skip-info">${m.tournament} · ${m.time} · ${m.winner.has_odds?'cotes ✓':'pas de cotes'}</div>
-        <div class="skip-info">${m.winner.edge_pct!=null?'Edge '+(m.winner.edge_pct>0?'+':'')+m.winner.edge_pct+'%':'edge —'}</div>
-      </div>`;
-    }).join('');
-  }else{
-    $('skipSection').style.display='none';
+  // Groupe par tournoi (ordre d'apparition préservé, EV+ d'abord dans chaque groupe)
+  const byTournament = [];
+  const seenTournaments = {};
+  for(const m of matches){
+    const t = m.tournament||'Inconnu';
+    if(!(t in seenTournaments)){
+      seenTournaments[t] = byTournament.length;
+      byTournament.push({name:t, matches:[]});
+    }
+    byTournament[seenTournaments[t]].matches.push(m);
   }
 
+  const html = byTournament.map(group=>{
+    const evInGroup = group.matches.filter(m=>m.winner.ev_status==='play').length;
+    const evBadge   = evInGroup>0
+      ? ` <span style="font-size:10px;background:var(--accent2);color:var(--accent);border:1px solid rgba(200,255,0,.3);border-radius:10px;padding:1px 7px;font-family:var(--mono);margin-left:6px">${evInGroup} EV+</span>`
+      : '';
+    return `<div class="section-head" style="margin-top:24px">
+        <span class="sh-title">${group.name}${evBadge}</span>
+        <div class="sh-line"></div>
+        <span class="sh-count">${group.matches.length} match${group.matches.length>1?'s':''}</span>
+      </div>
+      ${group.matches.map(m=>cardHTML(m, m.winner.ev_status==='play')).join('')}`;
+  }).join('');
+
+  $('evList').innerHTML = html;
   $('footStatus').textContent=`${ev.length} EV+ · ${data.summary.matches_with_odds||0} cotes · v${data.model_version}`;
 }
 
