@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-17T13:09:44.069626",
+  "generated_at": "2026-06-17T13:35:52.839294",
   "date": "2026-06-17",
   "model_version": "2.0.0",
   "summary": {
-    "matches_analysed": 67,
+    "matches_analysed": 63,
     "ev_plus_count": 1,
     "total_kelly_pct": 3.5,
-    "matches_with_odds": 3
+    "matches_with_odds": 4
   },
   "matches": [
     {
@@ -21,29 +21,29 @@
       "time": "16:20",
       "date": "2026-06-17",
       "winner": {
-        "prob_a": 0.4007,
-        "prob_b": 0.5993,
+        "prob_a": 0.4012,
+        "prob_b": 0.5988,
         "favorite": "player_b",
         "confidence": 2,
         "fair_odds": 1.67,
         "market_odds": 2.5,
-        "edge_pct": 19.93,
+        "edge_pct": 19.88,
         "kelly_pct": 3.5,
         "has_odds": true,
         "ev_status": "play",
-        "reason": "Win rate surface +8.3%"
+        "reason": "Win rate surface +8.8%"
       },
       "over_under": {
-        "expected_games": 21.7,
-        "line": 21.5,
-        "prob_over": 0.5184,
-        "prob_under": 0.4816,
+        "expected_games": 20.1,
+        "line": 20.0,
+        "prob_over": 0.5064,
+        "prob_under": 0.4936,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.5513,
-        "prob_3sets": 0.4487,
+        "prob_2sets": 0.5062,
+        "prob_3sets": 0.4938,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
@@ -54,10 +54,10 @@
         "hold_pct_b": 60.0,
         "winrate_10_a": null,
         "winrate_10_b": null,
-        "surf_winrate_a": 60.9,
-        "surf_winrate_b": 52.6,
-        "h2h_total": 0,
-        "h2h_wins_a": 0,
+        "surf_winrate_a": 61.0,
+        "surf_winrate_b": 52.2,
+        "h2h_total": 1,
+        "h2h_wins_a": 1,
         "avg_games_a": null,
         "avg_games_b": null
       }
@@ -127,29 +127,29 @@
       "time": "16:35",
       "date": "2026-06-17",
       "winner": {
-        "prob_a": 0.516,
-        "prob_b": 0.484,
+        "prob_a": 0.5185,
+        "prob_b": 0.4815,
         "favorite": "player_a",
         "confidence": 4,
-        "fair_odds": 1.94,
+        "fair_odds": 1.93,
         "market_odds": 1.4,
-        "edge_pct": -19.83,
+        "edge_pct": -19.58,
         "kelly_pct": 0.0,
         "has_odds": true,
         "ev_status": "skip",
-        "reason": "Elo grass +84 · Win rate surface -7.4%"
+        "reason": "Elo grass +84"
       },
       "over_under": {
-        "expected_games": 20.2,
-        "line": 20.0,
-        "prob_over": 0.516,
-        "prob_under": 0.484,
+        "expected_games": 20.6,
+        "line": 20.5,
+        "prob_over": 0.512,
+        "prob_under": 0.488,
         "recommendation": "NEUTRE",
         "confidence": 3
       },
       "sets": {
-        "prob_2sets": 0.6781,
-        "prob_3sets": 0.3219,
+        "prob_2sets": 0.6331,
+        "prob_3sets": 0.3669,
         "recommendation": "2 SETS",
         "confidence": 3
       },
@@ -160,10 +160,63 @@
         "hold_pct_b": 62.6,
         "winrate_10_a": null,
         "winrate_10_b": null,
-        "surf_winrate_a": 58.3,
-        "surf_winrate_b": 65.7,
-        "h2h_total": 0,
-        "h2h_wins_a": 0,
+        "surf_winrate_a": 59.0,
+        "surf_winrate_b": 63.9,
+        "h2h_total": 1,
+        "h2h_wins_a": 1,
+        "avg_games_a": null,
+        "avg_games_b": null
+      }
+    },
+    {
+      "id": "2026-06-17_Hubert_Hurkacz_Daniel_Altmaier",
+      "player_a": "Hubert Hurkacz",
+      "player_b": "Daniel Altmaier",
+      "favorite": "player_a",
+      "tournament": "Terra Wortmann Open - Halle",
+      "tournament_rank": "Main tour",
+      "surface": "Grass",
+      "round": "Second",
+      "time": "18:25",
+      "date": "2026-06-17",
+      "winner": {
+        "prob_a": 0.6024,
+        "prob_b": 0.3976,
+        "favorite": "player_a",
+        "confidence": 4,
+        "fair_odds": 1.66,
+        "market_odds": 1.25,
+        "edge_pct": -19.76,
+        "kelly_pct": 0.0,
+        "has_odds": true,
+        "ev_status": "skip",
+        "reason": "Elo grass +223 · Win rate surface +27.3%"
+      },
+      "over_under": {
+        "expected_games": 20.6,
+        "line": 20.5,
+        "prob_over": 0.5072,
+        "prob_under": 0.4928,
+        "recommendation": "NEUTRE",
+        "confidence": 3
+      },
+      "sets": {
+        "prob_2sets": 0.6238,
+        "prob_3sets": 0.3762,
+        "recommendation": "2 SETS",
+        "confidence": 3
+      },
+      "features": {
+        "elo_global_diff": 190,
+        "elo_surface_diff": 223,
+        "hold_pct_a": 66.1,
+        "hold_pct_b": 63.3,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 63.0,
+        "surf_winrate_b": 35.7,
+        "h2h_total": 2,
+        "h2h_wins_a": 2,
         "avg_games_a": null,
         "avg_games_b": null
       }
@@ -323,59 +376,6 @@
         "surf_winrate_b": 50.0,
         "h2h_total": 1,
         "h2h_wins_a": 1,
-        "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
-      "id": "2026-06-17_Hubert_Hurkacz_Daniel_Altmaier",
-      "player_a": "Hubert Hurkacz",
-      "player_b": "Daniel Altmaier",
-      "favorite": "player_a",
-      "tournament": "Terra Wortmann Open - Halle",
-      "tournament_rank": "Main tour",
-      "surface": "Grass",
-      "round": "Second",
-      "time": "18:05",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.6024,
-        "prob_b": 0.3976,
-        "favorite": "player_a",
-        "confidence": 3,
-        "fair_odds": 1.66,
-        "market_odds": null,
-        "edge_pct": null,
-        "kelly_pct": 0.0,
-        "has_odds": false,
-        "ev_status": "skip",
-        "reason": "Elo grass +223 · Win rate surface +27.3%"
-      },
-      "over_under": {
-        "expected_games": 20.6,
-        "line": 20.5,
-        "prob_over": 0.5072,
-        "prob_under": 0.4928,
-        "recommendation": "NEUTRE",
-        "confidence": 2
-      },
-      "sets": {
-        "prob_2sets": 0.6238,
-        "prob_3sets": 0.3762,
-        "recommendation": "2 SETS",
-        "confidence": 2
-      },
-      "features": {
-        "elo_global_diff": 190,
-        "elo_surface_diff": 223,
-        "hold_pct_a": 66.1,
-        "hold_pct_b": 63.3,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 63.0,
-        "surf_winrate_b": 35.7,
-        "h2h_total": 2,
-        "h2h_wins_a": 2,
         "avg_games_a": null,
         "avg_games_b": null
       }
@@ -911,112 +911,6 @@
       }
     },
     {
-      "id": "2026-06-17_Oliver_Crawford_Alexis_Galarneau",
-      "player_a": "Oliver Crawford",
-      "player_b": "Alexis Galarneau",
-      "favorite": "player_b",
-      "tournament": "Dublin Challenger",
-      "tournament_rank": "Challengers/ITF tournaments > $10K",
-      "surface": "Grass",
-      "round": "Second",
-      "time": "15:10",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.3686,
-        "prob_b": 0.6314,
-        "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.58,
-        "market_odds": null,
-        "edge_pct": null,
-        "kelly_pct": 0.0,
-        "has_odds": false,
-        "ev_status": "skip",
-        "reason": "Win rate surface +5.5%"
-      },
-      "over_under": {
-        "expected_games": 19.5,
-        "line": 19.5,
-        "prob_over": 0.4976,
-        "prob_under": 0.5024,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "sets": {
-        "prob_2sets": 0.5188,
-        "prob_3sets": 0.4812,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "features": {
-        "elo_global_diff": -22,
-        "elo_surface_diff": 0,
-        "hold_pct_a": 62.8,
-        "hold_pct_b": 61.4,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 61.1,
-        "surf_winrate_b": 55.6,
-        "h2h_total": 1,
-        "h2h_wins_a": 1,
-        "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
-      "id": "2026-06-17_Henry_Searle_Yu_Hsiou_Hsu",
-      "player_a": "Henry Searle",
-      "player_b": "Yu Hsiou Hsu",
-      "favorite": "player_b",
-      "tournament": "Dublin Challenger",
-      "tournament_rank": "Challengers/ITF tournaments > $10K",
-      "surface": "Grass",
-      "round": "Second",
-      "time": "15:10",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.3086,
-        "prob_b": 0.6914,
-        "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.45,
-        "market_odds": null,
-        "edge_pct": null,
-        "kelly_pct": 0.0,
-        "has_odds": false,
-        "ev_status": "skip",
-        "reason": "Win rate surface -7.2%"
-      },
-      "over_under": {
-        "expected_games": 21.0,
-        "line": 21.0,
-        "prob_over": 0.5016,
-        "prob_under": 0.4984,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "sets": {
-        "prob_2sets": 0.5537,
-        "prob_3sets": 0.4463,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "features": {
-        "elo_global_diff": -78,
-        "elo_surface_diff": -32,
-        "hold_pct_a": 64.9,
-        "hold_pct_b": 62.8,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 45.0,
-        "surf_winrate_b": 52.2,
-        "h2h_total": 1,
-        "h2h_wins_a": 1,
-        "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
       "id": "2026-06-17_Clement_Tabur_Stefanos_Sakellaridis",
       "player_a": "Clement Tabur",
       "player_b": "Stefanos Sakellaridis",
@@ -1025,7 +919,7 @@
       "tournament_rank": "Challengers/ITF tournaments > $10K",
       "surface": "Grass",
       "round": "Second",
-      "time": "17:25",
+      "time": "17:40",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3581,
@@ -1131,7 +1025,7 @@
       "tournament_rank": "Challengers/ITF tournaments > $10K",
       "surface": "Grass",
       "round": "Second",
-      "time": "18:55",
+      "time": "19:05",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3644,
@@ -1237,7 +1131,7 @@
       "tournament_rank": "Challengers/ITF tournaments > $10K",
       "surface": "Grass",
       "round": "Second",
-      "time": "20:25",
+      "time": "20:35",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.4261,
@@ -1275,6 +1169,165 @@
         "winrate_10_b": null,
         "surf_winrate_a": null,
         "surf_winrate_b": null,
+        "h2h_total": 0,
+        "h2h_wins_a": 0,
+        "avg_games_a": null,
+        "avg_games_b": null
+      }
+    },
+    {
+      "id": "2026-06-18_Naoki_Nakagawa_Colin_Sinclair",
+      "player_a": "Naoki Nakagawa",
+      "player_b": "Colin Sinclair",
+      "favorite": "player_b",
+      "tournament": "M15 Tokyo",
+      "tournament_rank": "",
+      "surface": "Hard",
+      "round": "Second",
+      "time": "06:00",
+      "date": "2026-06-18",
+      "winner": {
+        "prob_a": 0.3615,
+        "prob_b": 0.6385,
+        "favorite": "player_b",
+        "confidence": 2,
+        "fair_odds": 1.57,
+        "market_odds": null,
+        "edge_pct": null,
+        "kelly_pct": 0.0,
+        "has_odds": false,
+        "ev_status": "skip",
+        "reason": "Léger avantage Elo"
+      },
+      "over_under": {
+        "expected_games": 21.0,
+        "line": 21.0,
+        "prob_over": 0.5008,
+        "prob_under": 0.4992,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "sets": {
+        "prob_2sets": 0.5588,
+        "prob_3sets": 0.4412,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "features": {
+        "elo_global_diff": -14,
+        "elo_surface_diff": -14,
+        "hold_pct_a": 61.3,
+        "hold_pct_b": 63.8,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 59.0,
+        "surf_winrate_b": 56.1,
+        "h2h_total": 0,
+        "h2h_wins_a": 0,
+        "avg_games_a": null,
+        "avg_games_b": null
+      }
+    },
+    {
+      "id": "2026-06-18_Jake_Delaney_Yusuke_Kusuhara",
+      "player_a": "Jake Delaney",
+      "player_b": "Yusuke Kusuhara",
+      "favorite": "player_b",
+      "tournament": "M15 Tokyo",
+      "tournament_rank": "",
+      "surface": "Hard",
+      "round": "Second",
+      "time": "06:00",
+      "date": "2026-06-18",
+      "winner": {
+        "prob_a": 0.3731,
+        "prob_b": 0.6269,
+        "favorite": "player_b",
+        "confidence": 2,
+        "fair_odds": 1.6,
+        "market_odds": null,
+        "edge_pct": null,
+        "kelly_pct": 0.0,
+        "has_odds": false,
+        "ev_status": "skip",
+        "reason": "Léger avantage Elo"
+      },
+      "over_under": {
+        "expected_games": 20.9,
+        "line": 21.0,
+        "prob_over": 0.4912,
+        "prob_under": 0.5088,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "sets": {
+        "prob_2sets": 0.55,
+        "prob_3sets": 0.45,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "features": {
+        "elo_global_diff": 0,
+        "elo_surface_diff": 0,
+        "hold_pct_a": 63.5,
+        "hold_pct_b": 60.4,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 56.6,
+        "surf_winrate_b": 60.0,
+        "h2h_total": 0,
+        "h2h_wins_a": 0,
+        "avg_games_a": null,
+        "avg_games_b": null
+      }
+    },
+    {
+      "id": "2026-06-18_Renta_Tokuda_Shunsuke_Nakagawa",
+      "player_a": "Renta Tokuda",
+      "player_b": "Shunsuke Nakagawa",
+      "favorite": "player_b",
+      "tournament": "M15 Tokyo",
+      "tournament_rank": "",
+      "surface": "Hard",
+      "round": "Second",
+      "time": "06:00",
+      "date": "2026-06-18",
+      "winner": {
+        "prob_a": 0.38,
+        "prob_b": 0.62,
+        "favorite": "player_b",
+        "confidence": 2,
+        "fair_odds": 1.61,
+        "market_odds": null,
+        "edge_pct": null,
+        "kelly_pct": 0.0,
+        "has_odds": false,
+        "ev_status": "skip",
+        "reason": "Léger avantage Elo"
+      },
+      "over_under": {
+        "expected_games": 20.6,
+        "line": 20.5,
+        "prob_over": 0.5064,
+        "prob_under": 0.4936,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "sets": {
+        "prob_2sets": 0.55,
+        "prob_3sets": 0.45,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "features": {
+        "elo_global_diff": 0,
+        "elo_surface_diff": 0,
+        "hold_pct_a": 62.2,
+        "hold_pct_b": 58.6,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 62.5,
+        "surf_winrate_b": 59.3,
         "h2h_total": 0,
         "h2h_wins_a": 0,
         "avg_games_a": null,
@@ -1396,7 +1449,7 @@
       "tournament_rank": "Challengers/ITF tournaments > $10K",
       "surface": "Grass",
       "round": "Second",
-      "time": "17:30",
+      "time": "18:30",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3451,
@@ -1449,7 +1502,7 @@
       "tournament_rank": "Challengers/ITF tournaments > $10K",
       "surface": "Grass",
       "round": "Second",
-      "time": "18:55",
+      "time": "19:10",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.438,
@@ -1502,7 +1555,7 @@
       "tournament_rank": "Challengers/ITF tournaments > $10K",
       "surface": "Grass",
       "round": "Second",
-      "time": "19:00",
+      "time": "20:20",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3761,
@@ -1542,59 +1595,6 @@
         "surf_winrate_b": null,
         "h2h_total": 2,
         "h2h_wins_a": 2,
-        "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
-      "id": "2026-06-17_Laslo_Djere_Ryan_Seggerman",
-      "player_a": "Laslo Djere",
-      "player_b": "Ryan Seggerman",
-      "favorite": "player_b",
-      "tournament": "Parma Challenger",
-      "tournament_rank": "Challengers/ITF tournaments > $10K",
-      "surface": "Clay",
-      "round": "Second",
-      "time": "15:25",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.4671,
-        "prob_b": 0.5329,
-        "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.88,
-        "market_odds": null,
-        "edge_pct": null,
-        "kelly_pct": 0.0,
-        "has_odds": false,
-        "ev_status": "skip",
-        "reason": "Elo clay +95 · Win rate surface +9.5%"
-      },
-      "over_under": {
-        "expected_games": 20.0,
-        "line": 20.0,
-        "prob_over": 0.4984,
-        "prob_under": 0.5016,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "sets": {
-        "prob_2sets": 0.5463,
-        "prob_3sets": 0.4537,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "features": {
-        "elo_global_diff": 66,
-        "elo_surface_diff": 95,
-        "hold_pct_a": 62.0,
-        "hold_pct_b": 65.3,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 66.3,
-        "surf_winrate_b": 56.8,
-        "h2h_total": 1,
-        "h2h_wins_a": 1,
         "avg_games_a": null,
         "avg_games_b": null
       }
@@ -1812,112 +1812,6 @@
       }
     },
     {
-      "id": "2026-06-17_Genaro_Alberto_Olivieri_Michele_Ribecai",
-      "player_a": "Genaro Alberto Olivieri",
-      "player_b": "Michele Ribecai",
-      "favorite": "player_b",
-      "tournament": "Poznan Challenger",
-      "tournament_rank": "Challengers/ITF tournaments > $10K",
-      "surface": "Clay",
-      "round": "Second",
-      "time": "15:20",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.3857,
-        "prob_b": 0.6143,
-        "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.63,
-        "market_odds": null,
-        "edge_pct": null,
-        "kelly_pct": 0.0,
-        "has_odds": false,
-        "ev_status": "skip",
-        "reason": "Win rate surface -6.2%"
-      },
-      "over_under": {
-        "expected_games": 21.3,
-        "line": 21.5,
-        "prob_over": 0.4816,
-        "prob_under": 0.5184,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "sets": {
-        "prob_2sets": 0.5613,
-        "prob_3sets": 0.4387,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "features": {
-        "elo_global_diff": 18,
-        "elo_surface_diff": 14,
-        "hold_pct_a": 58.3,
-        "hold_pct_b": 59.4,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 57.8,
-        "surf_winrate_b": 64.0,
-        "h2h_total": 0,
-        "h2h_wins_a": 0,
-        "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
-      "id": "2026-06-17_Maks_Kasnikowski_Jan_Choinski",
-      "player_a": "Maks Kasnikowski",
-      "player_b": "Jan Choinski",
-      "favorite": "player_b",
-      "tournament": "Poznan Challenger",
-      "tournament_rank": "Challengers/ITF tournaments > $10K",
-      "surface": "Clay",
-      "round": "Second",
-      "time": "15:25",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.3951,
-        "prob_b": 0.6049,
-        "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.65,
-        "market_odds": null,
-        "edge_pct": null,
-        "kelly_pct": 0.0,
-        "has_odds": false,
-        "ev_status": "skip",
-        "reason": "Léger avantage Elo"
-      },
-      "over_under": {
-        "expected_games": 22.0,
-        "line": 22.0,
-        "prob_over": 0.5008,
-        "prob_under": 0.4992,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "sets": {
-        "prob_2sets": 0.5688,
-        "prob_3sets": 0.4312,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "features": {
-        "elo_global_diff": 30,
-        "elo_surface_diff": 7,
-        "hold_pct_a": 62.8,
-        "hold_pct_b": 62.3,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 61.9,
-        "surf_winrate_b": 62.8,
-        "h2h_total": 0,
-        "h2h_wins_a": 0,
-        "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
       "id": "2026-06-17_Facundo_Diaz_Acosta_Hynek_Barton",
       "player_a": "Facundo Diaz Acosta",
       "player_b": "Hynek Barton",
@@ -1929,29 +1823,29 @@
       "time": "15:35",
       "date": "2026-06-17",
       "winner": {
-        "prob_a": 0.4196,
-        "prob_b": 0.5804,
+        "prob_a": 0.4368,
+        "prob_b": 0.5632,
         "favorite": "player_b",
         "confidence": 2,
-        "fair_odds": 1.72,
+        "fair_odds": 1.78,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Elo clay +51"
+        "reason": "Elo clay +51 · H2H 2/3"
       },
       "over_under": {
-        "expected_games": 24.6,
-        "line": 24.5,
-        "prob_over": 0.5112,
-        "prob_under": 0.4888,
+        "expected_games": 23.6,
+        "line": 23.5,
+        "prob_over": 0.5072,
+        "prob_under": 0.4928,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.5781,
-        "prob_3sets": 0.4219,
+        "prob_2sets": 0.5611,
+        "prob_3sets": 0.4389,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
@@ -1962,62 +1856,9 @@
         "hold_pct_b": 63.0,
         "winrate_10_a": null,
         "winrate_10_b": null,
-        "surf_winrate_a": 63.9,
-        "surf_winrate_b": 65.2,
-        "h2h_total": 2,
-        "h2h_wins_a": 1,
-        "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
-      "id": "2026-06-17_Norbert_Gombos_Dalibor_Svrcina",
-      "player_a": "Norbert Gombos",
-      "player_b": "Dalibor Svrcina",
-      "favorite": "player_b",
-      "tournament": "Poznan Challenger",
-      "tournament_rank": "Challengers/ITF tournaments > $10K",
-      "surface": "Clay",
-      "round": "Second",
-      "time": "17:30",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.3651,
-        "prob_b": 0.6349,
-        "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.58,
-        "market_odds": null,
-        "edge_pct": null,
-        "kelly_pct": 0.0,
-        "has_odds": false,
-        "ev_status": "skip",
-        "reason": "Léger avantage Elo"
-      },
-      "over_under": {
-        "expected_games": 21.8,
-        "line": 22.0,
-        "prob_over": 0.48,
-        "prob_under": 0.52,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "sets": {
-        "prob_2sets": 0.5325,
-        "prob_3sets": 0.4675,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "features": {
-        "elo_global_diff": -44,
-        "elo_surface_diff": 21,
-        "hold_pct_a": 63.2,
-        "hold_pct_b": 56.3,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 58.4,
-        "surf_winrate_b": 57.1,
-        "h2h_total": 2,
+        "surf_winrate_a": 64.0,
+        "surf_winrate_b": 64.8,
+        "h2h_total": 3,
         "h2h_wins_a": 2,
         "avg_games_a": null,
         "avg_games_b": null
@@ -2077,6 +1918,59 @@
       }
     },
     {
+      "id": "2026-06-17_Norbert_Gombos_Dalibor_Svrcina",
+      "player_a": "Norbert Gombos",
+      "player_b": "Dalibor Svrcina",
+      "favorite": "player_b",
+      "tournament": "Poznan Challenger",
+      "tournament_rank": "Challengers/ITF tournaments > $10K",
+      "surface": "Clay",
+      "round": "Second",
+      "time": "18:00",
+      "date": "2026-06-17",
+      "winner": {
+        "prob_a": 0.3651,
+        "prob_b": 0.6349,
+        "favorite": "player_b",
+        "confidence": 2,
+        "fair_odds": 1.58,
+        "market_odds": null,
+        "edge_pct": null,
+        "kelly_pct": 0.0,
+        "has_odds": false,
+        "ev_status": "skip",
+        "reason": "Léger avantage Elo"
+      },
+      "over_under": {
+        "expected_games": 21.8,
+        "line": 22.0,
+        "prob_over": 0.48,
+        "prob_under": 0.52,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "sets": {
+        "prob_2sets": 0.5325,
+        "prob_3sets": 0.4675,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "features": {
+        "elo_global_diff": -44,
+        "elo_surface_diff": 21,
+        "hold_pct_a": 63.2,
+        "hold_pct_b": 56.3,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 58.4,
+        "surf_winrate_b": 57.1,
+        "h2h_total": 2,
+        "h2h_wins_a": 2,
+        "avg_games_a": null,
+        "avg_games_b": null
+      }
+    },
+    {
       "id": "2026-06-17_Gonzalo_Bueno_Frederico_Ferreira_Silva",
       "player_a": "Gonzalo Bueno",
       "player_b": "Frederico Ferreira Silva",
@@ -2085,7 +1979,7 @@
       "tournament_rank": "Challengers/ITF tournaments > $10K",
       "surface": "Clay",
       "round": "Second",
-      "time": "17:30",
+      "time": "18:00",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3944,
@@ -2183,59 +2077,6 @@
       }
     },
     {
-      "id": "2026-06-17_Emilien_Demanet_Carlos_Sanchez_Jover",
-      "player_a": "Emilien Demanet",
-      "player_b": "Carlos Sanchez Jover",
-      "favorite": "player_b",
-      "tournament": "Royan Challenger",
-      "tournament_rank": "Challengers/ITF tournaments > $10K",
-      "surface": "Clay",
-      "round": "Second",
-      "time": "15:24",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.3707,
-        "prob_b": 0.6293,
-        "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.59,
-        "market_odds": null,
-        "edge_pct": null,
-        "kelly_pct": 0.0,
-        "has_odds": false,
-        "ev_status": "skip",
-        "reason": "Léger avantage Elo"
-      },
-      "over_under": {
-        "expected_games": 21.1,
-        "line": 21.0,
-        "prob_over": 0.508,
-        "prob_under": 0.492,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "sets": {
-        "prob_2sets": 0.55,
-        "prob_3sets": 0.45,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "features": {
-        "elo_global_diff": 0,
-        "elo_surface_diff": 0,
-        "hold_pct_a": 58.5,
-        "hold_pct_b": 57.5,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 58.2,
-        "surf_winrate_b": 63.0,
-        "h2h_total": 0,
-        "h2h_wins_a": 0,
-        "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
       "id": "2026-06-17_Gilles_Arnaud_Bailly_Cosme_Rolland_De_Ravel",
       "player_a": "Gilles Arnaud Bailly",
       "player_b": "Cosme Rolland De Ravel",
@@ -2297,7 +2138,7 @@
       "tournament_rank": "Challengers/ITF tournaments > $10K",
       "surface": "Clay",
       "round": "Second",
-      "time": "17:25",
+      "time": "17:45",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3228,
@@ -2350,7 +2191,7 @@
       "tournament_rank": "Challengers/ITF tournaments > $10K",
       "surface": "Clay",
       "round": "Second",
-      "time": "17:30",
+      "time": "18:35",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3925,
@@ -2395,59 +2236,6 @@
       }
     },
     {
-      "id": "2026-06-17_Kilian_Feldbausch_Svyatoslav_Gulin",
-      "player_a": "Kilian Feldbausch",
-      "player_b": "Svyatoslav Gulin",
-      "favorite": "player_b",
-      "tournament": "Royan Challenger",
-      "tournament_rank": "Challengers/ITF tournaments > $10K",
-      "surface": "Clay",
-      "round": "Second",
-      "time": "18:55",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.3653,
-        "prob_b": 0.6347,
-        "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.58,
-        "market_odds": null,
-        "edge_pct": null,
-        "kelly_pct": 0.0,
-        "has_odds": false,
-        "ev_status": "skip",
-        "reason": "Win rate surface -8.1%"
-      },
-      "over_under": {
-        "expected_games": 20.6,
-        "line": 20.5,
-        "prob_over": 0.5056,
-        "prob_under": 0.4944,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "sets": {
-        "prob_2sets": 0.605,
-        "prob_3sets": 0.395,
-        "recommendation": "2 SETS",
-        "confidence": 1
-      },
-      "features": {
-        "elo_global_diff": 0,
-        "elo_surface_diff": 0,
-        "hold_pct_a": 57.5,
-        "hold_pct_b": 60.7,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 62.4,
-        "surf_winrate_b": 70.5,
-        "h2h_total": 1,
-        "h2h_wins_a": 1,
-        "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
       "id": "2026-06-17_Gerard_Campana_Lee_Thomas_Faurel",
       "player_a": "Gerard Campana Lee",
       "player_b": "Thomas Faurel",
@@ -2456,7 +2244,7 @@
       "tournament_rank": "Challengers/ITF tournaments > $10K",
       "surface": "Clay",
       "round": "Second",
-      "time": "19:00",
+      "time": "20:05",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3737,
@@ -2496,6 +2284,59 @@
         "surf_winrate_b": 53.6,
         "h2h_total": 0,
         "h2h_wins_a": 0,
+        "avg_games_a": null,
+        "avg_games_b": null
+      }
+    },
+    {
+      "id": "2026-06-17_Kilian_Feldbausch_Svyatoslav_Gulin",
+      "player_a": "Kilian Feldbausch",
+      "player_b": "Svyatoslav Gulin",
+      "favorite": "player_b",
+      "tournament": "Royan Challenger",
+      "tournament_rank": "Challengers/ITF tournaments > $10K",
+      "surface": "Clay",
+      "round": "Second",
+      "time": "20:10",
+      "date": "2026-06-17",
+      "winner": {
+        "prob_a": 0.3653,
+        "prob_b": 0.6347,
+        "favorite": "player_b",
+        "confidence": 2,
+        "fair_odds": 1.58,
+        "market_odds": null,
+        "edge_pct": null,
+        "kelly_pct": 0.0,
+        "has_odds": false,
+        "ev_status": "skip",
+        "reason": "Win rate surface -8.1%"
+      },
+      "over_under": {
+        "expected_games": 20.6,
+        "line": 20.5,
+        "prob_over": 0.5056,
+        "prob_under": 0.4944,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "sets": {
+        "prob_2sets": 0.605,
+        "prob_3sets": 0.395,
+        "recommendation": "2 SETS",
+        "confidence": 1
+      },
+      "features": {
+        "elo_global_diff": 0,
+        "elo_surface_diff": 0,
+        "hold_pct_a": 57.5,
+        "hold_pct_b": 60.7,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 62.4,
+        "surf_winrate_b": 70.5,
+        "h2h_total": 1,
+        "h2h_wins_a": 1,
         "avg_games_a": null,
         "avg_games_b": null
       }
@@ -3084,59 +2925,6 @@
       }
     },
     {
-      "id": "2026-06-17_Yuliia_Starodubtseva_Emma_Navarro",
-      "player_a": "Yuliia Starodubtseva",
-      "player_b": "Emma Navarro",
-      "favorite": "player_b",
-      "tournament": "Lexus Nottingham Open - Nottingham",
-      "tournament_rank": "Main tour",
-      "surface": "Grass",
-      "round": "Second",
-      "time": "15:15",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.3637,
-        "prob_b": 0.6363,
-        "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.57,
-        "market_odds": null,
-        "edge_pct": null,
-        "kelly_pct": 0.0,
-        "has_odds": false,
-        "ev_status": "skip",
-        "reason": "Win rate surface -10.5%"
-      },
-      "over_under": {
-        "expected_games": 18.7,
-        "line": 18.5,
-        "prob_over": 0.5192,
-        "prob_under": 0.4808,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "sets": {
-        "prob_2sets": 0.55,
-        "prob_3sets": 0.45,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "features": {
-        "elo_global_diff": 0,
-        "elo_surface_diff": 0,
-        "hold_pct_a": 55.4,
-        "hold_pct_b": 57.0,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 56.2,
-        "surf_winrate_b": 66.7,
-        "h2h_total": 0,
-        "h2h_wins_a": 0,
-        "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
       "id": "2026-06-17_Katie_Volynets_Jessica_Bouzas_Maneiro",
       "player_a": "Katie Volynets",
       "player_b": "Jessica Bouzas Maneiro",
@@ -3145,7 +2933,7 @@
       "tournament_rank": "Main tour",
       "surface": "Grass",
       "round": "Second",
-      "time": "17:30",
+      "time": "18:50",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3667,
@@ -3198,7 +2986,7 @@
       "tournament_rank": "Main tour",
       "surface": "Grass",
       "round": "Second",
-      "time": "19:00",
+      "time": "20:00",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3663,
@@ -3251,7 +3039,7 @@
       "tournament_rank": "Main tour",
       "surface": "Grass",
       "round": "Second",
-      "time": "20:30",
+      "time": "21:30",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3876,
@@ -3410,7 +3198,7 @@
       "tournament_rank": "Challengers/ITF tournaments > $10K",
       "surface": "Clay",
       "round": "First",
-      "time": "17:15",
+      "time": "18:00",
       "date": "2026-06-17",
       "winner": {
         "prob_a": 0.3534,

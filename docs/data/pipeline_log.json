@@ -1,868 +1,813 @@
 {
-  "date": "2026-06-17T13:09:43.956449",
+  "date": "2026-06-17T13:35:52.740907",
   "steps": [
     {
-      "time": "13:05:30",
+      "time": "13:31:21",
       "level": "INFO",
-      "msg": "=== fetch_data.py === 2026-06-17 13:05"
+      "msg": "=== fetch_data.py === 2026-06-17 13:31"
     },
     {
-      "time": "13:05:31",
+      "time": "13:31:23",
       "level": "INFO",
-      "msg": "ATP 2026-06-17 → 44 matchs Betclic (sur 246 total)"
+      "msg": "ATP 2026-06-17 → 38 matchs Betclic (sur 246 vus)"
     },
     {
-      "time": "13:05:32",
+      "time": "13:31:23",
       "level": "INFO",
-      "msg": "ATP 2026-06-18 → 4 matchs Betclic (sur 14 total)"
+      "msg": "ATP 2026-06-18 → 7 matchs Betclic (sur 17 vus)"
     },
     {
-      "time": "13:05:33",
+      "time": "13:31:24",
       "level": "INFO",
-      "msg": "WTA 2026-06-17 → 12 matchs Betclic (sur 211 total)"
+      "msg": "WTA 2026-06-17 → 11 matchs Betclic (sur 211 vus)"
     },
     {
-      "time": "13:05:33",
+      "time": "13:31:25",
       "level": "INFO",
-      "msg": "WTA 2026-06-18 → 7 matchs Betclic (sur 17 total)"
+      "msg": "WTA 2026-06-18 → 7 matchs Betclic (sur 21 vus)"
     },
     {
-      "time": "13:05:33",
+      "time": "13:31:25",
       "level": "INFO",
-      "msg": "✅ 67 matchs Betclic retenus (filtré depuis 443 au total)"
+      "msg": "✅ 63 matchs retenus (filtrés depuis 449 total)"
     },
     {
-      "time": "13:05:33",
+      "time": "13:31:25",
       "level": "INFO",
-      "msg": "[1/67] Juan Estevez vs Hernan Casanova · Asuncion Challenger · 00:00"
+      "msg": "[1/63] Juan Estevez vs Hernan Casanova · Asuncion Challenger · 00:00"
     },
     {
-      "time": "13:05:37",
+      "time": "13:31:30",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:05:37",
+      "time": "13:31:30",
       "level": "INFO",
-      "msg": "[2/67] Joaquin Aguilar Cardozo vs Gonzalo Villanueva · Asuncion Challenger · 00:00"
+      "msg": "[2/63] Joaquin Aguilar Cardozo vs Gonzalo Villanueva · Asuncion Challenger · 00:00"
     },
     {
-      "time": "13:05:41",
+      "time": "13:31:34",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:05:41",
+      "time": "13:31:34",
       "level": "INFO",
-      "msg": "[3/67] Eduardo Ribeiro vs Juan Manuel La Serna · Asuncion Challenger · 21:00"
+      "msg": "[3/63] Eduardo Ribeiro vs Juan Manuel La Serna · Asuncion Challenger · 21:00"
     },
     {
-      "time": "13:05:44",
+      "time": "13:31:37",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/44217/86275"
     },
     {
-      "time": "13:05:45",
+      "time": "13:31:38",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:05:45",
+      "time": "13:31:38",
       "level": "INFO",
-      "msg": "[4/67] Guido Ivan Justo vs Juan Sebastian Gomez · Asuncion Challenger · 21:00"
+      "msg": "[4/63] Guido Ivan Justo vs Juan Sebastian Gomez · Asuncion Challenger · 21:00"
     },
     {
-      "time": "13:05:48",
+      "time": "13:31:41",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/61966/12276"
     },
     {
-      "time": "13:05:49",
+      "time": "13:31:41",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:05:49",
+      "time": "13:31:41",
       "level": "INFO",
-      "msg": "[5/67] Santiago De La Fuente vs Matias Soto · Asuncion Challenger · 21:00"
+      "msg": "[5/63] Santiago De La Fuente vs Matias Soto · Asuncion Challenger · 21:00"
     },
     {
-      "time": "13:05:52",
+      "time": "13:31:46",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:05:52",
+      "time": "13:31:46",
       "level": "INFO",
-      "msg": "[6/67] Nicolas Kicker vs Conner Huertas Del Pino · Asuncion Challenger · 22:30"
+      "msg": "[6/63] Nicolas Kicker vs Conner Huertas Del Pino · Asuncion Challenger · 22:30"
     },
     {
-      "time": "13:05:56",
+      "time": "13:31:50",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:05:56",
+      "time": "13:31:50",
       "level": "INFO",
-      "msg": "[7/67] Thiago Seyboth Wild vs Nick Hardt · Asuncion Challenger · 22:30"
+      "msg": "[7/63] Thiago Seyboth Wild vs Nick Hardt · Asuncion Challenger · 22:30"
     },
     {
-      "time": "13:06:00",
+      "time": "13:31:54",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:00",
+      "time": "13:31:54",
       "level": "INFO",
-      "msg": "[8/67] Luciano Emanuel Ambrogi vs Santiago Rodriguez Taverna · Asuncion Challenger · 22:30"
+      "msg": "[8/63] Luciano Emanuel Ambrogi vs Santiago Rodriguez Taverna · Asuncion Challenger · 22:30"
     },
     {
-      "time": "13:06:03",
+      "time": "13:31:58",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:03",
+      "time": "13:31:58",
       "level": "INFO",
-      "msg": "[9/67] Oliver Crawford vs Alexis Galarneau · Dublin Challenger · 15:10"
+      "msg": "[9/63] Grigor Dimitrov vs Conor Gannon · Dublin Challenger · 17:15"
     },
     {
-      "time": "13:06:07",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
-    },
-    {
-      "time": "13:06:07",
-      "level": "INFO",
-      "msg": "[10/67] Henry Searle vs Yu Hsiou Hsu · Dublin Challenger · 15:10"
-    },
-    {
-      "time": "13:06:11",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
-    },
-    {
-      "time": "13:06:11",
-      "level": "INFO",
-      "msg": "[11/67] Grigor Dimitrov vs Conor Gannon · Dublin Challenger · 17:15"
-    },
-    {
-      "time": "13:06:13",
+      "time": "13:32:02",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/11953/79688"
     },
     {
-      "time": "13:06:14",
+      "time": "13:32:02",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:14",
+      "time": "13:32:02",
       "level": "INFO",
-      "msg": "[12/67] Clement Tabur vs Stefanos Sakellaridis · Dublin Challenger · 17:25"
+      "msg": "[10/63] Clement Tabur vs Stefanos Sakellaridis · Dublin Challenger · 17:40"
     },
     {
-      "time": "13:06:17",
+      "time": "13:32:07",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/47259/74880"
     },
     {
-      "time": "13:06:18",
+      "time": "13:32:07",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:18",
+      "time": "13:32:07",
       "level": "INFO",
-      "msg": "[13/67] Titouan Droguet vs Jerome Kym · Dublin Challenger · 18:45"
+      "msg": "[11/63] Titouan Droguet vs Jerome Kym · Dublin Challenger · 18:45"
     },
     {
-      "time": "13:06:21",
+      "time": "13:32:11",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:21",
+      "time": "13:32:11",
       "level": "INFO",
-      "msg": "[14/67] Mees Rottgering vs Kyrian Jacquet · Dublin Challenger · 18:55"
+      "msg": "[12/63] Mees Rottgering vs Kyrian Jacquet · Dublin Challenger · 19:05"
     },
     {
-      "time": "13:06:25",
+      "time": "13:32:15",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:25",
+      "time": "13:32:15",
       "level": "INFO",
-      "msg": "[15/67] Jurij Rodionov vs Colton Smith · Dublin Challenger · 20:15"
+      "msg": "[13/63] Jurij Rodionov vs Colton Smith · Dublin Challenger · 20:15"
     },
     {
-      "time": "13:06:28",
+      "time": "13:32:19",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:28",
+      "time": "13:32:19",
       "level": "INFO",
-      "msg": "[16/67] Yi Zhou vs Nicolas Mejia · Dublin Challenger · 20:25"
+      "msg": "[14/63] Yi Zhou vs Nicolas Mejia · Dublin Challenger · 20:35"
     },
     {
-      "time": "13:06:32",
+      "time": "13:32:23",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/97973/34968"
     },
     {
-      "time": "13:06:32",
+      "time": "13:32:23",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:32",
+      "time": "13:32:23",
       "level": "INFO",
-      "msg": "[17/67] Zhizhen Zhang vs Roman Safiullin · Nottingham 2 Challenger · 14:00"
+      "msg": "[15/63] Naoki Nakagawa vs Colin Sinclair · M15 Tokyo · 06:00"
     },
     {
-      "time": "13:06:37",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "time": "13:32:27",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/23090/26960"
     },
     {
-      "time": "13:06:37",
+      "time": "13:32:27",
       "level": "INFO",
-      "msg": "[18/67] Shintaro Mochizuki vs Remy Bertola · Nottingham 2 Challenger · 14:00"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:41",
+      "time": "13:32:27",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "[16/63] Jake Delaney vs Yusuke Kusuhara · M15 Tokyo · 06:00"
     },
     {
-      "time": "13:06:41",
-      "level": "INFO",
-      "msg": "[19/67] Christopher O'Connell vs Jay Clarke · Nottingham 2 Challenger · 16:10"
+      "time": "13:32:31",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/27114/77191"
     },
     {
-      "time": "13:06:45",
+      "time": "13:32:31",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "13:32:31",
+      "level": "INFO",
+      "msg": "[17/63] Renta Tokuda vs Shunsuke Nakagawa · M15 Tokyo · 06:00"
+    },
+    {
+      "time": "13:32:34",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/29151/83790"
+    },
+    {
+      "time": "13:32:35",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "13:32:35",
+      "level": "INFO",
+      "msg": "[18/63] Zhizhen Zhang vs Roman Safiullin · Nottingham 2 Challenger · 14:00"
+    },
+    {
+      "time": "13:32:39",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "13:32:39",
+      "level": "INFO",
+      "msg": "[19/63] Shintaro Mochizuki vs Remy Bertola · Nottingham 2 Challenger · 14:00"
+    },
+    {
+      "time": "13:32:44",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "13:32:44",
+      "level": "INFO",
+      "msg": "[20/63] Christopher O'Connell vs Jay Clarke · Nottingham 2 Challenger · 16:10"
+    },
+    {
+      "time": "13:32:49",
       "level": "INFO",
       "msg": "  ✅ Bet365 Christopher O'Connell 1.444 / Jay Clarke 2.625"
     },
     {
-      "time": "13:06:45",
+      "time": "13:32:49",
       "level": "INFO",
-      "msg": "[20/67] Jacob Fearnley vs Benjamin Bonzi · Nottingham 2 Challenger · 17:30"
+      "msg": "[21/63] Jacob Fearnley vs Benjamin Bonzi · Nottingham 2 Challenger · 18:30"
     },
     {
-      "time": "13:06:48",
+      "time": "13:32:53",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:48",
+      "time": "13:32:53",
       "level": "INFO",
-      "msg": "[21/67] Otto Virtanen vs Felix Gill · Nottingham 2 Challenger · 18:55"
+      "msg": "[22/63] Otto Virtanen vs Felix Gill · Nottingham 2 Challenger · 19:10"
     },
     {
-      "time": "13:06:52",
+      "time": "13:32:57",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:52",
+      "time": "13:32:57",
       "level": "INFO",
-      "msg": "[22/67] Billy Harris vs Arthur Gea · Nottingham 2 Challenger · 19:00"
+      "msg": "[23/63] Billy Harris vs Arthur Gea · Nottingham 2 Challenger · 20:20"
     },
     {
-      "time": "13:06:56",
+      "time": "13:33:02",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:06:56",
+      "time": "13:33:02",
       "level": "INFO",
-      "msg": "[23/67] Laslo Djere vs Ryan Seggerman · Parma Challenger · 15:25"
+      "msg": "[24/63] Marco Cecchinato vs Federico Bondioli · Parma Challenger · 16:20"
     },
     {
-      "time": "13:07:01",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
-    },
-    {
-      "time": "13:07:01",
-      "level": "INFO",
-      "msg": "[24/67] Marco Cecchinato vs Federico Bondioli · Parma Challenger · 16:20"
-    },
-    {
-      "time": "13:07:04",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/20104/92247"
-    },
-    {
-      "time": "13:07:05",
+      "time": "13:33:07",
       "level": "INFO",
       "msg": "  ✅ Bet365 Marco Cecchinato 1.5 / Federico Bondioli 2.5"
     },
     {
-      "time": "13:07:05",
+      "time": "13:33:07",
       "level": "INFO",
-      "msg": "[25/67] Sebastian Ofner vs Enrico Dalla Valle · Parma Challenger · 17:50"
+      "msg": "[25/63] Sebastian Ofner vs Enrico Dalla Valle · Parma Challenger · 17:50"
     },
     {
-      "time": "13:07:08",
+      "time": "13:33:10",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/27547/32764"
     },
     {
-      "time": "13:07:09",
+      "time": "13:33:10",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:07:09",
+      "time": "13:33:10",
       "level": "INFO",
-      "msg": "[26/67] Jacopo Vasami vs Buvaysar Gadamauri · Parma Challenger · 18:00"
+      "msg": "[26/63] Jacopo Vasami vs Buvaysar Gadamauri · Parma Challenger · 18:00"
     },
     {
-      "time": "13:07:12",
+      "time": "13:33:14",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/114185/54146"
     },
     {
-      "time": "13:07:12",
+      "time": "13:33:14",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:07:12",
+      "time": "13:33:14",
       "level": "INFO",
-      "msg": "[27/67] Daniel Elahi Galan vs Luca Van Assche · Parma Challenger · 19:20"
+      "msg": "[27/63] Daniel Elahi Galan vs Luca Van Assche · Parma Challenger · 19:20"
     },
     {
-      "time": "13:07:15",
+      "time": "13:33:18",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/26845/82371"
     },
     {
-      "time": "13:07:16",
+      "time": "13:33:18",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:07:16",
+      "time": "13:33:18",
       "level": "INFO",
-      "msg": "[28/67] Daniel Rincon vs Stefano Napolitano · Parma Challenger · 23:00"
+      "msg": "[28/63] Daniel Rincon vs Stefano Napolitano · Parma Challenger · 23:00"
     },
     {
-      "time": "13:07:19",
+      "time": "13:33:22",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/76010/20465"
     },
     {
-      "time": "13:07:20",
+      "time": "13:33:22",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:07:20",
+      "time": "13:33:22",
       "level": "INFO",
-      "msg": "[29/67] Genaro Alberto Olivieri vs Michele Ribecai · Poznan Challenger · 15:20"
+      "msg": "[29/63] Facundo Diaz Acosta vs Hynek Barton · Poznan Challenger · 15:35"
     },
     {
-      "time": "13:07:23",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/37577/100225"
-    },
-    {
-      "time": "13:07:23",
+      "time": "13:33:27",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:07:23",
+      "time": "13:33:27",
       "level": "INFO",
-      "msg": "[30/67] Maks Kasnikowski vs Jan Choinski · Poznan Challenger · 15:25"
+      "msg": "[30/63] Martin Krumich vs Joao Lucas Reis Da Silva · Poznan Challenger · 17:30"
     },
     {
-      "time": "13:07:26",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/84060/26421"
-    },
-    {
-      "time": "13:07:27",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
-    },
-    {
-      "time": "13:07:27",
-      "level": "INFO",
-      "msg": "[31/67] Facundo Diaz Acosta vs Hynek Barton · Poznan Challenger · 15:35"
-    },
-    {
-      "time": "13:07:31",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
-    },
-    {
-      "time": "13:07:31",
-      "level": "INFO",
-      "msg": "[32/67] Norbert Gombos vs Dalibor Svrcina · Poznan Challenger · 17:30"
-    },
-    {
-      "time": "13:07:35",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
-    },
-    {
-      "time": "13:07:35",
-      "level": "INFO",
-      "msg": "[33/67] Martin Krumich vs Joao Lucas Reis Da Silva · Poznan Challenger · 17:30"
-    },
-    {
-      "time": "13:07:39",
+      "time": "13:33:30",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/70459/50000"
     },
     {
-      "time": "13:07:39",
+      "time": "13:33:31",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:07:39",
+      "time": "13:33:31",
       "level": "INFO",
-      "msg": "[34/67] Gonzalo Bueno vs Frederico Ferreira Silva · Poznan Challenger · 17:30"
+      "msg": "[31/63] Norbert Gombos vs Dalibor Svrcina · Poznan Challenger · 18:00"
     },
     {
-      "time": "13:07:42",
+      "time": "13:33:35",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "13:33:35",
+      "level": "INFO",
+      "msg": "[32/63] Gonzalo Bueno vs Frederico Ferreira Silva · Poznan Challenger · 18:00"
+    },
+    {
+      "time": "13:33:38",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/73983/20396"
     },
     {
-      "time": "13:07:43",
+      "time": "13:33:39",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:07:43",
+      "time": "13:33:39",
       "level": "INFO",
-      "msg": "[35/67] Gustavo Heide vs Maxim Mrva · Poznan Challenger · 20:00"
+      "msg": "[33/63] Gustavo Heide vs Maxim Mrva · Poznan Challenger · 20:00"
     },
     {
-      "time": "13:07:46",
+      "time": "13:33:42",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/74899/97984"
     },
     {
-      "time": "13:07:46",
+      "time": "13:33:43",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:07:46",
+      "time": "13:33:43",
       "level": "INFO",
-      "msg": "[36/67] Emilien Demanet vs Carlos Sanchez Jover · Royan Challenger · 15:24"
+      "msg": "[34/63] Gilles Arnaud Bailly vs Cosme Rolland De Ravel · Royan Challenger · 16:10"
     },
     {
-      "time": "13:07:49",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/100202/42963"
-    },
-    {
-      "time": "13:07:50",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
-    },
-    {
-      "time": "13:07:50",
-      "level": "INFO",
-      "msg": "[37/67] Gilles Arnaud Bailly vs Cosme Rolland De Ravel · Royan Challenger · 16:10"
-    },
-    {
-      "time": "13:07:53",
+      "time": "13:33:47",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/92054/89814"
     },
     {
-      "time": "13:07:53",
+      "time": "13:33:47",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:07:53",
+      "time": "13:33:47",
       "level": "INFO",
-      "msg": "[38/67] Leo Raquillet vs Pavel Kotov · Royan Challenger · 17:25"
+      "msg": "[35/63] Leo Raquillet vs Pavel Kotov · Royan Challenger · 17:45"
     },
     {
-      "time": "13:07:56",
+      "time": "13:33:51",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/91861/45553"
     },
     {
-      "time": "13:07:57",
+      "time": "13:33:51",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:07:57",
+      "time": "13:33:51",
       "level": "INFO",
-      "msg": "[39/67] Felix Balshaw vs Lucio Ratti · Royan Challenger · 17:30"
+      "msg": "[36/63] Felix Balshaw vs Lucio Ratti · Royan Challenger · 18:35"
     },
     {
-      "time": "13:08:01",
+      "time": "13:33:55",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/106767/91721"
     },
     {
-      "time": "13:08:01",
+      "time": "13:33:55",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:01",
+      "time": "13:33:55",
       "level": "INFO",
-      "msg": "[40/67] Kilian Feldbausch vs Svyatoslav Gulin · Royan Challenger · 18:55"
+      "msg": "[37/63] Gerard Campana Lee vs Thomas Faurel · Royan Challenger · 20:05"
     },
     {
-      "time": "13:08:05",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
-    },
-    {
-      "time": "13:08:05",
-      "level": "INFO",
-      "msg": "[41/67] Gerard Campana Lee vs Thomas Faurel · Royan Challenger · 19:00"
-    },
-    {
-      "time": "13:08:09",
+      "time": "13:33:59",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/86348/100234"
     },
     {
-      "time": "13:08:09",
+      "time": "13:33:59",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:09",
+      "time": "13:33:59",
       "level": "INFO",
-      "msg": "[42/67] Alexander Zverev vs Yannick Hanfmann · Terra Wortmann Open - Halle · 14:30"
+      "msg": "[38/63] Kilian Feldbausch vs Svyatoslav Gulin · Royan Challenger · 20:10"
     },
     {
-      "time": "13:08:14",
+      "time": "13:34:04",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:14",
+      "time": "13:34:04",
       "level": "INFO",
-      "msg": "[43/67] Raphael Collignon vs Mattia Bellucci · Terra Wortmann Open - Halle · 14:30"
+      "msg": "[39/63] Alexander Zverev vs Yannick Hanfmann · Terra Wortmann Open - Halle · 14:30"
     },
     {
-      "time": "13:08:18",
+      "time": "13:34:08",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:18",
+      "time": "13:34:08",
       "level": "INFO",
-      "msg": "[44/67] Frances Tiafoe vs Sho Shimabukuro · Terra Wortmann Open - Halle · 16:35"
+      "msg": "[40/63] Raphael Collignon vs Mattia Bellucci · Terra Wortmann Open - Halle · 14:30"
     },
     {
-      "time": "13:08:21",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/29939/39863"
+      "time": "13:34:12",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:22",
+      "time": "13:34:12",
+      "level": "INFO",
+      "msg": "[41/63] Frances Tiafoe vs Sho Shimabukuro · Terra Wortmann Open - Halle · 16:35"
+    },
+    {
+      "time": "13:34:17",
       "level": "INFO",
       "msg": "  ✅ Bet365 Frances Tiafoe 1.4 / Sho Shimabukuro 3.0"
     },
     {
-      "time": "13:08:22",
+      "time": "13:34:17",
       "level": "INFO",
-      "msg": "[45/67] Ben Shelton vs Lorenzo Sonego · Terra Wortmann Open - Halle · 17:10"
+      "msg": "[42/63] Ben Shelton vs Lorenzo Sonego · Terra Wortmann Open - Halle · 17:10"
     },
     {
-      "time": "13:08:25",
+      "time": "13:34:21",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:25",
+      "time": "13:34:21",
       "level": "INFO",
-      "msg": "[46/67] Hubert Hurkacz vs Daniel Altmaier · Terra Wortmann Open - Halle · 18:05"
+      "msg": "[43/63] Hubert Hurkacz vs Daniel Altmaier · Terra Wortmann Open - Halle · 18:25"
     },
     {
-      "time": "13:08:29",
+      "time": "13:34:24",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ✅ Bet365 Hubert Hurkacz 1.25 / Daniel Altmaier 4.0"
     },
     {
-      "time": "13:08:29",
+      "time": "13:34:24",
       "level": "INFO",
-      "msg": "[47/67] Learner Tien vs Felix Auger Aliassime · Terra Wortmann Open - Halle · 18:40"
+      "msg": "[44/63] Learner Tien vs Felix Auger Aliassime · Terra Wortmann Open - Halle · 18:40"
     },
     {
-      "time": "13:08:33",
+      "time": "13:34:27",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/93452/40434"
     },
     {
-      "time": "13:08:34",
+      "time": "13:34:28",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:34",
+      "time": "13:34:28",
       "level": "INFO",
-      "msg": "[48/67] Terence Atmane vs Daniil Medvedev · Terra Wortmann Open - Halle · 20:10"
+      "msg": "[45/63] Terence Atmane vs Daniil Medvedev · Terra Wortmann Open - Halle · 20:10"
     },
     {
-      "time": "13:08:37",
+      "time": "13:34:33",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:37",
+      "time": "13:34:33",
       "level": "INFO",
-      "msg": "[49/67] Elina Svitolina vs Eva Lys · Berlin Tennis Open - Berlin · 14:00"
+      "msg": "[46/63] Elina Svitolina vs Eva Lys · Berlin Tennis Open - Berlin · 14:00"
     },
     {
-      "time": "13:08:41",
+      "time": "13:34:36",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:41",
+      "time": "13:34:36",
       "level": "INFO",
-      "msg": "[50/67] Madison Keys vs Karolina Muchova · Berlin Tennis Open - Berlin · 14:00"
+      "msg": "[47/63] Madison Keys vs Karolina Muchova · Berlin Tennis Open - Berlin · 14:00"
     },
     {
-      "time": "13:08:46",
+      "time": "13:34:41",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:46",
+      "time": "13:34:41",
       "level": "INFO",
-      "msg": "[51/67] Linda Noskova vs Diane Parry · Berlin Tennis Open - Berlin · 14:00"
+      "msg": "[48/63] Linda Noskova vs Diane Parry · Berlin Tennis Open - Berlin · 14:00"
     },
     {
-      "time": "13:08:50",
+      "time": "13:34:45",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:50",
+      "time": "13:34:45",
       "level": "INFO",
-      "msg": "[52/67] Jessica Pegula vs Katerina Siniakova · Berlin Tennis Open - Berlin · 16:20"
+      "msg": "[49/63] Jessica Pegula vs Katerina Siniakova · Berlin Tennis Open - Berlin · 16:20"
     },
     {
-      "time": "13:08:54",
+      "time": "13:34:49",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:54",
+      "time": "13:34:49",
       "level": "INFO",
-      "msg": "[53/67] Paula Badosa Gibert vs Cori Gauff · Berlin Tennis Open - Berlin · 18:30"
+      "msg": "[50/63] Paula Badosa Gibert vs Cori Gauff · Berlin Tennis Open - Berlin · 18:30"
     },
     {
-      "time": "13:08:57",
+      "time": "13:34:52",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:57",
+      "time": "13:34:52",
       "level": "INFO",
-      "msg": "[54/67] Aryna Sabalenka vs Ekaterina Alexandrova · Berlin Tennis Open - Berlin · 20:30"
+      "msg": "[51/63] Aryna Sabalenka vs Ekaterina Alexandrova · Berlin Tennis Open - Berlin · 20:30"
     },
     {
-      "time": "13:08:59",
+      "time": "13:34:56",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:08:59",
+      "time": "13:34:56",
       "level": "INFO",
-      "msg": "[55/67] Karolina Pliskova vs Caty McNally · Lexus Nottingham Open - Nottingham · 14:00"
+      "msg": "[52/63] Karolina Pliskova vs Caty McNally · Lexus Nottingham Open - Nottingham · 14:00"
     },
     {
-      "time": "13:09:04",
+      "time": "13:35:00",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:04",
+      "time": "13:35:00",
       "level": "INFO",
-      "msg": "[56/67] Viktorija Golubic vs Zeynep Sonmez · Lexus Nottingham Open - Nottingham · 14:00"
+      "msg": "[53/63] Viktorija Golubic vs Zeynep Sonmez · Lexus Nottingham Open - Nottingham · 14:00"
     },
     {
-      "time": "13:09:06",
+      "time": "13:35:02",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/10749/49991"
     },
     {
-      "time": "13:09:07",
+      "time": "13:35:03",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:07",
+      "time": "13:35:03",
       "level": "INFO",
-      "msg": "[57/67] Marie Bouzkova vs Hannah Klugman · Lexus Nottingham Open - Nottingham · 14:00"
+      "msg": "[54/63] Marie Bouzkova vs Hannah Klugman · Lexus Nottingham Open - Nottingham · 14:00"
     },
     {
-      "time": "13:09:09",
+      "time": "13:35:06",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/24572/80418"
     },
     {
-      "time": "13:09:10",
+      "time": "13:35:07",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:10",
+      "time": "13:35:07",
       "level": "INFO",
-      "msg": "[58/67] Ann Li vs Taylah Preston · Lexus Nottingham Open - Nottingham · 14:00"
+      "msg": "[55/63] Ann Li vs Taylah Preston · Lexus Nottingham Open - Nottingham · 14:00"
     },
     {
-      "time": "13:09:13",
+      "time": "13:35:10",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/45866/70326"
     },
     {
-      "time": "13:09:14",
+      "time": "13:35:11",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:14",
+      "time": "13:35:11",
       "level": "INFO",
-      "msg": "[59/67] Yuliia Starodubtseva vs Emma Navarro · Lexus Nottingham Open - Nottingham · 15:15"
+      "msg": "[56/63] Katie Volynets vs Jessica Bouzas Maneiro · Lexus Nottingham Open - Nottingham · 18:50"
     },
     {
-      "time": "13:09:17",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/41888/42098"
-    },
-    {
-      "time": "13:09:17",
+      "time": "13:35:16",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:17",
+      "time": "13:35:16",
       "level": "INFO",
-      "msg": "[60/67] Katie Volynets vs Jessica Bouzas Maneiro · Lexus Nottingham Open - Nottingham · 17:30"
+      "msg": "[57/63] Dayana Yastremska vs Tatjana Maria · Lexus Nottingham Open - Nottingham · 20:00"
     },
     {
-      "time": "13:09:21",
+      "time": "13:35:20",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:21",
+      "time": "13:35:20",
       "level": "INFO",
-      "msg": "[61/67] Dayana Yastremska vs Tatjana Maria · Lexus Nottingham Open - Nottingham · 19:00"
+      "msg": "[58/63] Talia Gibson vs Qinwen Zheng · Lexus Nottingham Open - Nottingham · 21:30"
     },
     {
-      "time": "13:09:23",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
-    },
-    {
-      "time": "13:09:23",
-      "level": "INFO",
-      "msg": "[62/67] Talia Gibson vs Qinwen Zheng · Lexus Nottingham Open - Nottingham · 20:30"
-    },
-    {
-      "time": "13:09:25",
+      "time": "13:35:32",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/63749/53128"
     },
     {
-      "time": "13:09:26",
+      "time": "13:35:33",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:26",
+      "time": "13:35:33",
       "level": "INFO",
-      "msg": "[63/67] Isabelle Cherny vs Lucciana Perez Alarcon · W35 San Gregorio · 17:05"
+      "msg": "[59/63] Isabelle Cherny vs Lucciana Perez Alarcon · W35 San Gregorio · 17:05"
     },
     {
-      "time": "13:09:29",
+      "time": "13:35:36",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/72658/75744"
     },
     {
-      "time": "13:09:30",
+      "time": "13:35:37",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:30",
+      "time": "13:35:37",
       "level": "INFO",
-      "msg": "[64/67] Michelle Kelly Tikhonko vs Amy Stevens · W35 San Gregorio · 17:10"
+      "msg": "[60/63] Michelle Kelly Tikhonko vs Amy Stevens · W35 San Gregorio · 17:10"
     },
     {
-      "time": "13:09:33",
+      "time": "13:35:40",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:33",
+      "time": "13:35:40",
       "level": "INFO",
-      "msg": "[65/67] Angelica Raggi vs Natalija Senic · W35 San Gregorio · 17:15"
+      "msg": "[61/63] Angelica Raggi vs Natalija Senic · W35 San Gregorio · 18:00"
     },
     {
-      "time": "13:09:36",
+      "time": "13:35:44",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/26528/74176"
     },
     {
-      "time": "13:09:37",
+      "time": "13:35:44",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:37",
+      "time": "13:35:44",
       "level": "INFO",
-      "msg": "[66/67] Masha Lazarenko vs Giulia Maria Sofia Bonaccorso · W35 San Gregorio · 18:30"
+      "msg": "[62/63] Masha Lazarenko vs Giulia Maria Sofia Bonaccorso · W35 San Gregorio · 18:30"
     },
     {
-      "time": "13:09:40",
+      "time": "13:35:48",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/90793/105016"
     },
     {
-      "time": "13:09:40",
+      "time": "13:35:49",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:40",
+      "time": "13:35:49",
       "level": "INFO",
-      "msg": "[67/67] Agnese Gentili vs Anna Lena Ebster · W35 San Gregorio · 18:30"
+      "msg": "[63/63] Agnese Gentili vs Anna Lena Ebster · W35 San Gregorio · 18:30"
     },
     {
-      "time": "13:09:43",
+      "time": "13:35:52",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/103529/74844"
     },
     {
-      "time": "13:09:43",
+      "time": "13:35:52",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "13:09:43",
+      "time": "13:35:52",
       "level": "INFO",
-      "msg": "=== Terminé : 67 matchs · 3 cotes · 564 requêtes ==="
+      "msg": "=== Terminé : 63 matchs · 4 cotes · 532 requêtes ==="
     }
   ],
-  "requests_used": 564,
-  "fixtures_count": 67,
-  "odds_available": 3
+  "requests_used": 532,
+  "fixtures_count": 63,
+  "odds_available": 4
 }
