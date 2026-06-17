@@ -73,6 +73,18 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,12,16,0.96);backdrop-fil
 .sh-line{flex:1;height:1px;background:var(--border);}
 .sh-count{font-size:10px;color:var(--text3);font-family:var(--mono);}
 
+/* TOURNAMENT HEADER */
+.tourn-head{display:flex;align-items:center;gap:10px;margin:28px 0 10px;cursor:pointer;user-select:none;}
+.tourn-head:hover .tourn-name{color:var(--accent);}
+.tourn-name{font-size:15px;font-weight:800;letter-spacing:-.2px;color:var(--accent);white-space:nowrap;transition:color .15s;}
+.tourn-line{flex:1;height:1px;background:var(--border);}
+.tourn-meta{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.tourn-count{font-size:10px;color:var(--text3);font-family:var(--mono);}
+.tourn-chevron{width:14px;height:14px;color:var(--text3);transition:transform .2s;flex-shrink:0;}
+.tourn-chevron.open{transform:rotate(180deg);}
+.tourn-body{overflow:hidden;transition:opacity .2s;}
+.tourn-body.collapsed{display:none;}
+
 /* MATCH CARD */
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:8px;overflow:hidden;transition:border-color .2s;}
 .card.ev-play{border-color:rgba(200,255,0,.22);}
@@ -267,17 +279,25 @@ function render(data){
     byTournament[seenTournaments[t]].matches.push(m);
   }
 
-  const html = byTournament.map(group=>{
-    const evInGroup = group.matches.filter(m=>m.winner.ev_status==='play').length;
-    const evBadge   = evInGroup>0
-      ? ` <span style="font-size:10px;background:var(--accent2);color:var(--accent);border:1px solid rgba(200,255,0,.3);border-radius:10px;padding:1px 7px;font-family:var(--mono);margin-left:6px">${evInGroup} EV+</span>`
+  const html = byTournament.map((group, idx)=>{
+    const tid        = 'tourn_'+idx;
+    const evInGroup  = group.matches.filter(m=>m.winner.ev_status==='play').length;
+    const evBadge    = evInGroup>0
+      ? `<span style="font-size:10px;background:var(--accent2);color:var(--accent);border:1px solid rgba(200,255,0,.3);border-radius:10px;padding:1px 7px;font-family:var(--mono)">${evInGroup} EV+</span>`
       : '';
-    return `<div class="section-head" style="margin-top:24px">
-        <span class="sh-title">${group.name}${evBadge}</span>
-        <div class="sh-line"></div>
-        <span class="sh-count">${group.matches.length} match${group.matches.length>1?'s':''}</span>
+    const chevron = `<svg class="tourn-chevron open" id="chev_${tid}" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4.5l5 5 5-5"/></svg>`;
+    return `<div class="tourn-head" onclick="toggleTournament('${tid}')">
+        <span class="tourn-name">${group.name}</span>
+        <div class="tourn-line"></div>
+        <div class="tourn-meta">
+          ${evBadge}
+          <span class="tourn-count">${group.matches.length} match${group.matches.length>1?'s':''}</span>
+          ${chevron}
+        </div>
       </div>
-      ${group.matches.map(m=>cardHTML(m, m.winner.ev_status==='play')).join('')}`;
+      <div class="tourn-body" id="${tid}">
+        ${group.matches.map(m=>cardHTML(m, m.winner.ev_status==='play')).join('')}
+      </div>`;
   }).join('');
 
   $('evList').innerHTML = html;
@@ -376,6 +396,13 @@ function cardHTML(m, isEV){
     </div>
     ${featHTML}
   </div>`;
+}
+
+function toggleTournament(tid){
+  const body  = document.getElementById(tid);
+  const chev  = document.getElementById('chev_'+tid);
+  const collapsed = body.classList.toggle('collapsed');
+  chev.classList.toggle('open', !collapsed);
 }
 
 function toggleFeat(id){
