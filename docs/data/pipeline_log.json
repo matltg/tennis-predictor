@@ -1,1833 +1,868 @@
 {
-  "date": "2026-06-17T12:50:34.089309",
+  "date": "2026-06-17T13:09:43.956449",
   "steps": [
     {
-      "time": "12:41:11",
+      "time": "13:05:30",
       "level": "INFO",
-      "msg": "=== fetch_data.py === 2026-06-17 12:41"
+      "msg": "=== fetch_data.py === 2026-06-17 13:05"
     },
     {
-      "time": "12:41:13",
+      "time": "13:05:31",
       "level": "INFO",
-      "msg": "ATP 2026-06-17 → 139 matchs"
+      "msg": "ATP 2026-06-17 → 44 matchs Betclic (sur 246 total)"
     },
     {
-      "time": "12:41:13",
+      "time": "13:05:32",
       "level": "INFO",
-      "msg": "ATP 2026-06-18 → 12 matchs"
+      "msg": "ATP 2026-06-18 → 4 matchs Betclic (sur 14 total)"
     },
     {
-      "time": "12:41:14",
+      "time": "13:05:33",
       "level": "INFO",
-      "msg": "WTA 2026-06-17 → 102 matchs"
+      "msg": "WTA 2026-06-17 → 12 matchs Betclic (sur 211 total)"
     },
     {
-      "time": "12:41:15",
+      "time": "13:05:33",
       "level": "INFO",
-      "msg": "WTA 2026-06-18 → 17 matchs"
+      "msg": "WTA 2026-06-18 → 7 matchs Betclic (sur 17 total)"
     },
     {
-      "time": "12:41:15",
+      "time": "13:05:33",
       "level": "INFO",
-      "msg": "Total : 270 fixtures dont 133 premium (ATP/WTA 250+)"
+      "msg": "✅ 67 matchs Betclic retenus (filtré depuis 443 au total)"
     },
     {
-      "time": "12:41:15",
+      "time": "13:05:33",
       "level": "INFO",
-      "msg": "[1/270] Juan Estevez vs Hernan Casanova · Asuncion Challenger · 00:00 ⭐"
+      "msg": "[1/67] Juan Estevez vs Hernan Casanova · Asuncion Challenger · 00:00"
     },
     {
-      "time": "12:41:19",
+      "time": "13:05:37",
       "level": "INFO",
-      "msg": "[2/270] Joaquin Aguilar Cardozo vs Gonzalo Villanueva · Asuncion Challenger · 00:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:41:22",
+      "time": "13:05:37",
       "level": "INFO",
-      "msg": "[3/270] William Kleege vs Spencer Johnson · M15 Irvine · 00:00"
+      "msg": "[2/67] Joaquin Aguilar Cardozo vs Gonzalo Villanueva · Asuncion Challenger · 00:00"
     },
     {
-      "time": "12:41:23",
+      "time": "13:05:41",
       "level": "INFO",
-      "msg": "[4/270] Benjamin O'Connell vs Alexander Rozin · M15 Irvine · 00:35"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:41:23",
+      "time": "13:05:41",
       "level": "INFO",
-      "msg": "[5/270] Vit Kalina vs Marcel Latak · M15 Irvine · 00:35"
+      "msg": "[3/67] Eduardo Ribeiro vs Juan Manuel La Serna · Asuncion Challenger · 21:00"
     },
     {
-      "time": "12:41:24",
-      "level": "INFO",
-      "msg": "[6/270] Kenta Miyoshi vs Lambert Ruland · M15 Irvine · 00:35"
-    },
-    {
-      "time": "12:41:24",
-      "level": "INFO",
-      "msg": "[7/270] Neo Niedner vs Matt Kuhar · M15 Irvine · 02:05"
-    },
-    {
-      "time": "12:41:25",
-      "level": "INFO",
-      "msg": "[8/270] Bryce Nakashima vs Billy Suarez · M15 Irvine · 02:05"
-    },
-    {
-      "time": "12:41:25",
-      "level": "INFO",
-      "msg": "[9/270] Alexander Guajardo vs Karl Lee · M15 Irvine · 02:05"
-    },
-    {
-      "time": "12:41:26",
-      "level": "INFO",
-      "msg": "[10/270] Tanishk Konduri vs Joshua Peck · M15 Irvine · 02:05"
-    },
-    {
-      "time": "12:41:26",
-      "level": "INFO",
-      "msg": "[11/270] Tommy Paul vs Botic Van De Zandschulp · HSBC Championships - London · 13:00 ⭐"
-    },
-    {
-      "time": "12:41:31",
-      "level": "INFO",
-      "msg": "[12/270] Corentin Moutet vs Alejandro Davidovich Fokina · HSBC Championships - London · 13:00 ⭐"
-    },
-    {
-      "time": "12:41:35",
-      "level": "INFO",
-      "msg": "[13/270] Rinky Hijikata vs Jiri Lehecka · HSBC Championships - London · 13:00 ⭐"
-    },
-    {
-      "time": "12:41:37",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/58149/61838"
-    },
-    {
-      "time": "12:41:38",
-      "level": "INFO",
-      "msg": "[14/270] Hamad Medjedovic vs Ugo Humbert · HSBC Championships - London · 13:00 ⭐"
-    },
-    {
-      "time": "12:41:42",
-      "level": "INFO",
-      "msg": "[15/270] Zhizhen Zhang vs Roman Safiullin · Nottingham 2 Challenger · 14:00 ⭐"
-    },
-    {
-      "time": "12:41:47",
-      "level": "INFO",
-      "msg": "[16/270] Shintaro Mochizuki vs Remy Bertola · Nottingham 2 Challenger · 14:00 ⭐"
-    },
-    {
-      "time": "12:41:51",
-      "level": "INFO",
-      "msg": "[17/270] Alexander Zverev vs Yannick Hanfmann · Terra Wortmann Open - Halle · 14:30 ⭐"
-    },
-    {
-      "time": "12:41:55",
-      "level": "INFO",
-      "msg": "[18/270] Raphael Collignon vs Mattia Bellucci · Terra Wortmann Open - Halle · 14:30 ⭐"
-    },
-    {
-      "time": "12:41:59",
-      "level": "INFO",
-      "msg": "[19/270] Jakub Vrba vs Noa Vukadin · M25 Samobor · 14:43"
-    },
-    {
-      "time": "12:41:59",
-      "level": "INFO",
-      "msg": "[20/270] Karlo Kajin vs Dimitar Kuzmanov · M25 Samobor · 14:53"
-    },
-    {
-      "time": "12:42:00",
-      "level": "INFO",
-      "msg": "[21/270] Glib Sekachov vs Petros Tsitsipas · M25 Samobor · 14:53"
-    },
-    {
-      "time": "12:42:00",
-      "level": "INFO",
-      "msg": "[22/270] Luca Potenza vs Fausto Tabacco · M25 Milano · 14:54"
-    },
-    {
-      "time": "12:42:00",
-      "level": "INFO",
-      "msg": "[23/270] Stefan Ilie Bogdan Petre vs Nicholas David Ionel · M15 Constanta · 15:00"
-    },
-    {
-      "time": "12:42:01",
-      "level": "INFO",
-      "msg": "  ✅ Bet365 Stefan Ilie Bogdan Petre 4.333 / Nicholas David Ionel 1.2"
-    },
-    {
-      "time": "12:42:01",
-      "level": "INFO",
-      "msg": "[24/270] Aaron Gabet vs Seydina Andre · M15 Bourg-en-Bresse · 15:03"
-    },
-    {
-      "time": "12:42:02",
-      "level": "INFO",
-      "msg": "[25/270] Peter Fajta vs Ben Stecker · M15 Gyula · 15:05"
-    },
-    {
-      "time": "12:42:02",
-      "level": "INFO",
-      "msg": "[26/270] Tomas Lanik vs Pietro Orlando Fellin · M15 Gyula · 15:05"
-    },
-    {
-      "time": "12:42:03",
-      "level": "INFO",
-      "msg": "[27/270] Oliver Crawford vs Alexis Galarneau · Dublin Challenger · 15:10 ⭐"
-    },
-    {
-      "time": "12:42:06",
-      "level": "INFO",
-      "msg": "[28/270] Henry Searle vs Yu Hsiou Hsu · Dublin Challenger · 15:10 ⭐"
-    },
-    {
-      "time": "12:42:11",
-      "level": "INFO",
-      "msg": "[29/270] Nicolas Ifi vs Menelaos Efstathiou · M15 Bourg-en-Bresse · 15:10"
-    },
-    {
-      "time": "12:42:12",
-      "level": "INFO",
-      "msg": "[30/270] Leo Lagarrigue vs Charles Bertimon · M15 Bourg-en-Bresse · 15:10"
-    },
-    {
-      "time": "12:42:12",
-      "level": "INFO",
-      "msg": "[31/270] David Fix vs Pieter De Lange · M15 Saarlouis · 15:10"
-    },
-    {
-      "time": "12:42:12",
-      "level": "INFO",
-      "msg": "[32/270] Yannik Kelm vs Piet Steveker · M15 Saarlouis · 15:10"
-    },
-    {
-      "time": "12:42:13",
-      "level": "INFO",
-      "msg": "[33/270] Marc Majdandzic vs Tom Sickenberger · M15 Saarlouis · 15:10"
-    },
-    {
-      "time": "12:42:13",
-      "level": "INFO",
-      "msg": "[34/270] Alexander Gschiel vs Aleksandr Braynin · M15 Gyula · 15:15"
-    },
-    {
-      "time": "12:42:14",
-      "level": "INFO",
-      "msg": "[35/270] Genaro Alberto Olivieri vs Michele Ribecai · Poznan Challenger · 15:20 ⭐"
-    },
-    {
-      "time": "12:42:17",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/37577/100225"
-    },
-    {
-      "time": "12:42:18",
-      "level": "INFO",
-      "msg": "[36/270] Bogdan Seleznev vs Cem Christopher Kucukhuseyin · M15 Kayseri · 15:22"
-    },
-    {
-      "time": "12:42:18",
-      "level": "INFO",
-      "msg": "[37/270] Oluwaseun Peter Ogunsakin vs Danil Panarin · M15 Monastir · 15:23"
-    },
-    {
-      "time": "12:42:19",
-      "level": "INFO",
-      "msg": "[38/270] Emilien Demanet vs Carlos Sanchez Jover · Royan Challenger · 15:24 ⭐"
-    },
-    {
-      "time": "12:42:22",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/100202/42963"
-    },
-    {
-      "time": "12:42:22",
-      "level": "INFO",
-      "msg": "[39/270] Laslo Djere vs Ryan Seggerman · Parma Challenger · 15:25 ⭐"
-    },
-    {
-      "time": "12:42:26",
-      "level": "INFO",
-      "msg": "[40/270] Maks Kasnikowski vs Jan Choinski · Poznan Challenger · 15:25 ⭐"
-    },
-    {
-      "time": "12:42:29",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/84060/26421"
-    },
-    {
-      "time": "12:42:29",
-      "level": "INFO",
-      "msg": "[41/270] Patrik Meszaros vs Rafael Kis Balazs · M15 Gyula · 15:25"
-    },
-    {
-      "time": "12:42:30",
-      "level": "INFO",
-      "msg": "[42/270] Diego Fernandez Flores vs Rocco Piatti · M15 Monastir · 15:33"
-    },
-    {
-      "time": "12:42:30",
-      "level": "INFO",
-      "msg": "[43/270] Facundo Diaz Acosta vs Hynek Barton · Poznan Challenger · 15:35 ⭐"
-    },
-    {
-      "time": "12:42:34",
-      "level": "INFO",
-      "msg": "[44/270] Ruben Hartig vs Iulius Maximus Stoica · M15 Constanta · 15:35"
-    },
-    {
-      "time": "12:42:34",
-      "level": "INFO",
-      "msg": "[45/270] Brandon Nakashima vs Ignacio Buse · HSBC Championships - London · 15:40 ⭐"
-    },
-    {
-      "time": "12:42:39",
-      "level": "INFO",
-      "msg": "  ✅ Bet365 Brandon Nakashima 1.363 / Ignacio Buse 3.2"
-    },
-    {
-      "time": "12:42:39",
-      "level": "INFO",
-      "msg": "[46/270] Kai Wehnelt vs Gian Gruenig · M25 Klosters · 15:40"
-    },
-    {
-      "time": "12:42:39",
-      "level": "INFO",
-      "msg": "[47/270] Felix Roussel vs Constantin Bittoun Kouzmine · M15 Kayseri · 15:42"
-    },
-    {
-      "time": "12:42:40",
-      "level": "INFO",
-      "msg": "[48/270] Matthieu Chambonniere vs Noah Lopez Cherubino · M15 Mungia-Laukariz · 15:43"
-    },
-    {
-      "time": "12:42:40",
-      "level": "INFO",
-      "msg": "[49/270] Federico Arnaboldi vs Petr Nesterov · M25 Milano · 15:44"
-    },
-    {
-      "time": "12:42:40",
-      "level": "INFO",
-      "msg": "[50/270] Adhithya Ganesan vs Rigele Te · M25 Lourinha · 16:02"
-    },
-    {
-      "time": "12:42:41",
-      "level": "INFO",
-      "msg": "[51/270] Calin Apostol vs Radu David Turcanu · M15 Constanta · 16:03"
-    },
-    {
-      "time": "12:42:42",
-      "level": "INFO",
-      "msg": "  ✅ Bet365 Calin Apostol 6.0 / Radu David Turcanu 1.111"
-    },
-    {
-      "time": "12:42:42",
-      "level": "INFO",
-      "msg": "[52/270] Sergi Perez Contri vs Pablo Aunion · M15 Mungia-Laukariz · 16:08"
-    },
-    {
-      "time": "12:42:43",
-      "level": "INFO",
-      "msg": "[53/270] Dominic Stricker vs Alessandro Hunziker · M25 Klosters · 16:09"
-    },
-    {
-      "time": "12:42:43",
-      "level": "INFO",
-      "msg": "[54/270] Christopher O'Connell vs Jay Clarke · Nottingham 2 Challenger · 16:10 ⭐"
-    },
-    {
-      "time": "12:42:47",
-      "level": "INFO",
-      "msg": "  ✅ Bet365 Christopher O'Connell 1.444 / Jay Clarke 2.625"
-    },
-    {
-      "time": "12:42:47",
-      "level": "INFO",
-      "msg": "[55/270] Gilles Arnaud Bailly vs Cosme Rolland De Ravel · Royan Challenger · 16:10 ⭐"
-    },
-    {
-      "time": "12:42:51",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/92054/89814"
-    },
-    {
-      "time": "12:42:51",
-      "level": "INFO",
-      "msg": "[56/270] Ivan Marrero Curbelo vs Laurence Teunissen · M15 Kayseri · 16:12"
-    },
-    {
-      "time": "12:42:52",
-      "level": "INFO",
-      "msg": "[57/270] Tiago Torres vs Zach Stephens · M25 Lourinha · 16:14"
-    },
-    {
-      "time": "12:42:52",
-      "level": "INFO",
-      "msg": "[58/270] Aziz Ouakaa vs Matthew Rankin · M15 Monastir · 16:18"
-    },
-    {
-      "time": "12:42:53",
-      "level": "INFO",
-      "msg": "[59/270] Pavlos Tsitsipas vs Ryan Nijboer · M15 Mungia-Laukariz · 16:18"
-    },
-    {
-      "time": "12:42:53",
-      "level": "INFO",
-      "msg": "[60/270] Marco Cecchinato vs Federico Bondioli · Parma Challenger · 16:20 ⭐"
-    },
-    {
-      "time": "12:42:56",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/20104/92247"
-    },
-    {
-      "time": "12:42:57",
-      "level": "INFO",
-      "msg": "  ✅ Bet365 Marco Cecchinato 1.5 / Federico Bondioli 2.5"
-    },
-    {
-      "time": "12:42:57",
-      "level": "INFO",
-      "msg": "[61/270] Alec Deckers vs Carl Emil Overbeck · M25 Lourinha · 16:20"
-    },
-    {
-      "time": "12:42:58",
-      "level": "INFO",
-      "msg": "[62/270] Matas Vasiliauskas vs Haydar Cem Gokpinar · M15 Kayseri · 16:32"
-    },
-    {
-      "time": "12:42:58",
-      "level": "INFO",
-      "msg": "[63/270] Gian Marco Ortenzi vs Georgii Kravchenko · M25 Milano · 16:34"
-    },
-    {
-      "time": "12:42:59",
-      "level": "INFO",
-      "msg": "[64/270] Tim Handel vs Christian Djonov · M25 Klosters · 16:34"
-    },
-    {
-      "time": "12:42:59",
-      "level": "INFO",
-      "msg": "[65/270] Frances Tiafoe vs Sho Shimabukuro · Terra Wortmann Open - Halle · 16:35 ⭐"
-    },
-    {
-      "time": "12:43:02",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/29939/39863"
-    },
-    {
-      "time": "12:43:03",
-      "level": "INFO",
-      "msg": "  ✅ Bet365 Frances Tiafoe 1.4 / Sho Shimabukuro 3.0"
-    },
-    {
-      "time": "12:43:03",
-      "level": "INFO",
-      "msg": "[66/270] Mili Poljicak vs Bozo Barun · M25 Samobor · 16:35"
-    },
-    {
-      "time": "12:43:04",
-      "level": "INFO",
-      "msg": "[67/270] Jan Kumstat vs Corentin Denolly · M25 Klosters · 16:40"
-    },
-    {
-      "time": "12:43:04",
-      "level": "INFO",
-      "msg": "[68/270] Tanguy Genier vs Nicolas Kobelt · M25 Klosters · 16:50"
-    },
-    {
-      "time": "12:43:05",
-      "level": "INFO",
-      "msg": "[69/270] Isaac Becroft vs Gianluca Carlini · M15 Monastir · 16:53"
-    },
-    {
-      "time": "12:43:05",
-      "level": "INFO",
-      "msg": "[70/270] Rodrigo Alujas vs Arthur Bellegy · M15 Bourg-en-Bresse · 16:56"
-    },
-    {
-      "time": "12:43:06",
-      "level": "INFO",
-      "msg": "[71/270] Lasse Poertner vs Nikolai Barsukov · M15 Saarlouis · 16:56"
-    },
-    {
-      "time": "12:43:06",
-      "level": "INFO",
-      "msg": "[72/270] Nicolas Tepmahc vs Udit Kamboj · M15 Kayseri · 16:57"
-    },
-    {
-      "time": "12:43:07",
-      "level": "INFO",
-      "msg": "[73/270] John Hallquist Lithen vs Piet Luis Pinter · M15 Gyula · 17:00"
-    },
-    {
-      "time": "12:43:07",
-      "level": "INFO",
-      "msg": "[74/270] Kolos Kincses vs Filip Drab · M15 Gyula · 17:03"
-    },
-    {
-      "time": "12:43:08",
-      "level": "INFO",
-      "msg": "[75/270] Bekkhan Atlangeriev vs Gabor Hornung · M15 Gyula · 17:05"
-    },
-    {
-      "time": "12:43:08",
-      "level": "INFO",
-      "msg": "[76/270] Alex De Minaur vs Denis Shapovalov · HSBC Championships - London · 17:09 ⭐"
-    },
-    {
-      "time": "12:43:12",
-      "level": "INFO",
-      "msg": "[77/270] Ben Shelton vs Lorenzo Sonego · Terra Wortmann Open - Halle · 17:10 ⭐"
-    },
-    {
-      "time": "12:43:14",
-      "level": "INFO",
-      "msg": "[78/270] Mathis Bondaz vs Filiberto Fumagalli · M15 Bourg-en-Bresse · 17:11"
-    },
-    {
-      "time": "12:43:15",
-      "level": "INFO",
-      "msg": "[79/270] Felix Einig vs Richard Antoni · M15 Saarlouis · 17:11"
-    },
-    {
-      "time": "12:43:15",
-      "level": "INFO",
-      "msg": "[80/270] Augusto Mateo Lucarelli vs Liam Branger · M15 Monastir · 17:13"
-    },
-    {
-      "time": "12:43:16",
-      "level": "INFO",
-      "msg": "[81/270] Viktor Durasovic vs Lorenzo Berto · M25 Milano · 17:14"
-    },
-    {
-      "time": "12:43:16",
-      "level": "INFO",
-      "msg": "[82/270] Grigor Dimitrov vs Conor Gannon · Dublin Challenger · 17:15 ⭐"
-    },
-    {
-      "time": "12:43:20",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/11953/79688"
-    },
-    {
-      "time": "12:43:21",
-      "level": "INFO",
-      "msg": "[83/270] Ivan Biletic vs Piotr Galus · M25 Samobor · 17:15"
-    },
-    {
-      "time": "12:43:21",
-      "level": "INFO",
-      "msg": "[84/270] Nicolas Parizzia vs Sandro Kopp · M25 Klosters · 17:15"
-    },
-    {
-      "time": "12:43:21",
-      "level": "INFO",
-      "msg": "[85/270] Pierre Antoine Faut vs Elijah Sanogo · M15 Bourg-en-Bresse · 17:15"
-    },
-    {
-      "time": "12:43:22",
-      "level": "INFO",
-      "msg": "[86/270] Mate Valkusz vs Leyton Rivera · M15 Gyula · 17:15"
-    },
-    {
-      "time": "12:43:22",
-      "level": "INFO",
-      "msg": "[87/270] Nicolas Garcia Longo vs Rares Teodor Pieleanu · M15 Constanta · 17:15"
-    },
-    {
-      "time": "12:43:23",
-      "level": "INFO",
-      "msg": "  ✅ Bet365 Nicolas Garcia Longo 3.75 / Rares Teodor Pieleanu 1.25"
-    },
-    {
-      "time": "12:43:23",
-      "level": "INFO",
-      "msg": "[88/270] Marcello Serafini vs Giorgio Tabacco · M25 Milano · 17:24"
-    },
-    {
-      "time": "12:43:24",
-      "level": "INFO",
-      "msg": "[89/270] Clement Tabur vs Stefanos Sakellaridis · Dublin Challenger · 17:25 ⭐"
-    },
-    {
-      "time": "12:43:27",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/47259/74880"
-    },
-    {
-      "time": "12:43:27",
-      "level": "INFO",
-      "msg": "[90/270] Leo Raquillet vs Pavel Kotov · Royan Challenger · 17:25 ⭐"
-    },
-    {
-      "time": "12:43:30",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/91861/45553"
-    },
-    {
-      "time": "12:43:31",
-      "level": "INFO",
-      "msg": "[91/270] Henry Bernet vs Jan Sebesta · M25 Klosters · 17:29"
-    },
-    {
-      "time": "12:43:31",
-      "level": "INFO",
-      "msg": "[92/270] Jacob Fearnley vs Benjamin Bonzi · Nottingham 2 Challenger · 17:30 ⭐"
-    },
-    {
-      "time": "12:43:36",
-      "level": "INFO",
-      "msg": "[93/270] Norbert Gombos vs Dalibor Svrcina · Poznan Challenger · 17:30 ⭐"
-    },
-    {
-      "time": "12:43:39",
-      "level": "INFO",
-      "msg": "[94/270] Martin Krumich vs Joao Lucas Reis Da Silva · Poznan Challenger · 17:30 ⭐"
-    },
-    {
-      "time": "12:43:43",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/70459/50000"
-    },
-    {
-      "time": "12:43:43",
-      "level": "INFO",
-      "msg": "[95/270] Gonzalo Bueno vs Frederico Ferreira Silva · Poznan Challenger · 17:30 ⭐"
-    },
-    {
-      "time": "12:43:46",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/73983/20396"
-    },
-    {
-      "time": "12:43:47",
-      "level": "INFO",
-      "msg": "[96/270] Felix Balshaw vs Lucio Ratti · Royan Challenger · 17:30 ⭐"
-    },
-    {
-      "time": "12:43:50",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/106767/91721"
-    },
-    {
-      "time": "12:43:50",
-      "level": "INFO",
-      "msg": "[97/270] Patrick Schoen vs Vasco Leote Prata · M25 Lourinha · 17:32"
-    },
-    {
-      "time": "12:43:51",
-      "level": "INFO",
-      "msg": "[98/270] Tiago Cacao vs Joao Domingues · M25 Lourinha · 17:33"
-    },
-    {
-      "time": "12:43:51",
-      "level": "INFO",
-      "msg": "[99/270] Carles Cordoba vs Alejandro Juan Mano · M15 Mungia-Laukariz · 17:42"
-    },
-    {
-      "time": "12:43:51",
-      "level": "INFO",
-      "msg": "[100/270] Valentin Lapalu vs Cesar Bouchelaghem · M15 Monastir · 17:43"
-    },
-    {
-      "time": "12:43:52",
-      "level": "INFO",
-      "msg": "[101/270] Oscar Jose Gutierrez vs Daniel Verbeek · M15 Mungia-Laukariz · 17:43"
-    },
-    {
-      "time": "12:43:53",
-      "level": "INFO",
-      "msg": "[102/270] Ali Habib vs Milan Ristov · M15 Kursumlijska Banja · 17:44"
-    },
-    {
-      "time": "12:43:53",
-      "level": "INFO",
-      "msg": "[103/270] Sebastian Ofner vs Enrico Dalla Valle · Parma Challenger · 17:50 ⭐"
-    },
-    {
-      "time": "12:43:56",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/27547/32764"
-    },
-    {
-      "time": "12:43:57",
-      "level": "INFO",
-      "msg": "[104/270] Jacopo Vasami vs Buvaysar Gadamauri · Parma Challenger · 18:00 ⭐"
-    },
-    {
-      "time": "12:44:00",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/114185/54146"
-    },
-    {
-      "time": "12:44:00",
-      "level": "INFO",
-      "msg": "[105/270] Hubert Hurkacz vs Daniel Altmaier · Terra Wortmann Open - Halle · 18:05 ⭐"
-    },
-    {
-      "time": "12:44:04",
-      "level": "INFO",
-      "msg": "[106/270] Stefan Adrian Andreescu vs Andrei Corneliu Gadoiu · M15 Constanta · 18:05"
-    },
-    {
-      "time": "12:44:05",
-      "level": "INFO",
-      "msg": "[107/270] Kaspar Mathes vs Marcel Zielinski · M15 Saarlouis · 18:13"
-    },
-    {
-      "time": "12:44:06",
-      "level": "INFO",
-      "msg": "[108/270] Louis Larue vs Giammarco Gandolfi · M15 Bourg-en-Bresse · 18:23"
-    },
-    {
-      "time": "12:44:06",
-      "level": "INFO",
-      "msg": "[109/270] Niccolo Baroni vs Branko Djuric · M15 Kursumlijska Banja · 18:23"
-    },
-    {
-      "time": "12:44:07",
-      "level": "INFO",
-      "msg": "[110/270] Simeon Stankovic vs Nikola Djosic · M15 Kursumlijska Banja · 18:23"
-    },
-    {
-      "time": "12:44:07",
-      "level": "INFO",
-      "msg": "[111/270] Andrea Colombo vs Egor Pleshivtsev · M15 Monastir · 18:28"
-    },
-    {
-      "time": "12:44:08",
-      "level": "INFO",
-      "msg": "[112/270] Andrea Brignacca vs Andrey Chepelev · M25 Samobor · 18:30"
-    },
-    {
-      "time": "12:44:08",
-      "level": "INFO",
-      "msg": "[113/270] Learner Tien vs Felix Auger Aliassime · Terra Wortmann Open - Halle · 18:40 ⭐"
-    },
-    {
-      "time": "12:44:11",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/93452/40434"
-    },
-    {
-      "time": "12:44:12",
-      "level": "INFO",
-      "msg": "[114/270] Titouan Droguet vs Jerome Kym · Dublin Challenger · 18:45 ⭐"
-    },
-    {
-      "time": "12:44:17",
-      "level": "INFO",
-      "msg": "[115/270] Adrian Mannarino vs Arthur Fery · HSBC Championships - London · 18:50 ⭐"
-    },
-    {
-      "time": "12:44:20",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/7806/79065"
-    },
-    {
-      "time": "12:44:21",
-      "level": "INFO",
-      "msg": "[116/270] Mert Alkaya vs Matisse Bobichon · M25 Lourinha · 18:52"
-    },
-    {
-      "time": "12:44:21",
-      "level": "INFO",
-      "msg": "[117/270] Otto Virtanen vs Felix Gill · Nottingham 2 Challenger · 18:55 ⭐"
-    },
-    {
-      "time": "12:44:25",
-      "level": "INFO",
-      "msg": "[118/270] Mees Rottgering vs Kyrian Jacquet · Dublin Challenger · 18:55 ⭐"
-    },
-    {
-      "time": "12:44:28",
-      "level": "INFO",
-      "msg": "[119/270] Kilian Feldbausch vs Svyatoslav Gulin · Royan Challenger · 18:55 ⭐"
-    },
-    {
-      "time": "12:44:32",
-      "level": "INFO",
-      "msg": "[120/270] Billy Harris vs Arthur Gea · Nottingham 2 Challenger · 19:00 ⭐"
-    },
-    {
-      "time": "12:44:37",
-      "level": "INFO",
-      "msg": "[121/270] Gerard Campana Lee vs Thomas Faurel · Royan Challenger · 19:00 ⭐"
-    },
-    {
-      "time": "12:44:40",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/86348/100234"
-    },
-    {
-      "time": "12:44:40",
-      "level": "INFO",
-      "msg": "[122/270] Kevin Edengren vs Pablo Martinez Gomez · M25 Lourinha · 19:02"
-    },
-    {
-      "time": "12:44:41",
-      "level": "INFO",
-      "msg": "[123/270] Daniel Elahi Galan vs Luca Van Assche · Parma Challenger · 19:20 ⭐"
-    },
-    {
-      "time": "12:44:44",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/26845/82371"
-    },
-    {
-      "time": "12:44:44",
-      "level": "INFO",
-      "msg": "[124/270] Robin Catry vs Mario Gonzalez Fernandez · M25 Lourinha · 19:23"
-    },
-    {
-      "time": "12:44:45",
-      "level": "INFO",
-      "msg": "[125/270] Gustavo Heide vs Maxim Mrva · Poznan Challenger · 20:00 ⭐"
-    },
-    {
-      "time": "12:44:49",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/74899/97984"
-    },
-    {
-      "time": "12:44:49",
-      "level": "INFO",
-      "msg": "[126/270] Dmitry Popko vs Zac Hamill · M25 Tulsa · 20:00"
-    },
-    {
-      "time": "12:44:50",
-      "level": "INFO",
-      "msg": "[127/270] Marko Miladinovic vs Maximus Dussault · M25 Tulsa · 20:00"
-    },
-    {
-      "time": "12:44:50",
-      "level": "INFO",
-      "msg": "[128/270] Luca Pow vs Lucas Marionneau · M25 Tulsa · 20:00"
-    },
-    {
-      "time": "12:44:51",
-      "level": "INFO",
-      "msg": "[129/270] William Manning vs Braden Shick · M25 Tulsa · 20:00"
-    },
-    {
-      "time": "12:44:51",
-      "level": "INFO",
-      "msg": "[130/270] Terence Atmane vs Daniil Medvedev · Terra Wortmann Open - Halle · 20:10 ⭐"
-    },
-    {
-      "time": "12:44:55",
-      "level": "INFO",
-      "msg": "[131/270] Jurij Rodionov vs Colton Smith · Dublin Challenger · 20:15 ⭐"
-    },
-    {
-      "time": "12:44:59",
-      "level": "INFO",
-      "msg": "[132/270] Jenson Brooksby vs Francisco Cerundolo · HSBC Championships - London · 20:20 ⭐"
-    },
-    {
-      "time": "12:45:02",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/40609/52279"
-    },
-    {
-      "time": "12:45:03",
-      "level": "INFO",
-      "msg": "[133/270] Yi Zhou vs Nicolas Mejia · Dublin Challenger · 20:25 ⭐"
-    },
-    {
-      "time": "12:45:06",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/97973/34968"
-    },
-    {
-      "time": "12:45:06",
-      "level": "INFO",
-      "msg": "[134/270] Loann Massard vs Simon Reveniau · M15 Bourg-en-Bresse · 20:35"
-    },
-    {
-      "time": "12:45:07",
-      "level": "INFO",
-      "msg": "[135/270] Eduardo Ribeiro vs Juan Manuel La Serna · Asuncion Challenger · 21:00 ⭐"
-    },
-    {
-      "time": "12:45:10",
+      "time": "13:05:44",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/44217/86275"
     },
     {
-      "time": "12:45:10",
+      "time": "13:05:45",
       "level": "INFO",
-      "msg": "[136/270] Guido Ivan Justo vs Juan Sebastian Gomez · Asuncion Challenger · 21:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:13",
+      "time": "13:05:45",
+      "level": "INFO",
+      "msg": "[4/67] Guido Ivan Justo vs Juan Sebastian Gomez · Asuncion Challenger · 21:00"
+    },
+    {
+      "time": "13:05:48",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/61966/12276"
     },
     {
-      "time": "12:45:14",
+      "time": "13:05:49",
       "level": "INFO",
-      "msg": "[137/270] Santiago De La Fuente vs Matias Soto · Asuncion Challenger · 21:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:18",
+      "time": "13:05:49",
       "level": "INFO",
-      "msg": "[138/270] Taym Alazmeh vs Vincent Marysko · M15 Saarlouis · 21:00"
+      "msg": "[5/67] Santiago De La Fuente vs Matias Soto · Asuncion Challenger · 21:00"
     },
     {
-      "time": "12:45:18",
+      "time": "13:05:52",
       "level": "INFO",
-      "msg": "[139/270] Nino Ehrenschneider vs Moritz Kudernatsch · M15 Saarlouis · 21:00"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:19",
+      "time": "13:05:52",
       "level": "INFO",
-      "msg": "[140/270] Dhakshineswar Suresh vs Gavin Young · M25 Tulsa · 21:35"
+      "msg": "[6/67] Nicolas Kicker vs Conner Huertas Del Pino · Asuncion Challenger · 22:30"
     },
     {
-      "time": "12:45:19",
+      "time": "13:05:56",
       "level": "INFO",
-      "msg": "[141/270] James Kent Trotter vs Ilyas Milad Fahim · M25 Tulsa · 21:35"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:20",
+      "time": "13:05:56",
       "level": "INFO",
-      "msg": "[142/270] Ozan Baris vs Justin Boulais · M25 Tulsa · 21:35"
+      "msg": "[7/67] Thiago Seyboth Wild vs Nick Hardt · Asuncion Challenger · 22:30"
     },
     {
-      "time": "12:45:20",
+      "time": "13:06:00",
       "level": "INFO",
-      "msg": "[143/270] Jonah Braswell vs Nicolas Arseneault · M25 Tulsa · 21:35"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:21",
+      "time": "13:06:00",
       "level": "INFO",
-      "msg": "[144/270] Nicolas Kicker vs Conner Huertas Del Pino · Asuncion Challenger · 22:30 ⭐"
+      "msg": "[8/67] Luciano Emanuel Ambrogi vs Santiago Rodriguez Taverna · Asuncion Challenger · 22:30"
     },
     {
-      "time": "12:45:24",
+      "time": "13:06:03",
       "level": "INFO",
-      "msg": "[145/270] Thiago Seyboth Wild vs Nick Hardt · Asuncion Challenger · 22:30 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:28",
+      "time": "13:06:03",
       "level": "INFO",
-      "msg": "[146/270] Luciano Emanuel Ambrogi vs Santiago Rodriguez Taverna · Asuncion Challenger · 22:30 ⭐"
+      "msg": "[9/67] Oliver Crawford vs Alexis Galarneau · Dublin Challenger · 15:10"
     },
     {
-      "time": "12:45:31",
+      "time": "13:06:07",
       "level": "INFO",
-      "msg": "[147/270] Daniel Rincon vs Stefano Napolitano · Parma Challenger · 23:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:34",
+      "time": "13:06:07",
+      "level": "INFO",
+      "msg": "[10/67] Henry Searle vs Yu Hsiou Hsu · Dublin Challenger · 15:10"
+    },
+    {
+      "time": "13:06:11",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:11",
+      "level": "INFO",
+      "msg": "[11/67] Grigor Dimitrov vs Conor Gannon · Dublin Challenger · 17:15"
+    },
+    {
+      "time": "13:06:13",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/11953/79688"
+    },
+    {
+      "time": "13:06:14",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:14",
+      "level": "INFO",
+      "msg": "[12/67] Clement Tabur vs Stefanos Sakellaridis · Dublin Challenger · 17:25"
+    },
+    {
+      "time": "13:06:17",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/47259/74880"
+    },
+    {
+      "time": "13:06:18",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:18",
+      "level": "INFO",
+      "msg": "[13/67] Titouan Droguet vs Jerome Kym · Dublin Challenger · 18:45"
+    },
+    {
+      "time": "13:06:21",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:21",
+      "level": "INFO",
+      "msg": "[14/67] Mees Rottgering vs Kyrian Jacquet · Dublin Challenger · 18:55"
+    },
+    {
+      "time": "13:06:25",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:25",
+      "level": "INFO",
+      "msg": "[15/67] Jurij Rodionov vs Colton Smith · Dublin Challenger · 20:15"
+    },
+    {
+      "time": "13:06:28",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:28",
+      "level": "INFO",
+      "msg": "[16/67] Yi Zhou vs Nicolas Mejia · Dublin Challenger · 20:25"
+    },
+    {
+      "time": "13:06:32",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/97973/34968"
+    },
+    {
+      "time": "13:06:32",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:32",
+      "level": "INFO",
+      "msg": "[17/67] Zhizhen Zhang vs Roman Safiullin · Nottingham 2 Challenger · 14:00"
+    },
+    {
+      "time": "13:06:37",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:37",
+      "level": "INFO",
+      "msg": "[18/67] Shintaro Mochizuki vs Remy Bertola · Nottingham 2 Challenger · 14:00"
+    },
+    {
+      "time": "13:06:41",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:41",
+      "level": "INFO",
+      "msg": "[19/67] Christopher O'Connell vs Jay Clarke · Nottingham 2 Challenger · 16:10"
+    },
+    {
+      "time": "13:06:45",
+      "level": "INFO",
+      "msg": "  ✅ Bet365 Christopher O'Connell 1.444 / Jay Clarke 2.625"
+    },
+    {
+      "time": "13:06:45",
+      "level": "INFO",
+      "msg": "[20/67] Jacob Fearnley vs Benjamin Bonzi · Nottingham 2 Challenger · 17:30"
+    },
+    {
+      "time": "13:06:48",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:48",
+      "level": "INFO",
+      "msg": "[21/67] Otto Virtanen vs Felix Gill · Nottingham 2 Challenger · 18:55"
+    },
+    {
+      "time": "13:06:52",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:52",
+      "level": "INFO",
+      "msg": "[22/67] Billy Harris vs Arthur Gea · Nottingham 2 Challenger · 19:00"
+    },
+    {
+      "time": "13:06:56",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:06:56",
+      "level": "INFO",
+      "msg": "[23/67] Laslo Djere vs Ryan Seggerman · Parma Challenger · 15:25"
+    },
+    {
+      "time": "13:07:01",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:07:01",
+      "level": "INFO",
+      "msg": "[24/67] Marco Cecchinato vs Federico Bondioli · Parma Challenger · 16:20"
+    },
+    {
+      "time": "13:07:04",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/20104/92247"
+    },
+    {
+      "time": "13:07:05",
+      "level": "INFO",
+      "msg": "  ✅ Bet365 Marco Cecchinato 1.5 / Federico Bondioli 2.5"
+    },
+    {
+      "time": "13:07:05",
+      "level": "INFO",
+      "msg": "[25/67] Sebastian Ofner vs Enrico Dalla Valle · Parma Challenger · 17:50"
+    },
+    {
+      "time": "13:07:08",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/27547/32764"
+    },
+    {
+      "time": "13:07:09",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:07:09",
+      "level": "INFO",
+      "msg": "[26/67] Jacopo Vasami vs Buvaysar Gadamauri · Parma Challenger · 18:00"
+    },
+    {
+      "time": "13:07:12",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/114185/54146"
+    },
+    {
+      "time": "13:07:12",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:07:12",
+      "level": "INFO",
+      "msg": "[27/67] Daniel Elahi Galan vs Luca Van Assche · Parma Challenger · 19:20"
+    },
+    {
+      "time": "13:07:15",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/26845/82371"
+    },
+    {
+      "time": "13:07:16",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:07:16",
+      "level": "INFO",
+      "msg": "[28/67] Daniel Rincon vs Stefano Napolitano · Parma Challenger · 23:00"
+    },
+    {
+      "time": "13:07:19",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/76010/20465"
     },
     {
-      "time": "12:45:35",
+      "time": "13:07:20",
       "level": "INFO",
-      "msg": "[148/270] Kaylan Bigun vs Vignesh Gogineni · M15 Irvine · 23:00"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:35",
+      "time": "13:07:20",
       "level": "INFO",
-      "msg": "[149/270] Felipe Vazquez vs Ronit Karki · M15 Irvine · 23:00"
+      "msg": "[29/67] Genaro Alberto Olivieri vs Michele Ribecai · Poznan Challenger · 15:20"
     },
     {
-      "time": "12:45:36",
-      "level": "INFO",
-      "msg": "[150/270] Nathan Cox vs Aadarsh Tripathi · M15 Irvine · 23:00"
-    },
-    {
-      "time": "12:45:36",
-      "level": "INFO",
-      "msg": "[151/270] Andrew Fenty vs Victor Tosetto · M25 Tulsa · 23:05"
-    },
-    {
-      "time": "12:45:37",
-      "level": "INFO",
-      "msg": "[152/270] Ru Xi Wu vs Yasmine Mansouri · W35 Tauste · 00:00 ⭐"
-    },
-    {
-      "time": "12:45:40",
+      "time": "13:07:23",
       "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/100355/41111"
+      "msg": "HTTP 500 → atp/h2h/stats/37577/100225"
     },
     {
-      "time": "12:45:41",
+      "time": "13:07:23",
       "level": "INFO",
-      "msg": "[153/270] Yulia Zhytelna vs Midori Castillo Meza · W15 Irvine · 00:35"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:41",
+      "time": "13:07:23",
       "level": "INFO",
-      "msg": "[154/270] Claire Hill vs Maria Aytoyan · W15 Irvine · 00:35"
+      "msg": "[30/67] Maks Kasnikowski vs Jan Choinski · Poznan Challenger · 15:25"
     },
     {
-      "time": "12:45:42",
+      "time": "13:07:26",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/84060/26421"
+    },
+    {
+      "time": "13:07:27",
       "level": "INFO",
-      "msg": "[155/270] Patsy Daughters vs Anna Tabunshchyk · W15 Irvine · 00:35"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:42",
+      "time": "13:07:27",
       "level": "INFO",
-      "msg": "[156/270] Tia Messerli vs Monika Ekstrand · W15 Irvine · 00:35"
+      "msg": "[31/67] Facundo Diaz Acosta vs Hynek Barton · Poznan Challenger · 15:35"
     },
     {
-      "time": "12:45:43",
+      "time": "13:07:31",
       "level": "INFO",
-      "msg": "[157/270] Stefania Rogozinska Dzik vs Kate Fakih · W15 Irvine · 02:05"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:43",
+      "time": "13:07:31",
       "level": "INFO",
-      "msg": "[158/270] Unknown Player vs Salma Ewing · W15 Irvine · 02:05"
+      "msg": "[32/67] Norbert Gombos vs Dalibor Svrcina · Poznan Challenger · 17:30"
     },
     {
-      "time": "12:45:44",
+      "time": "13:07:35",
       "level": "INFO",
-      "msg": "[159/270] Camille Allegre vs Yilin Chen · W15 Irvine · 02:05"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:44",
+      "time": "13:07:35",
       "level": "INFO",
-      "msg": "[160/270] Elina Svitolina vs Eva Lys · Berlin Tennis Open - Berlin · 14:00 ⭐"
+      "msg": "[33/67] Martin Krumich vs Joao Lucas Reis Da Silva · Poznan Challenger · 17:30"
     },
     {
-      "time": "12:45:48",
+      "time": "13:07:39",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/70459/50000"
+    },
+    {
+      "time": "13:07:39",
       "level": "INFO",
-      "msg": "[161/270] Madison Keys vs Karolina Muchova · Berlin Tennis Open - Berlin · 14:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:45:52",
+      "time": "13:07:39",
       "level": "INFO",
-      "msg": "[162/270] Linda Noskova vs Diane Parry · Berlin Tennis Open - Berlin · 14:00 ⭐"
+      "msg": "[34/67] Gonzalo Bueno vs Frederico Ferreira Silva · Poznan Challenger · 17:30"
     },
     {
-      "time": "12:45:56",
+      "time": "13:07:42",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/73983/20396"
+    },
+    {
+      "time": "13:07:43",
       "level": "INFO",
-      "msg": "[163/270] Karolina Pliskova vs Caty McNally · Lexus Nottingham Open - Nottingham · 14:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:46:00",
+      "time": "13:07:43",
       "level": "INFO",
-      "msg": "[164/270] Viktorija Golubic vs Zeynep Sonmez · Lexus Nottingham Open - Nottingham · 14:00 ⭐"
+      "msg": "[35/67] Gustavo Heide vs Maxim Mrva · Poznan Challenger · 20:00"
     },
     {
-      "time": "12:46:02",
+      "time": "13:07:46",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/74899/97984"
+    },
+    {
+      "time": "13:07:46",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:07:46",
+      "level": "INFO",
+      "msg": "[36/67] Emilien Demanet vs Carlos Sanchez Jover · Royan Challenger · 15:24"
+    },
+    {
+      "time": "13:07:49",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/100202/42963"
+    },
+    {
+      "time": "13:07:50",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:07:50",
+      "level": "INFO",
+      "msg": "[37/67] Gilles Arnaud Bailly vs Cosme Rolland De Ravel · Royan Challenger · 16:10"
+    },
+    {
+      "time": "13:07:53",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/92054/89814"
+    },
+    {
+      "time": "13:07:53",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:07:53",
+      "level": "INFO",
+      "msg": "[38/67] Leo Raquillet vs Pavel Kotov · Royan Challenger · 17:25"
+    },
+    {
+      "time": "13:07:56",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/91861/45553"
+    },
+    {
+      "time": "13:07:57",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:07:57",
+      "level": "INFO",
+      "msg": "[39/67] Felix Balshaw vs Lucio Ratti · Royan Challenger · 17:30"
+    },
+    {
+      "time": "13:08:01",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/106767/91721"
+    },
+    {
+      "time": "13:08:01",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:01",
+      "level": "INFO",
+      "msg": "[40/67] Kilian Feldbausch vs Svyatoslav Gulin · Royan Challenger · 18:55"
+    },
+    {
+      "time": "13:08:05",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:05",
+      "level": "INFO",
+      "msg": "[41/67] Gerard Campana Lee vs Thomas Faurel · Royan Challenger · 19:00"
+    },
+    {
+      "time": "13:08:09",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/86348/100234"
+    },
+    {
+      "time": "13:08:09",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:09",
+      "level": "INFO",
+      "msg": "[42/67] Alexander Zverev vs Yannick Hanfmann · Terra Wortmann Open - Halle · 14:30"
+    },
+    {
+      "time": "13:08:14",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:14",
+      "level": "INFO",
+      "msg": "[43/67] Raphael Collignon vs Mattia Bellucci · Terra Wortmann Open - Halle · 14:30"
+    },
+    {
+      "time": "13:08:18",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:18",
+      "level": "INFO",
+      "msg": "[44/67] Frances Tiafoe vs Sho Shimabukuro · Terra Wortmann Open - Halle · 16:35"
+    },
+    {
+      "time": "13:08:21",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/29939/39863"
+    },
+    {
+      "time": "13:08:22",
+      "level": "INFO",
+      "msg": "  ✅ Bet365 Frances Tiafoe 1.4 / Sho Shimabukuro 3.0"
+    },
+    {
+      "time": "13:08:22",
+      "level": "INFO",
+      "msg": "[45/67] Ben Shelton vs Lorenzo Sonego · Terra Wortmann Open - Halle · 17:10"
+    },
+    {
+      "time": "13:08:25",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:25",
+      "level": "INFO",
+      "msg": "[46/67] Hubert Hurkacz vs Daniel Altmaier · Terra Wortmann Open - Halle · 18:05"
+    },
+    {
+      "time": "13:08:29",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:29",
+      "level": "INFO",
+      "msg": "[47/67] Learner Tien vs Felix Auger Aliassime · Terra Wortmann Open - Halle · 18:40"
+    },
+    {
+      "time": "13:08:33",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/93452/40434"
+    },
+    {
+      "time": "13:08:34",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:34",
+      "level": "INFO",
+      "msg": "[48/67] Terence Atmane vs Daniil Medvedev · Terra Wortmann Open - Halle · 20:10"
+    },
+    {
+      "time": "13:08:37",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:37",
+      "level": "INFO",
+      "msg": "[49/67] Elina Svitolina vs Eva Lys · Berlin Tennis Open - Berlin · 14:00"
+    },
+    {
+      "time": "13:08:41",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:41",
+      "level": "INFO",
+      "msg": "[50/67] Madison Keys vs Karolina Muchova · Berlin Tennis Open - Berlin · 14:00"
+    },
+    {
+      "time": "13:08:46",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:46",
+      "level": "INFO",
+      "msg": "[51/67] Linda Noskova vs Diane Parry · Berlin Tennis Open - Berlin · 14:00"
+    },
+    {
+      "time": "13:08:50",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:50",
+      "level": "INFO",
+      "msg": "[52/67] Jessica Pegula vs Katerina Siniakova · Berlin Tennis Open - Berlin · 16:20"
+    },
+    {
+      "time": "13:08:54",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:54",
+      "level": "INFO",
+      "msg": "[53/67] Paula Badosa Gibert vs Cori Gauff · Berlin Tennis Open - Berlin · 18:30"
+    },
+    {
+      "time": "13:08:57",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:57",
+      "level": "INFO",
+      "msg": "[54/67] Aryna Sabalenka vs Ekaterina Alexandrova · Berlin Tennis Open - Berlin · 20:30"
+    },
+    {
+      "time": "13:08:59",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:08:59",
+      "level": "INFO",
+      "msg": "[55/67] Karolina Pliskova vs Caty McNally · Lexus Nottingham Open - Nottingham · 14:00"
+    },
+    {
+      "time": "13:09:04",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:09:04",
+      "level": "INFO",
+      "msg": "[56/67] Viktorija Golubic vs Zeynep Sonmez · Lexus Nottingham Open - Nottingham · 14:00"
+    },
+    {
+      "time": "13:09:06",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/10749/49991"
     },
     {
-      "time": "12:46:03",
+      "time": "13:09:07",
       "level": "INFO",
-      "msg": "[165/270] Marie Bouzkova vs Hannah Klugman · Lexus Nottingham Open - Nottingham · 14:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:46:06",
+      "time": "13:09:07",
+      "level": "INFO",
+      "msg": "[57/67] Marie Bouzkova vs Hannah Klugman · Lexus Nottingham Open - Nottingham · 14:00"
+    },
+    {
+      "time": "13:09:09",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/24572/80418"
     },
     {
-      "time": "12:46:06",
+      "time": "13:09:10",
       "level": "INFO",
-      "msg": "[166/270] Ann Li vs Taylah Preston · Lexus Nottingham Open - Nottingham · 14:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:46:09",
+      "time": "13:09:10",
+      "level": "INFO",
+      "msg": "[58/67] Ann Li vs Taylah Preston · Lexus Nottingham Open - Nottingham · 14:00"
+    },
+    {
+      "time": "13:09:13",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/45866/70326"
     },
     {
-      "time": "12:46:10",
+      "time": "13:09:14",
       "level": "INFO",
-      "msg": "[167/270] Miriam Bianca Bulgaru vs Ane Mintegi Del Olmo · Internazionali Femminili - Brescia · 14:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:46:13",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/32365/60261"
-    },
-    {
-      "time": "12:46:13",
+      "time": "13:09:14",
       "level": "INFO",
-      "msg": "[168/270] Xiyu Wang vs Carole Monnet · Internazionali Femminili - Brescia · 14:00 ⭐"
+      "msg": "[59/67] Yuliia Starodubtseva vs Emma Navarro · Lexus Nottingham Open - Nottingham · 15:15"
     },
     {
-      "time": "12:46:15",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/43872/45536"
-    },
-    {
-      "time": "12:46:16",
-      "level": "INFO",
-      "msg": "[169/270] Jennifer Ruggeri vs Mayar Sherif · Internazionali Femminili - Brescia · 14:00 ⭐"
-    },
-    {
-      "time": "12:46:19",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/62729/13706"
-    },
-    {
-      "time": "12:46:20",
-      "level": "INFO",
-      "msg": "[170/270] Jazmin Ortenzi vs Elizara Yaneva · Internazionali Femminili - Brescia · 14:05 ⭐"
-    },
-    {
-      "time": "12:46:23",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/52398/82044"
-    },
-    {
-      "time": "12:46:24",
-      "level": "INFO",
-      "msg": "[171/270] Sandugash Kenzhibayeva vs Marina Markina · W15 Kayseri · 14:47"
-    },
-    {
-      "time": "12:46:25",
-      "level": "INFO",
-      "msg": "[172/270] Lucia Cortez Llorca vs Valentina Ivanov · W35 Ystad · 14:50 ⭐"
-    },
-    {
-      "time": "12:46:28",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/40596/59915"
-    },
-    {
-      "time": "12:46:28",
-      "level": "INFO",
-      "msg": "[173/270] Nadia Podoroska vs Carolina Troiano · W35 San Gregorio · 14:52 ⭐"
-    },
-    {
-      "time": "12:46:31",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/14448/85086"
-    },
-    {
-      "time": "12:46:32",
-      "level": "INFO",
-      "msg": "[174/270] Francesca Gandolfi vs Vittoria Paganetti · W35 San Gregorio · 14:52 ⭐"
-    },
-    {
-      "time": "12:46:36",
-      "level": "INFO",
-      "msg": "[175/270] Ayla Aksu vs Sachia Vickery · Ladies Open - Figueira da Foz · 15:00 ⭐"
-    },
-    {
-      "time": "12:46:39",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/16106/12116"
-    },
-    {
-      "time": "12:46:40",
-      "level": "INFO",
-      "msg": "  ✅ Bet365 Ayla Aksu 1.222 / Sachia Vickery 4.0"
-    },
-    {
-      "time": "12:46:40",
-      "level": "INFO",
-      "msg": "[176/270] Barbora Palicova vs Jil Teichmann · Ladies Open - Figueira da Foz · 15:00 ⭐"
-    },
-    {
-      "time": "12:46:43",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/71093/17021"
-    },
-    {
-      "time": "12:46:43",
-      "level": "INFO",
-      "msg": "[177/270] Darja Vidmanova vs Elena Micic · Ladies Open - Figueira da Foz · 15:00 ⭐"
-    },
-    {
-      "time": "12:46:46",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/61710/73702"
-    },
-    {
-      "time": "12:46:47",
-      "level": "INFO",
-      "msg": "[178/270] Alina Korneeva vs Martyna Kubka · Ladies Open - Figueira da Foz · 15:00 ⭐"
-    },
-    {
-      "time": "12:46:51",
-      "level": "INFO",
-      "msg": "[179/270] Jeline Vandromme vs Valentina Ryser · Ladies Open - Figueira da Foz · 15:00 ⭐"
-    },
-    {
-      "time": "12:46:53",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/78144/51925"
-    },
-    {
-      "time": "12:46:54",
-      "level": "INFO",
-      "msg": "[180/270] Diae El Jardi vs Zeel Desai · W35 Mohammedia · 15:05 ⭐"
-    },
-    {
-      "time": "12:46:57",
-      "level": "INFO",
-      "msg": "[181/270] Yasmine Kabbaj vs Luna Vujovic · W35 Mohammedia · 15:05 ⭐"
-    },
-    {
-      "time": "12:47:00",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/72825/92600"
-    },
-    {
-      "time": "12:47:01",
-      "level": "INFO",
-      "msg": "[182/270] Liel Marlies Rothensteiner vs Yasmine Douyeb · W35 Mohammedia · 15:05 ⭐"
-    },
-    {
-      "time": "12:47:04",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/75084/109166"
-    },
-    {
-      "time": "12:47:04",
-      "level": "INFO",
-      "msg": "[183/270] Fanny Pire vs Ruth Roura Llaverias · W35 Mohammedia · 15:05 ⭐"
-    },
-    {
-      "time": "12:47:07",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/95777/82563"
-    },
-    {
-      "time": "12:47:08",
-      "level": "INFO",
-      "msg": "[184/270] Ksenia Krupenina vs Elina Nepliy · W35 Mohammedia · 15:05 ⭐"
-    },
-    {
-      "time": "12:47:11",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/103745/17335"
-    },
-    {
-      "time": "12:47:11",
-      "level": "INFO",
-      "msg": "[185/270] Yuliia Starodubtseva vs Emma Navarro · Lexus Nottingham Open - Nottingham · 15:15 ⭐"
-    },
-    {
-      "time": "12:47:14",
+      "time": "13:09:17",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/41888/42098"
     },
     {
-      "time": "12:47:15",
+      "time": "13:09:17",
       "level": "INFO",
-      "msg": "[186/270] Julia Grabher vs Anastasiia Sobolieva · Internazionali Femminili - Brescia · 15:15 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:47:18",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/16134/67801"
-    },
-    {
-      "time": "12:47:19",
-      "level": "INFO",
-      "msg": "[187/270] Sara Victoria Balan vs Alexia Patru · W15 Bucharest · 15:18"
-    },
-    {
-      "time": "12:47:20",
-      "level": "INFO",
-      "msg": "[188/270] Mia Horvit vs Ena Ilic · W15 Kursumlijska Banja · 15:23"
-    },
-    {
-      "time": "12:47:20",
-      "level": "INFO",
-      "msg": "[189/270] Helena Stevic vs Emma Ottavia Ghirardato · W15 Kursumlijska Banja · 15:23"
-    },
-    {
-      "time": "12:47:21",
-      "level": "INFO",
-      "msg": "[190/270] Nikola Daubnerova vs Anja Wildgruber · W15 Monastir · 15:23"
-    },
-    {
-      "time": "12:47:21",
-      "level": "INFO",
-      "msg": "[191/270] Lucie Pawlak vs Lamiss Houas · W15 Monastir · 15:23"
-    },
-    {
-      "time": "12:47:21",
-      "level": "INFO",
-      "msg": "[192/270] Emma Kamper Malmkjaer vs Rebecca Munk Mortensen · W35 Ystad · 15:33 ⭐"
-    },
-    {
-      "time": "12:47:25",
-      "level": "INFO",
-      "msg": "[193/270] Tanisha Kashyap vs Mariia Nozdrachova · W15 Monastir · 15:35"
-    },
-    {
-      "time": "12:47:25",
-      "level": "INFO",
-      "msg": "[194/270] Ivana Sebestova vs Kristina Voznyak · W35 Bolszewo · 15:38 ⭐"
-    },
-    {
-      "time": "12:47:28",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/55182/29699"
-    },
-    {
-      "time": "12:47:29",
-      "level": "INFO",
-      "msg": "[195/270] Yelyzaveta Chainykova vs Sorana Matis · W15 Monastir · 15:39"
-    },
-    {
-      "time": "12:47:29",
-      "level": "INFO",
-      "msg": "[196/270] Julia Riera vs Pauline Dore · W75 Blois · 15:43 ⭐"
-    },
-    {
-      "time": "12:47:32",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/52500/35834"
-    },
-    {
-      "time": "12:47:32",
-      "level": "INFO",
-      "msg": "[197/270] Unknown Player vs Ada Kumru · W15 Kayseri · 15:47"
-    },
-    {
-      "time": "12:47:32",
-      "level": "INFO",
-      "msg": "[198/270] Amelia Paszun vs Anna Ozerova · W35 Bolszewo · 15:52 ⭐"
-    },
-    {
-      "time": "12:47:35",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/99057/32856"
-    },
-    {
-      "time": "12:47:36",
-      "level": "INFO",
-      "msg": "[199/270] Linea Bajraliu vs Vilma Krebs Hyllested · W35 Ystad · 15:53 ⭐"
-    },
-    {
-      "time": "12:47:39",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/78942/74635"
-    },
-    {
-      "time": "12:47:39",
-      "level": "INFO",
-      "msg": "[200/270] Julia Adams vs Allison Nicole Isaacs · W15 Kayseri · 15:57"
-    },
-    {
-      "time": "12:47:40",
-      "level": "INFO",
-      "msg": "[201/270] Berfu Cengiz vs Darya Velikova · W50 Haskovo · 16:00 ⭐"
-    },
-    {
-      "time": "12:47:43",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/30116/71554"
-    },
-    {
-      "time": "12:47:44",
-      "level": "INFO",
-      "msg": "[202/270] Briana Szabo vs Daria Kuczer · W35 Bolszewo · 16:00 ⭐"
-    },
-    {
-      "time": "12:47:46",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/70190/32184"
-    },
-    {
-      "time": "12:47:46",
-      "level": "INFO",
-      "msg": "[203/270] Ksenia Zaytseva vs Nina Radovanovic · W15 Kursumlijska Banja · 16:03"
-    },
-    {
-      "time": "12:47:47",
-      "level": "INFO",
-      "msg": "[204/270] Viktoria Hruncakova vs Yeon Woo Ku · Ladies Open - Figueira da Foz · 16:05 ⭐"
-    },
-    {
-      "time": "12:47:50",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/29373/52261"
-    },
-    {
-      "time": "12:47:50",
-      "level": "INFO",
-      "msg": "[205/270] Lucie Nguyen Tan vs Alina Granwehr · W75 Blois · 16:05 ⭐"
-    },
-    {
-      "time": "12:47:54",
-      "level": "INFO",
-      "msg": "[206/270] Alevtina Ibragimova vs Mina Hodzic · W75 Blois · 16:05 ⭐"
-    },
-    {
-      "time": "12:47:58",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/79600/46151"
-    },
-    {
-      "time": "12:47:58",
-      "level": "INFO",
-      "msg": "[207/270] Eva Maria Ionescu vs Iulia Maria Buculei · W15 Bucharest · 16:13"
-    },
-    {
-      "time": "12:47:59",
-      "level": "INFO",
-      "msg": "[208/270] Ema Lina Picorusevic vs Karine Sarkisova · W15 Kursumlijska Banja · 16:18"
-    },
-    {
-      "time": "12:47:59",
-      "level": "INFO",
-      "msg": "[209/270] Jessica Pegula vs Katerina Siniakova · Berlin Tennis Open - Berlin · 16:20 ⭐"
-    },
-    {
-      "time": "12:48:02",
-      "level": "INFO",
-      "msg": "[210/270] Marie Vogt vs Kaat Coppez · W15 Dinard · 16:23"
-    },
-    {
-      "time": "12:48:03",
-      "level": "INFO",
-      "msg": "[211/270] Maja Pawelska vs Izabela Heinzova · W35 Bolszewo · 16:32 ⭐"
-    },
-    {
-      "time": "12:48:06",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/88944/61287"
-    },
-    {
-      "time": "12:48:06",
-      "level": "INFO",
-      "msg": "[212/270] Aran Teixido Garcia vs Carolina Kuhl · W35 Mohammedia · 16:35 ⭐"
-    },
-    {
-      "time": "12:48:09",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/45842/72065"
-    },
-    {
-      "time": "12:48:10",
-      "level": "INFO",
-      "msg": "[213/270] Aya El Aouni vs Ekaterina Perelygina · W35 Mohammedia · 16:35 ⭐"
-    },
-    {
-      "time": "12:48:13",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/71777/83985"
-    },
-    {
-      "time": "12:48:13",
-      "level": "INFO",
-      "msg": "[214/270] Clarissa Blomqvist vs Nour El Ouazzani · W35 Mohammedia · 16:35 ⭐"
-    },
-    {
-      "time": "12:48:16",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/74597/88456"
-    },
-    {
-      "time": "12:48:17",
-      "level": "INFO",
-      "msg": "[215/270] Warda Ait El Bachir vs Daria Egorova · W35 Mohammedia · 16:35 ⭐"
-    },
-    {
-      "time": "12:48:20",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/80202/91616"
-    },
-    {
-      "time": "12:48:20",
-      "level": "INFO",
-      "msg": "[216/270] Victoria Milovanova vs Livia Keller · W15 Monastir · 16:50"
-    },
-    {
-      "time": "12:48:21",
-      "level": "INFO",
-      "msg": "[217/270] Carol Plakk vs Arina Arifullina · W15 Monastir · 16:53"
-    },
-    {
-      "time": "12:48:21",
-      "level": "INFO",
-      "msg": "[218/270] Matylda Burylo vs Emina Honic · W35 Ystad · 17:05 ⭐"
-    },
-    {
-      "time": "12:48:24",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/65311/108342"
-    },
-    {
-      "time": "12:48:25",
-      "level": "INFO",
-      "msg": "[219/270] Isabelle Cherny vs Lucciana Perez Alarcon · W35 San Gregorio · 17:05 ⭐"
-    },
-    {
-      "time": "12:48:28",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/72658/75744"
-    },
-    {
-      "time": "12:48:28",
-      "level": "INFO",
-      "msg": "[220/270] Michelle Kelly Tikhonko vs Amy Stevens · W35 San Gregorio · 17:10 ⭐"
-    },
-    {
-      "time": "12:48:32",
-      "level": "INFO",
-      "msg": "[221/270] Joelle Steur vs Amy Sucha · W35 Bolszewo · 17:13 ⭐"
-    },
-    {
-      "time": "12:48:35",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/61183/90508"
-    },
-    {
-      "time": "12:48:36",
-      "level": "INFO",
-      "msg": "[222/270] Tian Jialin vs Anika Jaskova · W35 Ystad · 17:13 ⭐"
-    },
-    {
-      "time": "12:48:39",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/90639/67997"
-    },
-    {
-      "time": "12:48:40",
-      "level": "INFO",
-      "msg": "[223/270] Unknown Player vs Aspen Schuman · W15 Monastir · 17:14"
-    },
-    {
-      "time": "12:48:40",
-      "level": "INFO",
-      "msg": "[224/270] Anastasia Kulikova vs Alina Charaeva · Ladies Open - Figueira da Foz · 17:15 ⭐"
-    },
-    {
-      "time": "12:48:44",
-      "level": "INFO",
-      "msg": "[225/270] Fiona Ferro vs Ekaterine Gorgodze · Internazionali Femminili - Brescia · 17:15 ⭐"
-    },
-    {
-      "time": "12:48:48",
-      "level": "INFO",
-      "msg": "[226/270] Angelica Raggi vs Natalija Senic · W35 San Gregorio · 17:15 ⭐"
-    },
-    {
-      "time": "12:48:51",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/26528/74176"
-    },
-    {
-      "time": "12:48:51",
-      "level": "INFO",
-      "msg": "[227/270] Lola Radivojevic vs Francesca Curmi · W75 Blois · 17:22 ⭐"
-    },
-    {
-      "time": "12:48:54",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/72946/57306"
-    },
-    {
-      "time": "12:48:54",
-      "level": "INFO",
-      "msg": "[228/270] Gina Marie Dittmann vs Lucie Petruzelova · W35 Ystad · 17:28 ⭐"
-    },
-    {
-      "time": "12:48:57",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/59579/59293"
-    },
-    {
-      "time": "12:48:58",
-      "level": "INFO",
-      "msg": "[229/270] Katie Volynets vs Jessica Bouzas Maneiro · Lexus Nottingham Open - Nottingham · 17:30 ⭐"
-    },
-    {
-      "time": "12:49:02",
-      "level": "INFO",
-      "msg": "[230/270] Diana Martynov vs Ipek Oz · W75 Blois · 17:35 ⭐"
-    },
-    {
-      "time": "12:49:04",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/59581/27919"
-    },
-    {
-      "time": "12:49:05",
-      "level": "INFO",
-      "msg": "[231/270] Laetitia Sarrazin vs Monika Wojcik · W15 Dinard · 17:35"
-    },
-    {
-      "time": "12:49:06",
-      "level": "INFO",
-      "msg": "[232/270] Magdalena Baniak vs Weronika Ewald · W35 Bolszewo · 17:38 ⭐"
-    },
-    {
-      "time": "12:49:08",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/95774/80421"
-    },
-    {
-      "time": "12:49:09",
-      "level": "INFO",
-      "msg": "[233/270] Mariya Yemshanova vs Patricia Georgiana Goina · W15 Kursumlijska Banja · 17:39"
-    },
-    {
-      "time": "12:49:09",
-      "level": "INFO",
-      "msg": "[234/270] Christina Bednarczyk vs Franziska Sziedat · W15 Dinard · 17:58"
-    },
-    {
-      "time": "12:49:10",
-      "level": "INFO",
-      "msg": "[235/270] Jennifer Dourado Zimermman vs Maria Florencia Urrutia · W15 Luque · 18:00"
-    },
-    {
-      "time": "12:49:10",
-      "level": "INFO",
-      "msg": "[236/270] Maria Camila Torres Murcia vs Noelia Zeballos · W15 Luque · 18:00"
-    },
-    {
-      "time": "12:49:11",
-      "level": "INFO",
-      "msg": "[237/270] Antonia Vergara Rivera vs Amanda Carolina Nava Elkin · W15 Luque · 18:00"
-    },
-    {
-      "time": "12:49:11",
-      "level": "INFO",
-      "msg": "[238/270] Sara Kastakova vs Marie Mettraux · W15 Kursumlijska Banja · 18:13"
-    },
-    {
-      "time": "12:49:12",
-      "level": "INFO",
-      "msg": "[239/270] Susan Bandecchi vs Katarina Kuzmova · Ladies Open - Figueira da Foz · 18:20 ⭐"
-    },
-    {
-      "time": "12:49:16",
-      "level": "INFO",
-      "msg": "[240/270] Oceane Babel vs Martina Colmegna · W35 Mohammedia · 18:24 ⭐"
-    },
-    {
-      "time": "12:49:19",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/57873/16200"
-    },
-    {
-      "time": "12:49:20",
-      "level": "INFO",
-      "msg": "[241/270] Nina Vargova vs Soha Sadiq · W35 Mohammedia · 18:24 ⭐"
-    },
-    {
-      "time": "12:49:23",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/72468/34306"
-    },
-    {
-      "time": "12:49:23",
-      "level": "INFO",
-      "msg": "[242/270] Anna Shkutova vs Saumya Ronde · W35 Mohammedia · 18:24 ⭐"
-    },
-    {
-      "time": "12:49:26",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/103363/97067"
-    },
-    {
-      "time": "12:49:27",
-      "level": "INFO",
-      "msg": "[243/270] Nuria Sarganella Verdu vs Ana Victoria Gobbi Monllau · W15 Kursumlijska Banja · 18:24"
-    },
-    {
-      "time": "12:49:27",
-      "level": "INFO",
-      "msg": "[244/270] Paula Badosa Gibert vs Cori Gauff · Berlin Tennis Open - Berlin · 18:30 ⭐"
-    },
-    {
-      "time": "12:49:31",
-      "level": "INFO",
-      "msg": "[245/270] Masha Lazarenko vs Giulia Maria Sofia Bonaccorso · W35 San Gregorio · 18:30 ⭐"
-    },
-    {
-      "time": "12:49:34",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/90793/105016"
-    },
-    {
-      "time": "12:49:34",
-      "level": "INFO",
-      "msg": "[246/270] Agnese Gentili vs Anna Lena Ebster · W35 San Gregorio · 18:30 ⭐"
-    },
-    {
-      "time": "12:49:37",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/103529/74844"
-    },
-    {
-      "time": "12:49:38",
-      "level": "INFO",
-      "msg": "[247/270] Gergana Topalova vs Loes Ebeling Koning · W35 Ystad · 18:34 ⭐"
-    },
-    {
-      "time": "12:49:41",
-      "level": "INFO",
-      "msg": "[248/270] Barbara Kostecka vs Emilija Tverijonaite · W35 Bolszewo · 18:43 ⭐"
-    },
-    {
-      "time": "12:49:44",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/96116/73590"
-    },
-    {
-      "time": "12:49:45",
-      "level": "INFO",
-      "msg": "[249/270] Dayana Yastremska vs Tatjana Maria · Lexus Nottingham Open - Nottingham · 19:00 ⭐"
-    },
-    {
-      "time": "12:49:48",
-      "level": "INFO",
-      "msg": "[250/270] Marcelina Podlinska vs Daria Gorska · W35 Bolszewo · 19:08 ⭐"
-    },
-    {
-      "time": "12:49:51",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/36895/74188"
-    },
-    {
-      "time": "12:49:52",
-      "level": "INFO",
-      "msg": "[251/270] Tilwith Di Girolami vs Chrystal Lopez · W15 Dinard · 19:28"
-    },
-    {
-      "time": "12:49:52",
-      "level": "INFO",
-      "msg": "[252/270] Jenny Lim vs Sofya Lansere · W75 Blois · 19:30 ⭐"
-    },
-    {
-      "time": "12:49:56",
-      "level": "INFO",
-      "msg": "[253/270] Julia Stamatova vs Dalila Spiteri · W50 Haskovo · 19:30 ⭐"
-    },
-    {
-      "time": "12:49:59",
+      "time": "13:09:17",
       "level": "INFO",
-      "msg": "[254/270] Ana Filipa Santos vs Alisa Danilova · W15 Luque · 19:35"
+      "msg": "[60/67] Katie Volynets vs Jessica Bouzas Maneiro · Lexus Nottingham Open - Nottingham · 17:30"
     },
     {
-      "time": "12:50:00",
+      "time": "13:09:21",
       "level": "INFO",
-      "msg": "[255/270] Julia Konishi Camargo Silva vs Romina Ccuno · W15 Luque · 19:35"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:50:00",
+      "time": "13:09:21",
       "level": "INFO",
-      "msg": "[256/270] Catalina Delmas Schaerer vs Justina Maria Gonzalez Daniele · W15 Luque · 19:35"
+      "msg": "[61/67] Dayana Yastremska vs Tatjana Maria · Lexus Nottingham Open - Nottingham · 19:00"
     },
     {
-      "time": "12:50:01",
+      "time": "13:09:23",
       "level": "INFO",
-      "msg": "[257/270] Aryna Sabalenka vs Ekaterina Alexandrova · Berlin Tennis Open - Berlin · 20:30 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:50:05",
+      "time": "13:09:23",
       "level": "INFO",
-      "msg": "[258/270] Talia Gibson vs Qinwen Zheng · Lexus Nottingham Open - Nottingham · 20:30 ⭐"
+      "msg": "[62/67] Talia Gibson vs Qinwen Zheng · Lexus Nottingham Open - Nottingham · 20:30"
     },
     {
-      "time": "12:50:08",
+      "time": "13:09:25",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/63749/53128"
     },
     {
-      "time": "12:50:09",
+      "time": "13:09:26",
       "level": "INFO",
-      "msg": "[259/270] Tiantsoa Rakotomanga Rajaonah vs Mia Ristic · Internazionali Femminili - Brescia · 21:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:50:12",
+      "time": "13:09:26",
+      "level": "INFO",
+      "msg": "[63/67] Isabelle Cherny vs Lucciana Perez Alarcon · W35 San Gregorio · 17:05"
+    },
+    {
+      "time": "13:09:29",
       "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/74077/73698"
+      "msg": "HTTP 500 → wta/h2h/stats/72658/75744"
     },
     {
-      "time": "12:50:13",
+      "time": "13:09:30",
       "level": "INFO",
-      "msg": "[260/270] Clara Burel vs Despina Papamichail · W75 Blois · 21:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:50:16",
+      "time": "13:09:30",
+      "level": "INFO",
+      "msg": "[64/67] Michelle Kelly Tikhonko vs Amy Stevens · W35 San Gregorio · 17:10"
+    },
+    {
+      "time": "13:09:33",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes"
+    },
+    {
+      "time": "13:09:33",
+      "level": "INFO",
+      "msg": "[65/67] Angelica Raggi vs Natalija Senic · W35 San Gregorio · 17:15"
+    },
+    {
+      "time": "13:09:36",
       "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/41858/10343"
+      "msg": "HTTP 500 → wta/h2h/stats/26528/74176"
     },
     {
-      "time": "12:50:16",
+      "time": "13:09:37",
       "level": "INFO",
-      "msg": "[261/270] Celia Cervino Ruiz vs Vaishnavi Adkar · W35 Tauste · 21:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:50:19",
+      "time": "13:09:37",
+      "level": "INFO",
+      "msg": "[66/67] Masha Lazarenko vs Giulia Maria Sofia Bonaccorso · W35 San Gregorio · 18:30"
+    },
+    {
+      "time": "13:09:40",
       "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/25824/83823"
+      "msg": "HTTP 500 → wta/h2h/stats/90793/105016"
     },
     {
-      "time": "12:50:20",
+      "time": "13:09:40",
       "level": "INFO",
-      "msg": "[262/270] Belle Thompson vs Anna Kubareva · W35 Tauste · 21:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:50:23",
+      "time": "13:09:40",
+      "level": "INFO",
+      "msg": "[67/67] Agnese Gentili vs Anna Lena Ebster · W35 San Gregorio · 18:30"
+    },
+    {
+      "time": "13:09:43",
       "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/42234/43027"
+      "msg": "HTTP 500 → wta/h2h/stats/103529/74844"
     },
     {
-      "time": "12:50:24",
+      "time": "13:09:43",
       "level": "INFO",
-      "msg": "[263/270] Chelsea Fontenel vs Meritxell Teixido Garcia · W35 Tauste · 21:00 ⭐"
+      "msg": "  ⚠️ Pas de cotes"
     },
     {
-      "time": "12:50:27",
+      "time": "13:09:43",
       "level": "INFO",
-      "msg": "[264/270] Camila Romero vs Luciana Moyano · W15 Luque · 21:05"
-    },
-    {
-      "time": "12:50:28",
-      "level": "INFO",
-      "msg": "[265/270] Emily Zornada vs Chiara Di Genova · W15 Luque · 21:05"
-    },
-    {
-      "time": "12:50:28",
-      "level": "INFO",
-      "msg": "[266/270] Caira Delfina Vega Gudino vs Agustina Daniela Duarte · W15 Luque · 21:05"
-    },
-    {
-      "time": "12:50:29",
-      "level": "INFO",
-      "msg": "[267/270] Yushan Shao vs Unknown Player · W35 Tauste · 22:35 ⭐"
-    },
-    {
-      "time": "12:50:32",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/96133/87191"
-    },
-    {
-      "time": "12:50:32",
-      "level": "INFO",
-      "msg": "[268/270] Veronica Miroshnichenko vs Tatum Evans · W15 Irvine · 23:00"
-    },
-    {
-      "time": "12:50:32",
-      "level": "INFO",
-      "msg": "[269/270] Theadora Rabman vs Simone Kay · W15 Irvine · 23:00"
-    },
-    {
-      "time": "12:50:33",
-      "level": "INFO",
-      "msg": "[270/270] Paola Lopez vs Bianca Molnar · W15 Irvine · 23:00"
-    },
-    {
-      "time": "12:50:34",
-      "level": "INFO",
-      "msg": "=== Terminé : 270 fixtures · 8 cotes · 1247 requêtes ==="
+      "msg": "=== Terminé : 67 matchs · 3 cotes · 564 requêtes ==="
     }
   ],
-  "requests_used": 1247,
-  "fixtures_count": 270,
-  "odds_available": 8
+  "requests_used": 564,
+  "fixtures_count": 67,
+  "odds_available": 3
 }
