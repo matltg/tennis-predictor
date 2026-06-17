@@ -137,12 +137,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,12,16,0.96);backdrop-fil
 .fp-label{color:var(--text3);}
 .fp-val{font-family:var(--mono);color:var(--text2);}
 
-/* Odds input */
-.odds-row{display:flex;gap:6px;align-items:center;padding:8px 14px;border-top:1px solid var(--border);background:var(--bg);}
-.odds-label{font-size:11px;color:var(--text3);flex:1;}
-.odds-input{background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--text);font-family:var(--mono);font-size:13px;padding:5px 8px;width:70px;text-align:center;}
-.odds-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px rgba(200,255,0,.1);}
-.odds-edge{font-size:12px;font-weight:700;font-family:var(--mono);min-width:60px;text-align:right;}
+
 
 /* Skip list */
 .skip-list{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
@@ -331,15 +326,6 @@ function cardHTML(m, isEV){
   const setsProb  = sets.recommendation==='2 SETS'?Math.round(sets.prob_2sets*100):Math.round(sets.prob_3sets*100);
   const setsConf  = STARS(sets.confidence||1);
 
-  // Cotes input
-  const oddsSection = `
-    <div class="odds-row">
-      <span class="odds-label">Cote Betclic (${fav})</span>
-      <input class="odds-input" type="number" step="0.01" min="1.01" placeholder="1.85"
-        oninput="calcEdge(this,${prob/100},'${m.id}')" id="odds_${m.id}">
-      <span class="odds-edge" id="edge_${m.id}">—</span>
-    </div>`;
-
   // Features
   const featHTML = `
     <div class="feat-panel" id="feat_${m.id}" style="display:none">
@@ -388,7 +374,6 @@ function cardHTML(m, isEV){
 
     <div class="reason-bar ${isEV?'':'dim'}">${w.reason}</div>
 
-    ${oddsSection}
 
     <div class="feat-toggle" onclick="toggleFeat('${m.id}')">
       <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg>
@@ -416,11 +401,6 @@ function toggleFeat(id){
     t.innerHTML=t.innerHTML.replace('Masquer','Voir');
   }
 }
-
-function calcEdge(input, modelProb, id){
-  const odds = parseFloat(input.value);
-  const el   = document.getElementById('edge_'+id);
-  if(!odds||odds<=1){el.textContent='—';el.style.color='var(--text3)';return;}
   const marketProb = 1/odds;
   const edge = ((modelProb - marketProb)*100).toFixed(1);
   const sign = edge>0?'+':'';
