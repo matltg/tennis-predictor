@@ -132,19 +132,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,12,16,0.96);backdrop-fil
 /* Features toggle */
 .feat-toggle{font-size:10px;color:var(--text3);cursor:pointer;padding:6px 14px 10px;display:flex;align-items:center;gap:5px;border-top:1px solid var(--border);}
 .feat-toggle:hover{color:var(--text2);}
-.feat-panel{display:none;padding:10px 14px 12px;border-top:1px solid var(--border);background:var(--bg);display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.feat-panel{padding:10px 14px 12px;border-top:1px solid var(--border);background:var(--bg);display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
 .fp-item{font-size:10px;}
 .fp-label{color:var(--text3);}
 .fp-val{font-family:var(--mono);color:var(--text2);}
-
-
-
-/* Skip list */
-.skip-list{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
-.skip-row{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;border-bottom:1px solid var(--border);font-size:12px;gap:8px;flex-wrap:wrap;}
-.skip-row:last-child{border-bottom:none;}
-.skip-players{color:var(--text2);}
-.skip-info{font-size:10px;color:var(--text3);}
 
 /* Empty */
 .empty{text-align:center;padding:40px 20px;color:var(--text3);}
@@ -188,13 +179,17 @@ footer{border-top:1px solid var(--border);padding:12px 20px;font-size:10px;color
   <div class="prog-wrap" id="prog"><div class="prog-bar" id="progBar"></div></div>
 
   <div class="summary">
-    <div class="stat-box"><div class="stat-label">Matchs analysés</div><div class="stat-val val-white" id="sTotal">—</div><div class="stat-sub">ATP + WTA 250+</div></div>
+    <div class="stat-box"><div class="stat-label">Matchs analysés</div><div class="stat-val val-white" id="sTotal">—</div><div class="stat-sub">ATP + WTA 500+</div></div>
     <div class="stat-box"><div class="stat-label">Paris EV+</div><div class="stat-val val-accent" id="sEV">—</div><div class="stat-sub">edge > +5%</div></div>
     <div class="stat-box"><div class="stat-label">Avec cotes</div><div class="stat-val val-white" id="sOdds">—</div><div class="stat-sub">Bet365 auto</div></div>
     <div class="stat-box"><div class="stat-label">Bankroll</div><div class="stat-val val-accent" id="sBankroll">—</div><div class="stat-sub">Kelly ×0.25</div></div>
   </div>
 
-  <div class="section-head"><span class="sh-title">Matchs du jour — par tournoi</span><div class="sh-line"></div><span class="sh-count" id="evCount">—</span></div>
+  <div class="section-head">
+    <span class="sh-title">Matchs du jour — par tournoi</span>
+    <div class="sh-line"></div>
+    <span class="sh-count" id="evCount">—</span>
+  </div>
   <div id="evList"><div class="empty"><div class="spin"></div><div class="empty-t" style="margin-top:12px">Chargement...</div></div></div>
 </div>
 
@@ -209,7 +204,6 @@ const $=id=>document.getElementById(id);
 const SURF={'Grass':'🌿 Gazon','Clay':'🟫 Terre','Hard':'⬛ Dur','I.hard':'⬛ Dur Indoor'};
 const STARS=n=>[...Array(5)].map((_,i)=>`<span class="star ${i<n?'on':'off'}"></span>`).join('');
 
-// Date nav
 const now = new Date();
 $('navDate').textContent = now.toLocaleDateString('fr-FR',{weekday:'short',day:'numeric',month:'short'});
 
@@ -217,14 +211,12 @@ function toast(msg,type='ok'){
   const t=$('toast');t.textContent=msg;t.className=`toast on ${type}`;
   setTimeout(()=>t.className='toast',3200);
 }
-
 function prog(p){$('progBar').style.width=p+'%';}
 function loading(on){
   $('prog').className=on?'prog-wrap on':'prog-wrap';
   document.querySelectorAll('.btn').forEach(b=>b.disabled=on);
   if(!on)prog(0);
 }
-
 function showInfo(){
   toast('Pipeline automatique chaque nuit à 02h00 UTC · Sources : RapidAPI + TML-Database');
 }
@@ -257,15 +249,21 @@ function render(data){
   $('evCount').textContent   = matches.length+' matchs';
 
   if(matches.length===0){
-    $('evList').innerHTML=`<div class="empty"><div class="empty-t">Aucun match aujourd'hui</div><div>Le pipeline n'a pas encore tourné ou aucun fixture disponible</div></div>`;
-    $('footStatus').textContent=`0 EV+ · ${data.summary.matches_with_odds||0} cotes · v${data.model_version}`;
+    $('evList').innerHTML=`<div class="empty"><div class="empty-t">Aucun match aujourd'hui</div></div>`;
     return;
   }
 
-  // Groupe par tournoi (ordre d'apparition préservé, EV+ d'abord dans chaque groupe)
+  // Trier par heure d'abord, puis grouper par tournoi
+  const sorted = [...matches].sort((a,b)=>{
+    const ta = a.time==='TBD'?'99:99':a.time;
+    const tb = b.time==='TBD'?'99:99':b.time;
+    return ta.localeCompare(tb);
+  });
+
+  // Grouper par tournoi (ordre d'apparition après tri horaire)
   const byTournament = [];
   const seenTournaments = {};
-  for(const m of matches){
+  for(const m of sorted){
     const t = m.tournament||'Inconnu';
     if(!(t in seenTournaments)){
       seenTournaments[t] = byTournament.length;
@@ -275,9 +273,9 @@ function render(data){
   }
 
   const html = byTournament.map((group, idx)=>{
-    const tid        = 'tourn_'+idx;
-    const evInGroup  = group.matches.filter(m=>m.winner.ev_status==='play').length;
-    const evBadge    = evInGroup>0
+    const tid     = 'tourn_'+idx;
+    const evInGroup = group.matches.filter(m=>m.winner.ev_status==='play').length;
+    const evBadge = evInGroup>0
       ? `<span style="font-size:10px;background:var(--accent2);color:var(--accent);border:1px solid rgba(200,255,0,.3);border-radius:10px;padding:1px 7px;font-family:var(--mono)">${evInGroup} EV+</span>`
       : '';
     const chevron = `<svg class="tourn-chevron open" id="chev_${tid}" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4.5l5 5 5-5"/></svg>`;
@@ -310,8 +308,8 @@ function cardHTML(m, isEV){
   const surf = SURF[m.surface]||m.surface;
   const conf = STARS(w.confidence||1);
 
-  // EV badge
-  const sign = w.edge_pct>0?'+':'';
+  // Badge EV
+  const sign      = w.edge_pct>0?'+':'';
   const badgeClass = w.has_odds?(w.edge_pct>=5?'ev-pos':w.edge_pct<0?'ev-neg':'ev-neu'):'ev-neu';
   const badgeText  = w.has_odds?`${sign}${w.edge_pct?.toFixed(1)}% EV`:'cotes—';
 
@@ -322,9 +320,9 @@ function cardHTML(m, isEV){
   const ouConf  = STARS(ou.confidence||1);
 
   // Sets
-  const setsRec   = sets.recommendation==='2 SETS'?'rec-2sets':sets.recommendation==='3 SETS'?'rec-3sets':'rec-neutral';
-  const setsProb  = sets.recommendation==='2 SETS'?Math.round(sets.prob_2sets*100):Math.round(sets.prob_3sets*100);
-  const setsConf  = STARS(sets.confidence||1);
+  const setsRec  = sets.recommendation==='2 SETS'?'rec-2sets':sets.recommendation==='3 SETS'?'rec-3sets':'rec-neutral';
+  const setsProb = sets.recommendation==='2 SETS'?Math.round(sets.prob_2sets*100):Math.round(sets.prob_3sets*100);
+  const setsConf = STARS(sets.confidence||1);
 
   // Features
   const featHTML = `
@@ -374,7 +372,6 @@ function cardHTML(m, isEV){
 
     <div class="reason-bar ${isEV?'':'dim'}">${w.reason}</div>
 
-
     <div class="feat-toggle" onclick="toggleFeat('${m.id}')">
       <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3.5l3 3 3-3"/></svg>
       Voir toutes les features
@@ -384,8 +381,8 @@ function cardHTML(m, isEV){
 }
 
 function toggleTournament(tid){
-  const body  = document.getElementById(tid);
-  const chev  = document.getElementById('chev_'+tid);
+  const body = document.getElementById(tid);
+  const chev = document.getElementById('chev_'+tid);
   const collapsed = body.classList.toggle('collapsed');
   chev.classList.toggle('open', !collapsed);
 }
@@ -400,12 +397,6 @@ function toggleFeat(id){
     p.style.display='none';
     t.innerHTML=t.innerHTML.replace('Masquer','Voir');
   }
-}
-  const marketProb = 1/odds;
-  const edge = ((modelProb - marketProb)*100).toFixed(1);
-  const sign = edge>0?'+':'';
-  el.textContent = `${sign}${edge}%`;
-  el.style.color = edge>=5?'var(--accent)':edge>=0?'var(--text2)':'var(--red)';
 }
 
 load();
