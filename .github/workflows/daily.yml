@@ -1,1 +1,67 @@
+name: Tennis Predictor v2
 
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests pandas numpy
+
+      - name: Fetch TML-Database (Elo historique)
+        run: |
+          mkdir -p /tmp/tml
+          BASE="https://raw.githubusercontent.com/Tennismylife/TML-Database/master"
+          for year in 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026; do
+            curl -sf "$BASE/${year}.csv" -o "/tmp/tml/${year}.csv" && echo "$year OK" || echo "$year skip"
+          done
+          echo "TML chargé : $(ls /tmp/tml/*.csv | wc -l) fichiers"
+
+      - name: Fetch MatchChartingProject (stats avancées)
+        run: |
+          mkdir -p /tmp/charting
+          curl -sf "https://github.com/JeffSackmann/tennis_MatchChartingProject/archive/refs/heads/master.zip" \
+            -L -o /tmp/charting.zip && \
+          unzip -q /tmp/charting.zip -d /tmp/charting && \
+          echo "MatchCharting OK" || echo "MatchCharting skip"
+
+      - name: Compute Elo ratings
+        run: python scripts/compute_elo.py
+
+      - name: Fetch fixtures + player data via API
+        env:
+          RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+        run: python scripts/fetch_data.py
+
+      - name: Run prediction model
+        run: python scripts/run_model.py
+
+      - name: Copy JSON to docs/
+        run: |
+          mkdir -p docs/data
+          cp data/predictions.json docs/data/predictions.json
+          cp data/pipeline_log.json docs/data/pipeline_log.json
+          [ -f data/history.json ] && cp data/history.json docs/data/history.json || true
+
+      - name: Commit & push
+        run: |
+          git config user.name "Tennis Bot"
+          git config user.email "bot@tennis-predictor.local"
+          git add docs/data/
+          git diff --staged --quiet || git commit -m "chore: predictions $(date -u +%Y-%m-%d)"
+          git push
