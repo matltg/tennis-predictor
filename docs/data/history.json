@@ -1,0 +1,13 @@
+{
+  "updated_at": "2026-06-17T00:00:00",
+  "stats": {
+    "total_bets": 0,
+    "won": 0,
+    "lost": 0,
+    "roi_pct": 0,
+    "starting_bankroll": 1000,
+    "current_bankroll": 1000,
+    "max_drawdown_pct": 0
+  },
+  "bets": []
+}

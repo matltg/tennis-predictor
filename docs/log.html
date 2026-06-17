@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log Pipeline · Tennis Predictor</title>
+<style>
+:root{--bg:#080c10;--bg2:#0f1419;--bg3:#161d26;--border:rgba(255,255,255,.06);--border2:rgba(255,255,255,.12);--accent:#c8ff00;--accent2:rgba(200,255,0,.12);--accent3:rgba(200,255,0,.06);--text:#e8edf2;--text2:#7a8a99;--text3:#3d4d5c;--green:#00e676;--red:#ff4757;--orange:#ffb300;--mono:'SF Mono','Fira Code',monospace;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,system-ui,sans-serif;font-size:14px;line-height:1.6;}
+nav{position:sticky;top:0;z-index:100;background:rgba(8,12,16,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:52px;display:flex;align-items:center;padding:0 20px;gap:20px;}
+.nav-brand{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--accent);text-transform:uppercase;flex:1;}
+.nav-pulse{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.nav-link{font-size:12px;color:var(--text2);text-decoration:none;padding:5px 10px;border-radius:6px;transition:.15s;}
+.nav-link:hover,.nav-link.active{color:var(--accent);background:var(--accent3);}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px;}
+.section-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.sh-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);white-space:nowrap;}
+.sh-line{flex:1;height:1px;background:var(--border);}
+
+/* Stats bar */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px;}
+.stat-box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;}
+.stat-label{font-size:10px;color:var(--text3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;}
+.stat-val{font-size:20px;font-weight:700;font-family:var(--mono);}
+
+/* Log terminal */
+.terminal{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.term-header{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border);background:var(--bg3);}
+.term-dot{width:10px;height:10px;border-radius:50%;}
+.term-dot.green{background:#27c93f;}
+.term-dot.yellow{background:#ffbd2e;}
+.term-dot.red{background:#ff5f56;}
+.term-title{font-size:11px;color:var(--text3);margin-left:4px;font-family:var(--mono);}
+.term-body{padding:16px;font-family:var(--mono);font-size:12px;line-height:1.8;max-height:600px;overflow-y:auto;}
+.log-line{display:flex;gap:10px;padding:2px 0;}
+.log-time{color:var(--text3);flex-shrink:0;min-width:60px;}
+.log-level{flex-shrink:0;min-width:45px;font-weight:700;}
+.log-level.INFO{color:var(--accent);}
+.log-level.WARN{color:var(--orange);}
+.log-level.ERROR{color:var(--red);}
+.log-msg{color:var(--text2);}
+.log-msg .ok{color:var(--green);}
+.log-msg .warn{color:var(--orange);}
+.log-msg .err{color:var(--red);}
+
+/* Sources status */
+.sources{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:24px;}
+@media(max-width:500px){.sources{grid-template-columns:1fr;}}
+.source-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:10px;}
+.source-icon{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.source-icon.ok{background:rgba(0,230,118,.1);}
+.source-icon.warn{background:rgba(255,179,0,.1);}
+.source-icon.err{background:rgba(255,71,87,.1);}
+.source-name{font-size:12px;font-weight:600;}
+.source-detail{font-size:10px;color:var(--text3);margin-top:2px;}
+.status-dot{width:8px;height:8px;border-radius:50%;margin-left:auto;flex-shrink:0;}
+.status-dot.ok{background:var(--green);box-shadow:0 0 6px var(--green);}
+.status-dot.warn{background:var(--orange);}
+.status-dot.err{background:var(--red);}
+
+.empty{text-align:center;padding:40px;color:var(--text3);}
+footer{border-top:1px solid var(--border);padding:12px 20px;font-size:10px;color:var(--text3);font-family:var(--mono);margin-top:40px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand"><div class="nav-pulse"></div>Tennis Predictor</div>
+  <a href="index.html" class="nav-link">Bulletin</a>
+  <a href="history.html" class="nav-link">Historique</a>
+  <a href="log.html" class="nav-link active">Log</a>
+</nav>
+
+<div class="wrap">
+
+  <div class="section-head" style="margin-bottom:12px"><span class="sh-title">État du pipeline</span><div class="sh-line"></div></div>
+
+  <div class="stats-row">
+    <div class="stat-box"><div class="stat-label">Requêtes API</div><div class="stat-val" id="reqCount" style="color:var(--accent)">—</div></div>
+    <div class="stat-box"><div class="stat-label">Fixtures chargées</div><div class="stat-val" id="fixCount">—</div></div>
+    <div class="stat-box"><div class="stat-label">Dernier run</div><div class="stat-val" id="lastRun" style="font-size:13px;color:var(--text2)">—</div></div>
+  </div>
+
+  <div class="section-head"><span class="sh-title">Sources de données</span><div class="sh-line"></div></div>
+  <div class="sources" id="sources">
+    <div class="empty">Chargement...</div>
+  </div>
+
+  <div class="section-head" style="margin-top:24px"><span class="sh-title">Log d'exécution</span><div class="sh-line"></div></div>
+  <div class="terminal">
+    <div class="term-header">
+      <div class="term-dot green"></div>
+      <div class="term-dot yellow"></div>
+      <div class="term-dot red"></div>
+      <span class="term-title" id="termTitle">pipeline_log.json</span>
+    </div>
+    <div class="term-body" id="logBody">
+      <div class="empty" style="padding:20px">Chargement du log...</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>Tennis Predictor v2 · Log pipeline GitHub Actions</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+
+async function loadLog(){
+  try{
+    const res = await fetch('data/pipeline_log.json?v='+Date.now());
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    // Stats
+    $('reqCount').textContent = data.requests_used||0;
+    $('fixCount').textContent = data.fixtures_count||0;
+    const dt = new Date(data.date);
+    $('lastRun').textContent = dt.toLocaleString('fr-FR',{
+      day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'
+    });
+    $('termTitle').textContent = `pipeline_log.json · ${dt.toLocaleDateString('fr-FR')}`;
+
+    // Sources
+    renderSources(data);
+
+    // Log lines
+    const steps = data.steps||[];
+    if(!steps.length){
+      $('logBody').innerHTML='<div class="empty">Aucun log disponible</div>';
+      return;
+    }
+
+    $('logBody').innerHTML = steps.map(s=>{
+      const cls = s.level==='ERROR'?'err':s.level==='WARN'?'warn':'';
+      const msg = s.msg
+        .replace(/✅/g,'<span class="ok">✅</span>')
+        .replace(/⚠️/g,'<span class="warn">⚠️</span>')
+        .replace(/❌/g,'<span class="err">❌</span>');
+      return`<div class="log-line">
+        <span class="log-time">${s.time}</span>
+        <span class="log-level ${s.level}">${s.level}</span>
+        <span class="log-msg ${cls}">${msg}</span>
+      </div>`;
+    }).join('');
+
+    // Scroll to bottom
+    const body = $('logBody');
+    body.scrollTop = body.scrollHeight;
+
+  }catch(e){
+    $('logBody').innerHTML=`<div class="empty" style="color:var(--red)">Erreur : ${e.message}</div>`;
+  }
+}
+
+function renderSources(data){
+  const steps = data.steps||[];
+
+  // Détecter l'état de chaque source depuis les logs
+  function sourceOk(keyword){
+    return steps.some(s=>s.msg.includes(keyword)&&s.level==='INFO');
+  }
+  function sourceErr(keyword){
+    return steps.some(s=>s.msg.includes(keyword)&&(s.level==='ERROR'||s.level==='WARN'));
+  }
+
+  const fixtures_count = data.fixtures_count||0;
+  const req = data.requests_used||0;
+
+  const sources = [
+    {
+      name:'TML-Database',
+      detail:'Historique ATP 2015-2026 · Elo ratings',
+      icon:'📊',
+      status: sourceOk('TML')||sourceOk('joueurs')?'ok':'warn',
+    },
+    {
+      name:'RapidAPI Tennis',
+      detail:`${req} requêtes utilisées · ${fixtures_count} fixtures`,
+      icon:'⚡',
+      status: req>0?'ok':sourceErr('Clé')?'err':'warn',
+    },
+    {
+      name:'Bet365 Odds',
+      detail: steps.filter(s=>s.msg.includes('Cotes Bet365')).length + ' matchs avec cotes',
+      icon:'💰',
+      status: steps.some(s=>s.msg.includes('Cotes Bet365'))?'ok':'warn',
+    },
+    {
+      name:'MatchChartingProject',
+      detail:'Stats avancées point-par-point',
+      icon:'📈',
+      status: sourceOk('MatchCharting')?'ok':'warn',
+    },
+  ];
+
+  $('sources').innerHTML = sources.map(s=>`
+    <div class="source-card">
+      <div class="source-icon ${s.status}">${s.icon}</div>
+      <div>
+        <div class="source-name">${s.name}</div>
+        <div class="source-detail">${s.detail}</div>
+      </div>
+      <div class="status-dot ${s.status}"></div>
+    </div>
+  `).join('');
+}
+
+loadLog();
+</script>
+</body>
+</html>

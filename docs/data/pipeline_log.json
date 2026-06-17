@@ -1,0 +1,8 @@
+{
+  "date": "2026-06-17T02:00:00",
+  "requests_used": 0,
+  "fixtures_count": 0,
+  "steps": [
+    {"time": "02:00:00", "level": "INFO", "msg": "Pipeline en attente du premier run automatique à 02h00 UTC"}
+  ]
+}

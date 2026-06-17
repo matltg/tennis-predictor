@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Historique · Tennis Predictor</title>
+<style>
+:root{--bg:#080c10;--bg2:#0f1419;--bg3:#161d26;--bg4:#1d2733;--border:rgba(255,255,255,.06);--border2:rgba(255,255,255,.12);--accent:#c8ff00;--accent2:rgba(200,255,0,.12);--accent3:rgba(200,255,0,.06);--text:#e8edf2;--text2:#7a8a99;--text3:#3d4d5c;--green:#00e676;--green2:rgba(0,230,118,.10);--red:#ff4757;--red2:rgba(255,71,87,.10);--orange:#ffb300;--mono:'SF Mono','Fira Code',monospace;--r:8px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,system-ui,sans-serif;font-size:14px;line-height:1.6;}
+nav{position:sticky;top:0;z-index:100;background:rgba(8,12,16,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:52px;display:flex;align-items:center;padding:0 20px;gap:20px;}
+.nav-brand{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--accent);text-transform:uppercase;flex:1;}
+.nav-pulse{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.nav-link{font-size:12px;color:var(--text2);text-decoration:none;padding:5px 10px;border-radius:6px;transition:.15s;}
+.nav-link:hover,.nav-link.active{color:var(--accent);background:var(--accent3);}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 80px;}
+.kpi{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:24px;}
+@media(max-width:600px){.kpi{grid-template-columns:repeat(3,1fr);}}
+.kpi-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;}
+.kpi-label{font-size:9px;color:var(--text3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;}
+.kpi-val{font-size:18px;font-weight:700;letter-spacing:-.3px;line-height:1.1;}
+.kpi-sub{font-size:10px;color:var(--text3);margin-top:3px;}
+.c-accent{color:var(--accent);}
+.c-green{color:var(--green);}
+.c-red{color:var(--red);}
+.c-text{color:var(--text);}
+
+.section-head{display:flex;align-items:center;gap:10px;margin:24px 0 12px;}
+.sh-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);white-space:nowrap;}
+.sh-line{flex:1;height:1px;background:var(--border);}
+
+/* Chart */
+.chart-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:24px;}
+.chart-title{font-size:10px;color:var(--text3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px;}
+canvas{width:100%;height:70px;}
+
+/* Bet list */
+.bet-list{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;}
+.bet-row{display:grid;grid-template-columns:72px 1fr 60px 70px 80px 90px;gap:8px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--border);transition:.15s;}
+.bet-row:last-child{border-bottom:none;}
+.bet-row:hover{background:var(--bg3);}
+@media(max-width:600px){.bet-row{grid-template-columns:60px 1fr auto auto;}}
+.bet-date{font-size:11px;color:var(--text3);font-family:var(--mono);}
+.bet-player{font-size:13px;font-weight:600;}
+.bet-tourn{font-size:10px;color:var(--text3);}
+.bet-type{font-size:10px;padding:2px 6px;border-radius:4px;font-family:var(--mono);white-space:nowrap;}
+.type-winner{background:var(--accent2);color:var(--accent);}
+.type-ou{background:rgba(0,230,118,.1);color:var(--green);}
+.type-sets{background:rgba(255,179,0,.1);color:var(--orange);}
+.bet-odds{font-size:12px;font-family:var(--mono);color:var(--text2);text-align:center;}
+.bet-stake{font-size:12px;font-family:var(--mono);color:var(--text2);text-align:center;}
+.bet-pnl{font-size:13px;font-weight:700;font-family:var(--mono);text-align:right;}
+.pnl-pos{color:var(--green);}
+.pnl-neg{color:var(--red);}
+.pnl-open{color:var(--text3);}
+.result-actions{display:flex;gap:4px;justify-content:flex-end;}
+.btn-res{font-size:10px;font-weight:600;padding:3px 8px;border-radius:5px;cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--text2);transition:.15s;}
+.btn-res.w:hover{background:var(--green2);color:var(--green);border-color:rgba(0,230,118,.3);}
+.btn-res.l:hover{background:var(--red2);color:var(--red);border-color:rgba(255,71,87,.3);}
+.result-dot{width:8px;height:8px;border-radius:50%;}
+.dot-w{background:var(--green);}
+.dot-l{background:var(--red);}
+.dot-o{background:var(--text3);}
+
+.empty{text-align:center;padding:40px;color:var(--text3);}
+.empty-t{font-size:15px;color:var(--text2);margin-bottom:6px;font-weight:500;}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:10px 14px;font-size:12px;z-index:999;transform:translateY(60px);opacity:0;transition:all .3s;max-width:280px;}
+.toast.on{transform:translateY(0);opacity:1;}
+.toast.ok{border-color:rgba(200,255,0,.4);color:var(--accent);}
+.toast.err{border-color:rgba(255,71,87,.4);color:var(--red);}
+footer{border-top:1px solid var(--border);padding:12px 20px;font-size:10px;color:var(--text3);font-family:var(--mono);margin-top:40px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand"><div class="nav-pulse"></div>Tennis Predictor</div>
+  <a href="index.html" class="nav-link">Bulletin</a>
+  <a href="history.html" class="nav-link active">Historique</a>
+  <a href="log.html" class="nav-link">Log</a>
+</nav>
+
+<div class="wrap">
+  <div class="kpi">
+    <div class="kpi-box"><div class="kpi-label">ROI</div><div class="kpi-val c-accent" id="kRoi">—</div><div class="kpi-sub">depuis le début</div></div>
+    <div class="kpi-box"><div class="kpi-label">Bankroll</div><div class="kpi-val c-text" id="kBank">—</div><div class="kpi-sub">actuelle</div></div>
+    <div class="kpi-box"><div class="kpi-label">Accuracy</div><div class="kpi-val c-text" id="kAcc">—</div><div class="kpi-sub">paris joués</div></div>
+    <div class="kpi-box"><div class="kpi-label">W / L</div><div class="kpi-val c-text" id="kWL">—</div><div class="kpi-sub">résultats</div></div>
+    <div class="kpi-box"><div class="kpi-label">Drawdown max</div><div class="kpi-val c-red" id="kDD">—</div><div class="kpi-sub">depuis le début</div></div>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-title">Évolution bankroll</div>
+    <canvas id="chart"></canvas>
+  </div>
+
+  <div class="section-head"><span class="sh-title">Historique des paris</span><div class="sh-line"></div></div>
+  <div class="bet-list" id="betList">
+    <div class="empty"><div class="empty-t">Chargement...</div></div>
+  </div>
+</div>
+
+<footer>Tennis Predictor v2 · Historique</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+function toast(m,t='ok'){const el=$('toast');el.textContent=m;el.className=`toast on ${t}`;setTimeout(()=>el.className='toast',3000);}
+
+// localStorage pour les résultats
+function getResults(){try{return JSON.parse(localStorage.getItem('tp_results')||'{}')}catch{return{}}}
+function setResult(id,res){const r=getResults();r[id]=res;localStorage.setItem('tp_results',JSON.stringify(r));}
+
+async function loadHistory(){
+  try{
+    const res = await fetch('data/history.json?v='+Date.now());
+    const data = res.ok ? await res.json() : {stats:{},bets:[]};
+    const results = getResults();
+
+    // Merge résultats locaux
+    const bets = (data.bets||[]).map(b=>({...b, result: results[b.id]||b.result||'open'}));
+
+    renderKPIs(bets);
+    renderChart(bets);
+    renderBets(bets);
+  }catch(e){
+    $('betList').innerHTML=`<div class="empty"><div class="empty-t" style="color:var(--red)">Erreur : ${e.message}</div></div>`;
+  }
+}
+
+function renderKPIs(bets){
+  const closed = bets.filter(b=>b.result&&b.result!=='open');
+  const won    = closed.filter(b=>b.result==='won').length;
+  const lost   = closed.filter(b=>b.result==='lost').length;
+  const bank   = bets.reduce((s,b)=>s+(b.result==='won'?(b.stake_eur||0)*(b.market_odds-1):b.result==='lost'?-(b.stake_eur||0):0), 1000);
+  const roi    = closed.length>0?((bank-1000)/1000*100).toFixed(1):0;
+  const acc    = closed.length>0?(won/closed.length*100).toFixed(1):0;
+
+  // Drawdown
+  let peak=1000,dd=0,cur=1000;
+  [...bets].sort((a,b)=>a.date?.localeCompare(b.date)).forEach(b=>{
+    if(b.result==='won') cur+=(b.stake_eur||0)*(b.market_odds-1);
+    if(b.result==='lost') cur-=(b.stake_eur||0);
+    if(cur>peak) peak=cur;
+    if((peak-cur)/peak>dd) dd=(peak-cur)/peak;
+  });
+
+  $('kRoi').textContent=(roi>=0?'+':'')+roi+'%';
+  $('kBank').textContent=bank.toFixed(0)+'€';
+  $('kAcc').textContent=closed.length>0?acc+'%':'—';
+  $('kWL').textContent=`${won}W / ${lost}L`;
+  $('kDD').textContent='-'+(dd*100).toFixed(1)+'%';
+}
+
+function renderChart(bets){
+  const canvas=$('chart');
+  const ctx=canvas.getContext('2d');
+  const W=canvas.offsetWidth||800, H=70;
+  canvas.width=W; canvas.height=H;
+
+  const sorted=[...bets].filter(b=>b.result&&b.result!=='open')
+    .sort((a,b)=>(a.date||'').localeCompare(b.date||''));
+
+  if(sorted.length<2){
+    ctx.fillStyle='rgba(200,255,0,.04)';ctx.fillRect(0,0,W,H);
+    ctx.fillStyle='#3d4d5c';ctx.font='11px system-ui';ctx.textAlign='center';
+    ctx.fillText('Aucun historique',W/2,H/2+4);return;
+  }
+
+  let bank=1000;
+  const pts=[{x:0,y:bank}];
+  sorted.forEach((b,i)=>{
+    if(b.result==='won') bank+=(b.stake_eur||0)*(b.market_odds-1);
+    if(b.result==='lost') bank-=(b.stake_eur||0);
+    pts.push({x:i+1,y:bank});
+  });
+
+  const minY=Math.min(...pts.map(p=>p.y))-10;
+  const maxY=Math.max(...pts.map(p=>p.y))+10;
+  const tx=i=>(i/(pts.length-1||1))*(W-10)+5;
+  const ty=v=>H-((v-minY)/(maxY-minY))*(H-10)-5;
+
+  ctx.beginPath();ctx.moveTo(tx(0),H);
+  pts.forEach((p,i)=>ctx.lineTo(tx(i),ty(p.y)));
+  ctx.lineTo(tx(pts.length-1),H);ctx.closePath();
+  ctx.fillStyle='rgba(200,255,0,.06)';ctx.fill();
+
+  ctx.beginPath();
+  pts.forEach((p,i)=>i?ctx.lineTo(tx(i),ty(p.y)):ctx.moveTo(tx(i),ty(p.y)));
+  ctx.strokeStyle='#c8ff00';ctx.lineWidth=1.5;ctx.stroke();
+}
+
+function renderBets(bets){
+  if(!bets.length){
+    $('betList').innerHTML=`<div class="empty"><div class="empty-t">Aucun pari enregistré</div><div>Les paris apparaîtront ici une fois saisis</div></div>`;
+    return;
+  }
+
+  const typeLabel={winner:'Vainqueur',over:'Over','under':'Under','2sets':'2 Sets','3sets':'3 Sets'};
+  const typeCls  ={winner:'type-winner',over:'type-ou',under:'type-ou','2sets':'type-sets','3sets':'type-sets'};
+
+  $('betList').innerHTML=[...bets].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).map(b=>{
+    const isOpen=!b.result||b.result==='open';
+    const pnl=b.result==='won'?(b.stake_eur||0)*(b.market_odds-1):b.result==='lost'?-(b.stake_eur||0):null;
+    const pnlHTML=pnl!=null?`<span class="${pnl>=0?'pnl-pos':'pnl-neg'}">${pnl>=0?'+':''}${pnl.toFixed(2)}€</span>`:`<span class="pnl-open">en attente</span>`;
+    const dotCls=b.result==='won'?'dot-w':b.result==='lost'?'dot-l':'dot-o';
+    const actions=isOpen?`<div class="result-actions"><button class="btn-res w" onclick="mark('${b.id}','won')">W</button><button class="btn-res l" onclick="mark('${b.id}','lost')">L</button></div>`:`<div class="result-dot ${dotCls}"></div>`;
+
+    return`<div class="bet-row" id="row_${b.id}">
+      <span class="bet-date">${b.date||'—'}</span>
+      <div><div class="bet-player">${b.player}</div><div class="bet-tourn">${b.tournament||'—'}</div></div>
+      <span class="bet-type ${typeCls[b.type]||'type-winner'}">${typeLabel[b.type]||'—'}</span>
+      <span class="bet-odds">${b.market_odds||'—'}</span>
+      <span class="bet-stake">${b.stake_pct?.toFixed(1)||'—'}% · ${b.stake_eur?.toFixed(0)||'—'}€</span>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:6px">${pnlHTML}${actions}</div>
+    </div>`;
+  }).join('');
+}
+
+function mark(id,result){
+  setResult(id,result);
+  const row=document.getElementById('row_'+id);
+  if(row){
+    const actions=row.querySelector('.result-actions');
+    if(actions){
+      const d=document.createElement('div');
+      d.className=`result-dot ${result==='won'?'dot-w':'dot-l'}`;
+      actions.replaceWith(d);
+    }
+  }
+  toast(result==='won'?'✅ Gagné !':'❌ Perdu',result==='won'?'ok':'err');
+  setTimeout(loadHistory,500);
+}
+
+loadHistory();
+</script>
+</body>
+</html>
