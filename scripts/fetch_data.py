@@ -1,10 +1,9 @@
 """
 scripts/fetch_data.py
-Récupère toutes les données depuis RapidAPI tennis-api-atp-wta-itf
-Corrections :
-  - global REQ_COUNT dans toutes les fonctions
-  - URLs endpoints corrigées selon la doc API
-  - Fenêtre 24h, classé par tournoi + tour
+- Filtre ATP/WTA 250+ uniquement (économie requêtes)
+- URLs corrigées : match-stats, surface-summary
+- global REQ_COUNT partout
+- Cotes Bet365 via Get Odds Summary
 """
 import os, json, time, requests
 from datetime import datetime, timedelta, timezone
@@ -23,8 +22,26 @@ CACHE_FILE = Path("data/api_cache.json")
 LOG        = []
 REQ_COUNT  = 0
 
-# Niveaux à conserver
-PREMIUM_LEVELS = {"250", "500", "1000", "Grand Slam", "ATP Finals"}
+# Niveaux de tournois pour lesquels on fetche les stats joueur
+# Les autres matchs sont inclus dans les fixtures mais sans stats détaillées
+PREMIUM_KEYWORDS = [
+    "grand slam", "masters", "1000", "500", "250",
+    "atp finals", "davis", "united cup", "queens", "halle",
+    "wimbledon", "roland", "us open", "australian",
+    "berlin", "nottingham", "eastbourne", "bad homburg",
+    "'s-hertogenbosch", "lyon", "geneva"
+]
+
+def is_premium(tournament_name, rank_name):
+    """Retourne True si le tournoi mérite le fetch stats complet."""
+    combined = (tournament_name + " " + rank_name).lower()
+    # Exclure explicitement les petits tournois
+    if any(x in combined for x in ["m15", "m25", "itf", "w15", "w25", "futures", "challenger"]):
+        # Garder quand même les Challengers importants
+        if "challenger" in combined:
+            return True
+        return False
+    return True
 
 # ── Cache ──────────────────────────────────────────────────────────────────────
 
@@ -65,23 +82,18 @@ def log(level, msg):
 # ── API helpers ───────────────────────────────────────────────────────────────
 
 def api_get(path, params=None, cache_key=None, cache_hours=6):
-    """Appel API simple avec cache."""
     global REQ_COUNT
-
     if cache_key:
         cached = cache_get(cache_key, cache_hours)
         if cached is not None:
             return cached
-
     if not RAPIDAPI_KEY:
-        log("WARN", f"Clé API manquante — {path}")
         return None
-
     try:
         r = requests.get(f"{BASE}/{path}", headers=HEADERS,
                          params=params or {}, timeout=15)
         REQ_COUNT += 1
-        time.sleep(0.25)
+        time.sleep(0.2)
         if r.status_code == 200:
             data = r.json()
             result = data.get("data", data) if isinstance(data, dict) else data
@@ -96,14 +108,11 @@ def api_get(path, params=None, cache_key=None, cache_hours=6):
         return None
 
 def api_pages(path, params=None, cache_key=None, max_pages=3):
-    """Appel API paginé avec cache."""
     global REQ_COUNT
-
     if cache_key:
         cached = cache_get(cache_key, 6)
         if cached is not None:
             return cached
-
     all_items, page = [], 1
     p = dict(params or {})
     while page <= max_pages:
@@ -112,44 +121,35 @@ def api_pages(path, params=None, cache_key=None, max_pages=3):
             r = requests.get(f"{BASE}/{path}", headers=HEADERS,
                              params=p, timeout=15)
             REQ_COUNT += 1
-            time.sleep(0.25)
+            time.sleep(0.2)
             if r.status_code != 200:
                 break
             d = r.json()
             items = d.get("data", []) if isinstance(d, dict) else d
             if isinstance(items, list):
                 all_items.extend(items)
-            has_next = d.get("hasNextPage", False) if isinstance(d, dict) else False
-            if not has_next:
+            if not (d.get("hasNextPage", False) if isinstance(d, dict) else False):
                 break
             page += 1
         except Exception as e:
             log("ERROR", f"{path} p{page}: {e}")
             break
-
     if cache_key:
         cache_set(cache_key, all_items)
     return all_items
 
 def api_extend(path, cache_key=None, cache_hours=6):
-    """Appel API extend (endpoint spécial)."""
     global REQ_COUNT
-
     if cache_key:
         cached = cache_get(cache_key, cache_hours)
         if cached is not None:
             return cached
-
     if not RAPIDAPI_KEY:
         return None
-
     try:
-        r = requests.get(
-            f"https://tennis-api-atp-wta-itf.p.rapidapi.com/tennis/v2/{path}",
-            headers=HEADERS, timeout=15
-        )
+        r = requests.get(f"{BASE}/{path}", headers=HEADERS, timeout=15)
         REQ_COUNT += 1
-        time.sleep(0.25)
+        time.sleep(0.2)
         if r.status_code == 200:
             d = r.json()
             if d.get("success"):
@@ -165,12 +165,11 @@ def api_extend(path, cache_key=None, cache_hours=6):
 # ── Fixtures ──────────────────────────────────────────────────────────────────
 
 def get_fixtures():
-    """Fixtures ATP/WTA sur 24h glissantes."""
+    global REQ_COUNT
     fixtures = []
     today    = datetime.now().strftime("%Y-%m-%d")
     tomorrow = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
-
-    params = {
+    params   = {
         "include":  "round,tournament.court,tournament.rank",
         "filter":   "PlayerGroup:singles",
         "pageSize": "100"
@@ -186,38 +185,30 @@ def get_fixtures():
             for m in (items or []):
                 pa = (m.get("player1") or {}).get("name", "")
                 pb = (m.get("player2") or {}).get("name", "")
-                if not pa or not pb:
-                    continue
-                if "/" in pa or "/" in pb:
+                if not pa or not pb or "/" in pa or "/" in pb:
                     continue
 
-                # Timestamp UTC → heure locale + filtre à venir
-                raw_time   = m.get("date", "") or ""
+                raw_time    = m.get("date", "") or ""
                 is_upcoming = True
                 match_time  = "TBD"
                 if raw_time:
                     try:
                         dt = datetime.fromisoformat(raw_time.replace("Z", "+00:00"))
                         is_upcoming = dt > datetime.now(timezone.utc)
-                        # Heure locale Europe/Paris approximative (+2 en été)
-                        match_time = (dt + timedelta(hours=2)).strftime("%H:%M")
+                        match_time  = (dt + timedelta(hours=2)).strftime("%H:%M")
                     except:
                         pass
 
                 if not is_upcoming:
                     continue
 
-                tournament  = (m.get("tournament") or {}).get("name", "")
-                court_info  = ((m.get("tournament") or {}).get("court") or {})
-                surface     = court_info.get("name", "Hard") if isinstance(court_info, dict) else "Hard"
-                rank_info   = (m.get("tournament") or {}).get("rank") or {}
-                rank_name   = rank_info.get("name", "") if isinstance(rank_info, dict) else ""
-
-                # Ne conserver que les tournois premium
-                if rank_name not in PREMIUM_LEVELS:
-                    continue
-
-                round_name  = (m.get("round") or {}).get("name", "")
+                tournament = (m.get("tournament") or {}).get("name", "")
+                court_info = ((m.get("tournament") or {}).get("court") or {})
+                surface    = court_info.get("name", "Hard") if isinstance(court_info, dict) else "Hard"
+                rank_info  = (m.get("tournament") or {}).get("rank") or {}
+                rank_name  = rank_info.get("name", "") if isinstance(rank_info, dict) else ""
+                round_name = (m.get("round") or {}).get("name", "")
+                premium    = is_premium(tournament, rank_name)
 
                 fixtures.append({
                     "id":              m.get("id"),
@@ -232,12 +223,12 @@ def get_fixtures():
                     "round":           round_name,
                     "date":            date,
                     "time":            match_time,
+                    "premium":         premium,
                 })
                 singles += 1
 
-            log("INFO", f"{tour.upper()} {date} → {singles} matchs à venir")
+            log("INFO", f"{tour.upper()} {date} → {singles} matchs")
 
-    # Déduplique par (joueur_a, joueur_b, date)
     seen, out = set(), []
     for f in fixtures:
         k = (f["player_a"], f["player_b"], f["date"])
@@ -245,41 +236,40 @@ def get_fixtures():
             seen.add(k)
             out.append(f)
 
-    # Tri : par tour (ATP d'abord) puis par heure
+    # Tri : ATP avant WTA, puis par heure
     out.sort(key=lambda x: (0 if x["tour"] == "ATP" else 1, x["time"]))
 
-    log("INFO", f"Total fixtures : {len(out)}")
+    premium_count = sum(1 for f in out if f["premium"])
+    log("INFO", f"Total : {len(out)} fixtures dont {premium_count} premium (ATP/WTA 250+)")
     return out
 
 # ── Player data ───────────────────────────────────────────────────────────────
 
 def get_player_data(player_id, tour):
-    """Stats joueur depuis RapidAPI."""
     global REQ_COUNT
-
     if not player_id:
         return {}
 
     t    = tour.lower()
     data = {}
 
-    # Stats service globales — endpoint confirmé : {tour}/player/stats/{id}
-   stats = api_get(
+    # Stats service — URL corrigée : match-stats
+    stats = api_get(
         f"{t}/player/match-stats/{player_id}",
         cache_key=f"pstats_{player_id}", cache_hours=24
     )
     if stats:
         data["stats"] = stats
 
-    # Surface summary — endpoint confirmé : {tour}/player/surface/{id}
-   surf = api_get(
+    # Surface — URL corrigée : surface-summary
+    surf = api_get(
         f"{t}/player/surface-summary/{player_id}",
         cache_key=f"psurf_{player_id}", cache_hours=24
     )
     if surf:
         data["surface"] = surf
 
-    # Derniers matchs — endpoint confirmé : {tour}/player/matches/{id}
+    # Derniers matchs
     past = api_pages(
         f"{t}/player/matches/{player_id}",
         {"pageSize": "20"},
@@ -293,40 +283,29 @@ def get_player_data(player_id, tour):
 # ── H2H ──────────────────────────────────────────────────────────────────────
 
 def get_h2h(p1_id, p2_id, tour):
-    """Stats H2H entre deux joueurs."""
     global REQ_COUNT
-
     if not p1_id or not p2_id:
         return {}
-
     t         = tour.lower()
-    cache_key = f"h2h_{min(p1_id, p2_id)}_{max(p1_id, p2_id)}"
-
-    result = api_get(
-        f"{t}/h2h/stats/{p1_id}/{p2_id}",
-        cache_key=cache_key, cache_hours=12
-    )
+    cache_key = f"h2h_{min(p1_id,p2_id)}_{max(p1_id,p2_id)}"
+    result    = api_get(f"{t}/h2h/stats/{p1_id}/{p2_id}",
+                        cache_key=cache_key, cache_hours=12)
     return result or {}
 
 # ── Cotes Bet365 ──────────────────────────────────────────────────────────────
 
 def get_odds(player_a, player_b, date):
-    """
-    1. Get Event Id By Participants And Date
-    2. Get Odds Summary
-    """
     global REQ_COUNT
 
     # Étape 1 : Event ID
-    ck_event = f"evid_{player_a[:10]}_{player_b[:10]}_{date}"
+    ck_event   = f"evid_{player_a[:12]}_{player_b[:12]}_{date}"
     event_data = cache_get(ck_event, 24)
 
     if event_data is None:
-        result = api_extend(
+        event_data = api_extend(
             f"extend/api/event/get/{player_a}/{player_b}/{date}",
             cache_key=ck_event, cache_hours=24
-        )
-        event_data = result or {}
+        ) or {}
 
     if not event_data or not event_data.get("id"):
         return None
@@ -345,7 +324,6 @@ def get_odds(player_a, player_b, date):
     if not odds_data:
         return None
 
-    # Parse Bet365
     bet365  = odds_data.get("Bet365", {})
     ftr     = bet365.get("Full Time Result", {})
     start   = ftr.get("start", {}) or {}
@@ -359,8 +337,7 @@ def get_odds(player_a, player_b, date):
 
     try:
         o1, o2 = float(od1), float(od2)
-        # Filtre les cotes post-match aberrantes (ex: 101.0)
-        if o1 > 15 or o2 > 15:
+        if o1 > 20 or o2 > 20:  # filtre cotes post-match aberrantes
             return None
         return {
             "player_a_odds": o1,
@@ -375,56 +352,48 @@ def get_odds(player_a, player_b, date):
 
 def run():
     global REQ_COUNT
-
     log("INFO", f"=== fetch_data.py === {datetime.now().strftime('%Y-%m-%d %H:%M')}")
 
-    # 1. Fixtures 24h
-    log("INFO", "Récupération des fixtures (24h)...")
     fixtures = get_fixtures()
-
     if not fixtures:
-        log("WARN", "Aucun match trouvé — vérifier l'API")
+        log("WARN", "Aucun match trouvé")
 
-    # 2. Enrichissement joueur par joueur
-    enriched       = []
-    players_done   = {}   # id → données déjà fetchées
-    odds_ok        = 0
-    odds_ko        = 0
+    enriched     = []
+    players_done = {}
+    odds_ok      = 0
 
     for i, f in enumerate(fixtures):
-        pa    = f["player_a"]
-        pb    = f["player_b"]
-        p1_id = f.get("player1_id")
-        p2_id = f.get("player2_id")
-        tour  = f.get("tour", "ATP")
+        pa      = f["player_a"]
+        pb      = f["player_b"]
+        p1_id   = f.get("player1_id")
+        p2_id   = f.get("player2_id")
+        tour    = f.get("tour", "ATP")
+        premium = f.get("premium", False)
 
-        log("INFO", f"[{i+1}/{len(fixtures)}] {pa} vs {pb} ({tour} · {f['tournament']} · {f['time']})")
+        log("INFO", f"[{i+1}/{len(fixtures)}] {pa} vs {pb} · {f['tournament']} · {f['time']}{' ⭐' if premium else ''}")
 
-        # Données joueur A (une seule fois par joueur)
-        if p1_id and p1_id not in players_done:
-            players_done[p1_id] = get_player_data(p1_id, tour)
+        # Stats joueur — SEULEMENT pour les matchs premium (ATP/WTA 250+)
+        if premium:
+            if p1_id and p1_id not in players_done:
+                players_done[p1_id] = get_player_data(p1_id, tour)
+            if p2_id and p2_id not in players_done:
+                players_done[p2_id] = get_player_data(p2_id, tour)
+
         f["player_a_data"] = players_done.get(p1_id, {})
-
-        # Données joueur B
-        if p2_id and p2_id not in players_done:
-            players_done[p2_id] = get_player_data(p2_id, tour)
         f["player_b_data"] = players_done.get(p2_id, {})
 
-        # H2H
-        f["h2h"] = get_h2h(p1_id, p2_id, tour)
+        # H2H — seulement premium
+        f["h2h"] = get_h2h(p1_id, p2_id, tour) if premium else {}
 
-        # Cotes Bet365
+        # Cotes Bet365 — tous les matchs
         odds = get_odds(pa, pb, f["date"])
         f["odds"] = odds
         if odds:
             odds_ok += 1
-            log("INFO", f"  ✅ Bet365 : {pa} {odds['player_a_odds']} / {pb} {odds['player_b_odds']}")
-        else:
-            odds_ko += 1
+            log("INFO", f"  ✅ Bet365 {pa} {odds['player_a_odds']} / {pb} {odds['player_b_odds']}")
 
         enriched.append(f)
 
-    # 3. Sauvegarde fixtures enrichies
     Path("data/fixtures.json").write_text(
         json.dumps({
             "fetched_at":     datetime.now().isoformat(),
@@ -437,16 +406,15 @@ def run():
 
     save_cache(CACHE)
 
-    log("INFO", f"=== Terminé : {len(enriched)} fixtures · {odds_ok} avec cotes · {REQ_COUNT} requêtes ===")
+    log("INFO", f"=== Terminé : {len(enriched)} fixtures · {odds_ok} cotes · {REQ_COUNT} requêtes ===")
 
-    # 4. Sauvegarde log pipeline
     Path("data/pipeline_log.json").write_text(
         json.dumps({
-            "date":            datetime.now().isoformat(),
-            "steps":           LOG,
-            "requests_used":   REQ_COUNT,
-            "fixtures_count":  len(enriched),
-            "odds_available":  odds_ok,
+            "date":           datetime.now().isoformat(),
+            "steps":          LOG,
+            "requests_used":  REQ_COUNT,
+            "fixtures_count": len(enriched),
+            "odds_available": odds_ok,
         }, ensure_ascii=False, indent=2)
     )
 
