@@ -23,6 +23,9 @@ CACHE_FILE = Path("data/api_cache.json")
 LOG        = []
 REQ_COUNT  = 0
 
+# Niveaux à conserver
+PREMIUM_LEVELS = {"250", "500", "1000", "Grand Slam", "ATP Finals"}
+
 # ── Cache ──────────────────────────────────────────────────────────────────────
 
 def load_cache():
@@ -209,6 +212,11 @@ def get_fixtures():
                 surface     = court_info.get("name", "Hard") if isinstance(court_info, dict) else "Hard"
                 rank_info   = (m.get("tournament") or {}).get("rank") or {}
                 rank_name   = rank_info.get("name", "") if isinstance(rank_info, dict) else ""
+
+                # Ne conserver que les tournois premium
+                if rank_name not in PREMIUM_LEVELS:
+                    continue
+
                 round_name  = (m.get("round") or {}).get("name", "")
 
                 fixtures.append({
