@@ -1,7 +1,7 @@
 """
 scripts/fetch_data.py
-Filtre strict : ATP 500 / Masters 1000 / Grand Chelem + équivalents WTA
-= matchs disponibles sur Betclic
+Whitelist stricte des tournois Betclic (ATP 500 / Masters 1000 / Grand Chelem / WTA équivalents)
+Mis à jour chaque semaine selon le calendrier
 """
 import os, json, time, requests
 from datetime import datetime, timedelta, timezone
@@ -20,46 +20,83 @@ CACHE_FILE = Path("data/api_cache.json")
 LOG        = []
 REQ_COUNT  = 0
 
-# ── Filtre tournois ────────────────────────────────────────────────────────────
-# Uniquement ATP 500+, Masters 1000, Grand Chelem et équivalents WTA
+# ── Whitelist tournois Betclic ─────────────────────────────────────────────────
+# Mettre à jour chaque semaine selon le calendrier ATP/WTA
+# Format : fragment du nom du tournoi en minuscules
 
-KEEP_RANK_KEYWORDS = [
-    "500", "1000", "grand slam", "masters", "atp finals", "wta finals",
-    "united cup", "davis", "billie jean"
+BETCLIC_WHITELIST = [
+    # === SEMAINE ACTUELLE (16-22 juin 2025) ===
+    "halle",
+    "queen",          # Queen's Club Championships
+    "berlin",         # WTA Berlin
+    "nottingham",     # WTA Nottingham
+
+    # === SEMAINES SUIVANTES (pré-Wimbledon) ===
+    "eastbourne",     # ATP + WTA Eastbourne
+    "bad homburg",    # WTA Bad Homburg
+    "s-hertogenbosch", # ATP Rosmalen
+    "mallorca",       # WTA Mallorca
+
+    # === GRAND CHELEM ===
+    "wimbledon",
+    "roland garros",
+    "australian open",
+    "us open",
+
+    # === MASTERS 1000 ATP ===
+    "indian wells",
+    "miami",
+    "monte carlo",
+    "madrid",
+    "rome",
+    "montreal",
+    "toronto",
+    "cincinnati",
+    "shanghai",
+    "paris",
+    "bercy",
+    "canada",
+
+    # === WTA 1000 ===
+    "indian wells",
+    "miami",
+    "madrid",
+    "rome",
+    "montreal",
+    "toronto",
+    "cincinnati",
+    "beijing",
+    "wuhan",
+    "guadalajara",
+
+    # === ATP 500 ===
+    "rotterdam",
+    "rio",
+    "dubai",
+    "acapulco",
+    "barcelona",
+    "hamburg",
+    "hambourg",
+    "tokyo",
+    "beijing",
+    "vienna",
+    "wien",
+    "basel",
+    "washington",
+
+    # === WTA 500 ===
+    "doha",
+    "dubai",
+    "strasbourg",
+    "charleston",
+    "birmingham",
+    "chicago",
 ]
 
-# Noms de tournois connus ATP 500 / 1000 / GS (fallback si rank absent)
-KEEP_TOURNAMENT_KEYWORDS = [
-    # ATP 500
-    "halle", "queen", "queens", "eastbourne", "hamburg", "hambourg",
-    "beijing", "tokyo", "dubai", "acapulco", "rio", "washington",
-    "rotterdam", "barcelona", "vienna", "wien", "basel", "bâle",
-    # Masters 1000
-    "indian wells", "miami", "madrid", "rome", "montreal", "toronto",
-    "cincinnati", "shanghai", "paris", "bercy", "canada",
-    # Grand Chelem
-    "australian open", "roland garros", "wimbledon", "us open",
-    # WTA 500 / 1000
-    "berlin", "bad homburg", "birmingham", "nottingham", "doha",
-    "dubai", "chicago", "guadalajara", "wuhan", "beijing",
-    "montreal", "cincinnati", "madrid", "rome", "miami",
-]
-
-def is_betclic_level(tournament_name, rank_name):
-    """True si le tournoi est disponible sur Betclic (ATP 500+ / WTA 500+)."""
-    rank_lower  = rank_name.lower()
-    tourn_lower = tournament_name.lower()
-
-    # Filtre par rank d'abord
-    if any(k in rank_lower for k in KEEP_RANK_KEYWORDS):
-        return True
-
-    # Filtre par nom de tournoi
-    if any(k in tourn_lower for k in KEEP_TOURNAMENT_KEYWORDS):
-        return True
-
-    # Exclure explicitement tout le reste
-    return False
+def is_betclic(tournament_name):
+    """True uniquement si le tournoi est dans la whitelist Betclic."""
+    t = tournament_name.lower()
+    return any(w in t for w in BETCLIC_WHITELIST)
 
 # ── Cache ──────────────────────────────────────────────────────────────────────
 
@@ -184,17 +221,17 @@ def api_extend(path, cache_key=None, cache_hours=6):
 
 def get_fixtures():
     global REQ_COUNT
-    fixtures = []
-    today    = datetime.now().strftime("%Y-%m-%d")
-    tomorrow = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
-    params   = {
+    fixtures  = []
+    today     = datetime.now().strftime("%Y-%m-%d")
+    tomorrow  = (datetime.now() + timedelta(days=1)).strftime("%Y-%m-%d")
+    params    = {
         "include":  "round,tournament.court,tournament.rank",
         "filter":   "PlayerGroup:singles",
         "pageSize": "100"
     }
 
-    total_seen   = 0
-    total_kept   = 0
+    total_seen = 0
+    total_kept = 0
 
     for tour in ["atp", "wta"]:
         for date in [today, tomorrow]:
@@ -210,13 +247,10 @@ def get_fixtures():
                     continue
 
                 total_seen += 1
-
                 tournament = (m.get("tournament") or {}).get("name", "")
-                rank_info  = (m.get("tournament") or {}).get("rank") or {}
-                rank_name  = rank_info.get("name", "") if isinstance(rank_info, dict) else ""
 
-                # Filtre strict Betclic
-                if not is_betclic_level(tournament, rank_name):
+                # Whitelist stricte
+                if not is_betclic(tournament):
                     continue
 
                 raw_time    = m.get("date", "") or ""
@@ -235,6 +269,8 @@ def get_fixtures():
 
                 court_info = ((m.get("tournament") or {}).get("court") or {})
                 surface    = court_info.get("name", "Hard") if isinstance(court_info, dict) else "Hard"
+                rank_info  = (m.get("tournament") or {}).get("rank") or {}
+                rank_name  = rank_info.get("name", "") if isinstance(rank_info, dict) else ""
                 round_name = (m.get("round") or {}).get("name", "")
 
                 fixtures.append({
@@ -254,7 +290,7 @@ def get_fixtures():
                 kept += 1
 
             total_kept += kept
-            log("INFO", f"{tour.upper()} {date} → {kept} matchs Betclic (sur {len(items or [])} total)")
+            log("INFO", f"{tour.upper()} {date} → {kept} matchs Betclic (sur {len(items or [])} vus)")
 
     # Déduplique
     seen, out = set(), []
@@ -271,7 +307,7 @@ def get_fixtures():
         x["time"]
     ))
 
-    log("INFO", f"✅ {len(out)} matchs Betclic retenus (filtré depuis {total_seen} au total)")
+    log("INFO", f"✅ {len(out)} matchs retenus (filtrés depuis {total_seen} total)")
     return out
 
 # ── Player data ───────────────────────────────────────────────────────────────
@@ -280,29 +316,22 @@ def get_player_data(player_id, tour):
     global REQ_COUNT
     if not player_id:
         return {}
-
     t    = tour.lower()
     data = {}
 
-    stats = api_get(
-        f"{t}/player/match-stats/{player_id}",
-        cache_key=f"pstats_{player_id}", cache_hours=24
-    )
+    stats = api_get(f"{t}/player/match-stats/{player_id}",
+                    cache_key=f"pstats_{player_id}", cache_hours=24)
     if stats:
         data["stats"] = stats
 
-    surf = api_get(
-        f"{t}/player/surface-summary/{player_id}",
-        cache_key=f"psurf_{player_id}", cache_hours=24
-    )
+    surf = api_get(f"{t}/player/surface-summary/{player_id}",
+                   cache_key=f"psurf_{player_id}", cache_hours=24)
     if surf:
         data["surface"] = surf
 
-    past = api_pages(
-        f"{t}/player/matches/{player_id}",
-        {"pageSize": "20"},
-        cache_key=f"ppast_{player_id}", max_pages=1
-    )
+    past = api_pages(f"{t}/player/matches/{player_id}",
+                     {"pageSize": "20"},
+                     cache_key=f"ppast_{player_id}", max_pages=1)
     if past:
         data["past_matches"] = past
 
@@ -327,7 +356,6 @@ def get_odds(player_a, player_b, date):
 
     ck_event   = f"evid_{player_a[:12]}_{player_b[:12]}_{date}"
     event_data = cache_get(ck_event, 24)
-
     if event_data is None:
         event_data = api_extend(
             f"extend/api/event/get/{player_a}/{player_b}/{date}",
@@ -340,7 +368,6 @@ def get_odds(player_a, player_b, date):
     event_id  = event_data["id"]
     ck_odds   = f"odds_{event_id}"
     odds_data = cache_get(ck_odds, 2)
-
     if odds_data is None:
         odds_data = api_extend(
             f"extend/api/odds/summary/{event_id}",
@@ -357,7 +384,6 @@ def get_odds(player_a, player_b, date):
 
     od1 = start.get("od1") or kickoff.get("od1")
     od2 = start.get("od2") or kickoff.get("od2")
-
     if not od1 or not od2:
         return None
 
@@ -381,9 +407,8 @@ def run():
     log("INFO", f"=== fetch_data.py === {datetime.now().strftime('%Y-%m-%d %H:%M')}")
 
     fixtures = get_fixtures()
-
     if not fixtures:
-        log("WARN", "Aucun match Betclic trouvé aujourd'hui")
+        log("WARN", "Aucun match Betclic trouvé — vérifier la whitelist")
 
     enriched     = []
     players_done = {}
@@ -398,7 +423,6 @@ def run():
 
         log("INFO", f"[{i+1}/{len(fixtures)}] {pa} vs {pb} · {f['tournament']} · {f['time']}")
 
-        # Stats joueur
         if p1_id and p1_id not in players_done:
             players_done[p1_id] = get_player_data(p1_id, tour)
         if p2_id and p2_id not in players_done:
@@ -406,18 +430,15 @@ def run():
 
         f["player_a_data"] = players_done.get(p1_id, {})
         f["player_b_data"] = players_done.get(p2_id, {})
+        f["h2h"]           = get_h2h(p1_id, p2_id, tour)
 
-        # H2H
-        f["h2h"] = get_h2h(p1_id, p2_id, tour)
-
-        # Cotes Bet365
         odds = get_odds(pa, pb, f["date"])
         f["odds"] = odds
         if odds:
             odds_ok += 1
             log("INFO", f"  ✅ Bet365 {pa} {odds['player_a_odds']} / {pb} {odds['player_b_odds']}")
         else:
-            log("INFO", f"  ⚠️ Pas de cotes")
+            log("INFO", f"  ⚠️ Pas de cotes Bet365")
 
         enriched.append(f)
 
@@ -432,7 +453,6 @@ def run():
     )
 
     save_cache(CACHE)
-
     log("INFO", f"=== Terminé : {len(enriched)} matchs · {odds_ok} cotes · {REQ_COUNT} requêtes ===")
 
     Path("data/pipeline_log.json").write_text(
