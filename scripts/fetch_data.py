@@ -231,28 +231,34 @@ def api_pages(path, params=None, cache_key=None, max_pages=3):
     return all_items
 
 def api_extend(path, cache_key=None, cache_hours=6):
-    global REQ_COUNT
-    if cache_key:
-        cached = cache_get(cache_key, cache_hours)
-        if cached is not None:
-            return cached
-    if not RAPIDAPI_KEY:
-        return None
-    try:
-        r = requests.get(f"{BASE}/{path}", headers=HEADERS, timeout=15)
-        REQ_COUNT += 1
-        time.sleep(0.2)
-        if r.status_code == 200:
-            d = r.json()
-            if d.get("success"):
-                result = d.get("result", {})
-                if cache_key:
-                    cache_set(cache_key, result)
-                return result
-        return None
-    except Exception as e:
-        log("WARN", f"extend {path}: {e}")
-        return None
+   global REQ_COUNT
+   if cache_key:
+       cached = cache_get(cache_key, cache_hours)
+       if cached is not None:
+           return cached
+   if not RAPIDAPI_KEY:
+       return None
+   try:
+       r = requests.get(f"{BASE}/{path}", headers=HEADERS, timeout=15)
+       REQ_COUNT += 1
+       time.sleep(0.2)
+       if r.status_code == 200:
+           d = r.json()
+           log("DEBUG", f"extend {path} → success={d.get('success')} result={str(d.get('result',''))[:80]}")
+           if d.get("success"):
+               result = d.get("result", {})
+               if cache_key:
+                   cache_set(cache_key, result)
+               return result
+           else:
+               log("DEBUG", f"extend {path} → success=False msg={d.get('message','')}")
+       else:
+           log("WARN", f"extend HTTP {r.status_code} → {path}")
+       return None
+   except Exception as e:
+       log("WARN", f"extend {path}: {e}")
+       return None
+
 
 # â”€â”€ Fixtures â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
