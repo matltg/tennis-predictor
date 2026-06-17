@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-17T19:17:28.191076",
+  "generated_at": "2026-06-17T19:35:08.172280",
   "date": "2026-06-17",
   "model_version": "2.0.0",
   "summary": {
-    "matches_analysed": 18,
+    "matches_analysed": 17,
     "ev_plus_count": 0,
     "total_kelly_pct": 0.0,
     "matches_with_odds": 1
@@ -275,59 +275,6 @@
       }
     },
     {
-      "id": "2026-06-17_Daniil_Medvedev_Terence_Atmane",
-      "player_a": "Daniil Medvedev",
-      "player_b": "Terence Atmane",
-      "favorite": "player_a",
-      "tournament": "Terra Wortmann Open - Halle",
-      "tournament_rank": "Main tour",
-      "surface": "Grass",
-      "round": "Second",
-      "time": "21:30",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.6581,
-        "prob_b": 0.3419,
-        "favorite": "player_a",
-        "confidence": 3,
-        "fair_odds": 1.52,
-        "market_odds": null,
-        "edge_pct": null,
-        "kelly_pct": 0.0,
-        "has_odds": false,
-        "ev_status": "skip",
-        "reason": "Elo grass +213 · Win rate surface +36.6%"
-      },
-      "over_under": {
-        "expected_games": 22.0,
-        "line": 22.0,
-        "prob_over": 0.4968,
-        "prob_under": 0.5032,
-        "recommendation": "NEUTRE",
-        "confidence": 2
-      },
-      "sets": {
-        "prob_2sets": 0.705,
-        "prob_3sets": 0.295,
-        "recommendation": "2 SETS",
-        "confidence": 2
-      },
-      "features": {
-        "elo_global_diff": 339,
-        "elo_surface_diff": 213,
-        "hold_pct_a": 65.5,
-        "hold_pct_b": 64.1,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 69.9,
-        "surf_winrate_b": 33.3,
-        "h2h_total": 2,
-        "h2h_wins_a": 2,
-        "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
       "id": "2026-06-17_Talia_Gibson_Qinwen_Zheng",
       "player_a": "Talia Gibson",
       "player_b": "Qinwen Zheng",
@@ -352,16 +299,16 @@
         "reason": "Win rate surface +12.8%"
       },
       "over_under": {
-        "expected_games": 19.5,
-        "line": 19.5,
-        "prob_over": 0.4968,
-        "prob_under": 0.5032,
+        "expected_games": 19.9,
+        "line": 20.0,
+        "prob_over": 0.4928,
+        "prob_under": 0.5072,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.55,
-        "prob_3sets": 0.45,
+        "prob_2sets": 0.505,
+        "prob_3sets": 0.495,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
@@ -374,8 +321,8 @@
         "winrate_10_b": null,
         "surf_winrate_a": 48.1,
         "surf_winrate_b": 35.3,
-        "h2h_total": 0,
-        "h2h_wins_a": 0,
+        "h2h_total": 1,
+        "h2h_wins_a": 1,
         "avg_games_a": null,
         "avg_games_b": null
       }

@@ -1,503 +1,318 @@
 {
-  "date": "2026-06-17T19:17:28.116980",
+  "date": "2026-06-17T19:35:08.098840",
   "steps": [
     {
-      "time": "19:15:47",
+      "time": "19:34:00",
       "level": "INFO",
-      "msg": "=== fetch_data.py === 2026-06-17 19:15"
+      "msg": "=== fetch_data.py === 2026-06-17 19:34"
     },
     {
-      "time": "19:15:49",
+      "time": "19:34:01",
       "level": "INFO",
-      "msg": "ATP 2026-06-17 â†’ 1 matchs retenus (sur 251 vus)"
+      "msg": "ATP 2026-06-17 → 0 matchs retenus (sur 251 vus)"
     },
     {
-      "time": "19:15:50",
+      "time": "19:34:02",
       "level": "INFO",
-      "msg": "ATP 2026-06-18 â†’ 8 matchs retenus (sur 39 vus)"
+      "msg": "ATP 2026-06-18 → 8 matchs retenus (sur 45 vus)"
     },
     {
-      "time": "19:15:51",
+      "time": "19:34:03",
       "level": "INFO",
-      "msg": "WTA 2026-06-17 â†’ 1 matchs retenus (sur 211 vus)"
+      "msg": "WTA 2026-06-17 → 1 matchs retenus (sur 211 vus)"
     },
     {
-      "time": "19:15:52",
+      "time": "19:34:03",
       "level": "INFO",
-      "msg": "WTA 2026-06-18 â†’ 8 matchs retenus (sur 40 vus)"
+      "msg": "WTA 2026-06-18 → 8 matchs retenus (sur 40 vus)"
     },
     {
-      "time": "19:15:52",
+      "time": "19:34:03",
       "level": "DEBUG",
       "msg": "Exclus : ['Asuncion Challenger', 'Dublin Challenger', 'Internazionali Femminili - Brescia', 'Ladies Open - Figueira da Foz', 'M15 Bourg-en-Bresse', 'M15 Constanta', 'M15 Gyula', 'M15 Irvine', 'M15 Kayseri', 'M15 Kursumlijska Banja', 'M15 Maanshan', 'M15 Monastir', 'M15 Mungia-Laukariz', 'M15 Saarlouis', 'M15 Tokyo', 'M25 Klosters', 'M25 Lourinha', 'M25 Milano', 'M25 Samobor', 'M25 Tulsa', 'Nottingham 2 Challenger', 'Parma Challenger', 'Poznan Challenger', 'Royan Challenger', 'W15 Bucharest', 'W15 Dinard', 'W15 Irvine', 'W15 Kayseri', 'W15 Kursumlijska Banja', 'W15 Luque', 'W15 Monastir', 'W15 Sapporo', 'W35 Bolszewo', 'W35 Klosters', 'W35 Mohammedia', 'W35 San Gregorio', 'W35 Taipei', 'W35 Tauste', 'W35 Ystad', 'W35 Zhengzhou', 'W50 Haskovo', 'W75 Blois']"
     },
     {
-      "time": "19:15:52",
+      "time": "19:34:03",
       "level": "INFO",
-      "msg": "âœ… 18 matchs retenus / 491 analysÃ©s"
+      "msg": "✅ 17 matchs retenus / 497 analysés"
     },
     {
-      "time": "19:15:52",
+      "time": "19:34:03",
       "level": "INFO",
-      "msg": "[1/18] Corentin Moutet vs Alejandro Davidovich Fokina Â· HSBC Championships - London Â· 15:30"
+      "msg": "[1/17] Corentin Moutet vs Alejandro Davidovich Fokina · HSBC Championships - London · 15:30"
     },
     {
-      "time": "19:15:57",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Corentin Moutet/Alejandro Davidovich Fokina/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679480', 'startTimestamp': 1781778600, 'name':"
-    },
-    {
-      "time": "19:15:58",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679480 → success=False result=None"
-    },
-    {
-      "time": "19:15:58",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679480 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:15:58",
+      "time": "19:34:07",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "  ↩️ Retry cotes ordre inversé : Alejandro Davidovich Fokina / Corentin Moutet"
     },
     {
-      "time": "19:15:58",
+      "time": "19:34:07",
       "level": "INFO",
-      "msg": "[2/18] Tommy Paul vs Botic Van De Zandschulp Â· HSBC Championships - London Â· 17:00"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:16:02",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Tommy Paul/Botic Van De Zandschulp/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679478', 'startTimestamp': 1781778600, 'name':"
-    },
-    {
-      "time": "19:16:03",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679478 → success=False result=None"
-    },
-    {
-      "time": "19:16:03",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679478 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:16:03",
+      "time": "19:34:07",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "[2/17] Tommy Paul vs Botic Van De Zandschulp · HSBC Championships - London · 17:00"
     },
     {
-      "time": "19:16:03",
+      "time": "19:34:10",
       "level": "INFO",
-      "msg": "[3/18] Rinky Hijikata vs Jiri Lehecka Â· HSBC Championships - London Â· 18:30"
+      "msg": "  ↩️ Retry cotes ordre inversé : Botic Van De Zandschulp / Tommy Paul"
     },
     {
-      "time": "19:16:07",
+      "time": "19:34:12",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "19:34:12",
+      "level": "INFO",
+      "msg": "[3/17] Rinky Hijikata vs Jiri Lehecka · HSBC Championships - London · 18:30"
+    },
+    {
+      "time": "19:34:14",
       "level": "WARN",
-      "msg": "HTTP 500 â†’ atp/h2h/stats/58149/61838"
+      "msg": "HTTP 500 → atp/h2h/stats/58149/61838"
     },
     {
-      "time": "19:16:08",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Rinky Hijikata/Jiri Lehecka/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679481', 'startTimestamp': 1781778600, 'name':"
-    },
-    {
-      "time": "19:16:08",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679481 → success=False result=None"
-    },
-    {
-      "time": "19:16:08",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679481 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:16:08",
+      "time": "19:34:14",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "  ↩️ Retry cotes ordre inversé : Jiri Lehecka / Rinky Hijikata"
     },
     {
-      "time": "19:16:08",
+      "time": "19:34:16",
       "level": "INFO",
-      "msg": "[4/18] Hamad Medjedovic vs Ugo Humbert Â· HSBC Championships - London Â· 20:00"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:16:13",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Hamad Medjedovic/Ugo Humbert/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679479', 'startTimestamp': 1781778600, 'name':"
-    },
-    {
-      "time": "19:16:14",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679479 → success=False result=None"
-    },
-    {
-      "time": "19:16:14",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679479 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:16:14",
+      "time": "19:34:16",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "[4/17] Hamad Medjedovic vs Ugo Humbert · HSBC Championships - London · 20:00"
     },
     {
-      "time": "19:16:14",
+      "time": "19:34:18",
       "level": "INFO",
-      "msg": "[5/18] Fabian Marozsan vs Taylor Fritz Â· Terra Wortmann Open - Halle Â· 14:30"
+      "msg": "  ↩️ Retry cotes ordre inversé : Ugo Humbert / Hamad Medjedovic"
     },
     {
-      "time": "19:16:18",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Fabian Marozsan/Taylor Fritz/2026-06-18 → success=False result=None"
-    },
-    {
-      "time": "19:16:18",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Fabian Marozsan/Taylor Fritz/2026-06-18 → success=False msg=Event not found."
-    },
-    {
-      "time": "19:16:18",
+      "time": "19:34:19",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:16:18",
+      "time": "19:34:19",
       "level": "INFO",
-      "msg": "[6/18] Ben Shelton vs Ethan Quinn Â· Terra Wortmann Open - Halle Â· 16:00"
+      "msg": "[5/17] Fabian Marozsan vs Taylor Fritz · Terra Wortmann Open - Halle · 14:30"
     },
     {
-      "time": "19:16:22",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Ben Shelton/Ethan Quinn/2026-06-18 → success=False result=None"
-    },
-    {
-      "time": "19:16:22",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Ben Shelton/Ethan Quinn/2026-06-18 → success=False msg=Event not found."
-    },
-    {
-      "time": "19:16:22",
+      "time": "19:34:22",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "  ↩️ Retry cotes ordre inversé : Taylor Fritz / Fabian Marozsan"
     },
     {
-      "time": "19:16:22",
+      "time": "19:34:22",
       "level": "INFO",
-      "msg": "[7/18] Alexander Zverev vs Yannick Hanfmann Â· Terra Wortmann Open - Halle Â· 18:30"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:16:27",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Alexander Zverev/Yannick Hanfmann/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679461', 'startTimestamp': 1781775000, 'name':"
-    },
-    {
-      "time": "19:16:28",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679461 → success=False result=None"
-    },
-    {
-      "time": "19:16:28",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679461 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:16:28",
+      "time": "19:34:22",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "[6/17] Ben Shelton vs Ethan Quinn · Terra Wortmann Open - Halle · 16:00"
     },
     {
-      "time": "19:16:28",
+      "time": "19:34:26",
       "level": "INFO",
-      "msg": "[8/18] Raphael Collignon vs Mattia Bellucci Â· Terra Wortmann Open - Halle Â· 20:00"
+      "msg": "  ↩️ Retry cotes ordre inversé : Ethan Quinn / Ben Shelton"
     },
     {
-      "time": "19:16:32",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Raphael Collignon/Mattia Bellucci/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679460', 'startTimestamp': 1781775000, 'name':"
-    },
-    {
-      "time": "19:16:33",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679460 → success=False result=None"
-    },
-    {
-      "time": "19:16:33",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679460 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:16:33",
+      "time": "19:34:26",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:16:33",
+      "time": "19:34:26",
       "level": "INFO",
-      "msg": "[9/18] Daniil Medvedev vs Terence Atmane Â· Terra Wortmann Open - Halle Â· 21:30"
+      "msg": "[7/17] Alexander Zverev vs Yannick Hanfmann · Terra Wortmann Open - Halle · 18:30"
     },
     {
-      "time": "19:16:38",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Daniil Medvedev/Terence Atmane/2026-06-17 → success=False result=None"
-    },
-    {
-      "time": "19:16:38",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Daniil Medvedev/Terence Atmane/2026-06-17 → success=False msg=Event not found."
-    },
-    {
-      "time": "19:16:38",
+      "time": "19:34:29",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "  ↩️ Retry cotes ordre inversé : Yannick Hanfmann / Alexander Zverev"
     },
     {
-      "time": "19:16:38",
+      "time": "19:34:30",
       "level": "INFO",
-      "msg": "[10/18] Linda Noskova vs Diane Parry Â· Berlin Tennis Open - Berlin Â· 14:00"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:16:43",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Linda Noskova/Diane Parry/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679468', 'startTimestamp': 1781773200, 'name':"
-    },
-    {
-      "time": "19:16:44",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679468 → success=False result=None"
-    },
-    {
-      "time": "19:16:44",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679468 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:16:44",
+      "time": "19:34:30",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "[8/17] Raphael Collignon vs Mattia Bellucci · Terra Wortmann Open - Halle · 20:00"
     },
     {
-      "time": "19:16:44",
+      "time": "19:34:33",
       "level": "INFO",
-      "msg": "[11/18] Elina Svitolina vs Eva Lys Â· Berlin Tennis Open - Berlin Â· 15:30"
+      "msg": "  ↩️ Retry cotes ordre inversé : Mattia Bellucci / Raphael Collignon"
     },
     {
-      "time": "19:16:48",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Elina Svitolina/Eva Lys/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679458', 'startTimestamp': 1781773200, 'name':"
-    },
-    {
-      "time": "19:16:49",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679458 → success=False result=None"
-    },
-    {
-      "time": "19:16:49",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679458 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:16:49",
+      "time": "19:34:34",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:16:49",
+      "time": "19:34:34",
       "level": "INFO",
-      "msg": "[12/18] Madison Keys vs Karolina Muchova Â· Berlin Tennis Open - Berlin Â· 18:30"
+      "msg": "[9/17] Linda Noskova vs Diane Parry · Berlin Tennis Open - Berlin · 14:00"
     },
     {
-      "time": "19:16:55",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Madison Keys/Karolina Muchova/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679457', 'startTimestamp': 1781773200, 'name':"
-    },
-    {
-      "time": "19:16:55",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679457 → success=False result=None"
-    },
-    {
-      "time": "19:16:55",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679457 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:16:55",
+      "time": "19:34:37",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "  ↩️ Retry cotes ordre inversé : Diane Parry / Linda Noskova"
     },
     {
-      "time": "19:16:55",
+      "time": "19:34:38",
       "level": "INFO",
-      "msg": "[13/18] Alexandra Eala vs Elena Rybakina Â· Berlin Tennis Open - Berlin Â· 20:30"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:17:00",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Alexandra Eala/Elena Rybakina/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679609', 'startTimestamp': 1781796600, 'name':"
-    },
-    {
-      "time": "19:17:01",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679609 → success=False result=None"
-    },
-    {
-      "time": "19:17:01",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679609 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:17:01",
+      "time": "19:34:38",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "[10/17] Elina Svitolina vs Eva Lys · Berlin Tennis Open - Berlin · 15:30"
     },
     {
-      "time": "19:17:01",
+      "time": "19:34:41",
       "level": "INFO",
-      "msg": "[14/18] Viktorija Golubic vs Zeynep Sonmez Â· Lexus Nottingham Open - Nottingham Â· 15:00"
+      "msg": "  ↩️ Retry cotes ordre inversé : Eva Lys / Elina Svitolina"
     },
     {
-      "time": "19:17:05",
+      "time": "19:34:42",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "19:34:42",
+      "level": "INFO",
+      "msg": "[11/17] Madison Keys vs Karolina Muchova · Berlin Tennis Open - Berlin · 18:30"
+    },
+    {
+      "time": "19:34:45",
+      "level": "INFO",
+      "msg": "  ↩️ Retry cotes ordre inversé : Karolina Muchova / Madison Keys"
+    },
+    {
+      "time": "19:34:46",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "19:34:46",
+      "level": "INFO",
+      "msg": "[12/17] Alexandra Eala vs Elena Rybakina · Berlin Tennis Open - Berlin · 20:30"
+    },
+    {
+      "time": "19:34:49",
+      "level": "INFO",
+      "msg": "  ↩️ Retry cotes ordre inversé : Elena Rybakina / Alexandra Eala"
+    },
+    {
+      "time": "19:34:50",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "19:34:50",
+      "level": "INFO",
+      "msg": "[13/17] Viktorija Golubic vs Zeynep Sonmez · Lexus Nottingham Open - Nottingham · 15:00"
+    },
+    {
+      "time": "19:34:52",
       "level": "WARN",
-      "msg": "HTTP 500 â†’ wta/h2h/stats/10749/49991"
+      "msg": "HTTP 500 → wta/h2h/stats/10749/49991"
     },
     {
-      "time": "19:17:05",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Viktorija Golubic/Zeynep Sonmez/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679463', 'startTimestamp': 1781776800, 'name':"
-    },
-    {
-      "time": "19:17:06",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679463 → success=False result=None"
-    },
-    {
-      "time": "19:17:06",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679463 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:17:06",
+      "time": "19:34:52",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "  ↩️ Retry cotes ordre inversé : Zeynep Sonmez / Viktorija Golubic"
     },
     {
-      "time": "19:17:06",
+      "time": "19:34:53",
       "level": "INFO",
-      "msg": "[15/18] Karolina Pliskova vs Caty McNally Â· Lexus Nottingham Open - Nottingham Â· 15:30"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:17:11",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Karolina Pliskova/Caty McNally/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679475', 'startTimestamp': 1781776800, 'name':"
-    },
-    {
-      "time": "19:17:11",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679475 → success=False result=None"
-    },
-    {
-      "time": "19:17:11",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679475 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:17:11",
+      "time": "19:34:53",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "[14/17] Karolina Pliskova vs Caty McNally · Lexus Nottingham Open - Nottingham · 15:30"
     },
     {
-      "time": "19:17:11",
+      "time": "19:34:56",
       "level": "INFO",
-      "msg": "[16/18] Marie Bouzkova vs Hannah Klugman Â· Lexus Nottingham Open - Nottingham Â· 17:00"
+      "msg": "  ↩️ Retry cotes ordre inversé : Caty McNally / Karolina Pliskova"
     },
     {
-      "time": "19:17:15",
+      "time": "19:34:57",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "19:34:57",
+      "level": "INFO",
+      "msg": "[15/17] Marie Bouzkova vs Hannah Klugman · Lexus Nottingham Open - Nottingham · 17:00"
+    },
+    {
+      "time": "19:34:59",
       "level": "WARN",
-      "msg": "HTTP 500 â†’ wta/h2h/stats/24572/80418"
+      "msg": "HTTP 500 → wta/h2h/stats/24572/80418"
     },
     {
-      "time": "19:17:16",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Marie Bouzkova/Hannah Klugman/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679462', 'startTimestamp': 1781776800, 'name':"
-    },
-    {
-      "time": "19:17:17",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679462 → success=False result=None"
-    },
-    {
-      "time": "19:17:17",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679462 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:17:17",
+      "time": "19:35:00",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "  ↩️ Retry cotes ordre inversé : Hannah Klugman / Marie Bouzkova"
     },
     {
-      "time": "19:17:17",
+      "time": "19:35:01",
       "level": "INFO",
-      "msg": "[17/18] Ann Li vs Taylah Preston Â· Lexus Nottingham Open - Nottingham Â· 18:30"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:17:21",
+      "time": "19:35:01",
+      "level": "INFO",
+      "msg": "[16/17] Ann Li vs Taylah Preston · Lexus Nottingham Open - Nottingham · 18:30"
+    },
+    {
+      "time": "19:35:03",
       "level": "WARN",
-      "msg": "HTTP 500 â†’ wta/h2h/stats/45866/70326"
+      "msg": "HTTP 500 → wta/h2h/stats/45866/70326"
     },
     {
-      "time": "19:17:22",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Ann Li/Taylah Preston/2026-06-18 → success=True result={'status': 'Not Started', 'id': '3679459', 'startTimestamp': 1781773200, 'name':"
-    },
-    {
-      "time": "19:17:22",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679459 → success=False result=None"
-    },
-    {
-      "time": "19:17:22",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679459 → success=False msg=No odds found"
-    },
-    {
-      "time": "19:17:22",
+      "time": "19:35:04",
       "level": "INFO",
-      "msg": "  âš ï¸ Pas de cotes Bet365"
+      "msg": "  ↩️ Retry cotes ordre inversé : Taylah Preston / Ann Li"
     },
     {
-      "time": "19:17:22",
+      "time": "19:35:05",
       "level": "INFO",
-      "msg": "[18/18] Talia Gibson vs Qinwen Zheng Â· Lexus Nottingham Open - Nottingham Â· 22:15"
+      "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:17:26",
-      "level": "WARN",
-      "msg": "HTTP 500 â†’ wta/h2h/stats/63749/53128"
-    },
-    {
-      "time": "19:17:27",
-      "level": "DEBUG",
-      "msg": "extend extend/api/event/get/Talia Gibson/Qinwen Zheng/2026-06-17 → success=True result={'status': 'Ended', 'id': '3679291', 'startTimestamp': 1781690400, 'name': 'Tali"
-    },
-    {
-      "time": "19:17:28",
-      "level": "DEBUG",
-      "msg": "extend extend/api/odds/summary/3679291 → success=True result={'Bet365': {'Full Time Result': {'end': {'od1': '1.125', 'od2': '6.000', 'odx': "
-    },
-    {
-      "time": "19:17:28",
+      "time": "19:35:05",
       "level": "INFO",
-      "msg": "  âœ… Bet365 Talia Gibson 3.2 / Qinwen Zheng 1.363"
+      "msg": "[17/17] Talia Gibson vs Qinwen Zheng · Lexus Nottingham Open - Nottingham · 22:15"
     },
     {
-      "time": "19:17:28",
+      "time": "19:35:08",
       "level": "INFO",
-      "msg": "=== TerminÃ© : 18 matchs Â· 1 cotes Â· 167 requÃªtes ==="
+      "msg": "  ✅ Bet365 Talia Gibson 3.2 / Qinwen Zheng 1.363"
+    },
+    {
+      "time": "19:35:08",
+      "level": "INFO",
+      "msg": "=== Terminé : 17 matchs · 1 cotes · 189 requêtes ==="
     }
   ],
-  "requests_used": 167,
-  "fixtures_count": 18,
+  "requests_used": 189,
+  "fixtures_count": 17,
   "odds_available": 1
 }
