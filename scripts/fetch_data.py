@@ -1,8 +1,7 @@
 """
 scripts/fetch_data.py
-Whitelist complÃ¨te ATP 500+ / Masters 1000 / Grand Chelem + WTA Ã©quivalents
-BasÃ©e sur les calendriers officiels ATP et WTA 2026/2027
-P©renne â€” basÃ©e sur les noms de tournois, pas les dates
+Whitelist complète ATP 500+ / Masters 1000 / Grand Chelem + WTA équivalents
+Fix cotes : tentative dans les deux ordres (player_a/player_b et inversé)
 """
 import os, json, time, requests
 from datetime import datetime, timedelta, timezone
@@ -21,121 +20,48 @@ CACHE_FILE = Path("data/api_cache.json")
 LOG        = []
 REQ_COUNT  = 0
 
-# â”€â”€ Whitelist officielle ATP 500+ / Masters 1000 / Grand Chelem + WTA â”€â”€â”€â”€â”€â”€â”€â”€â”€
-# Source : calendriers officiels ATP et WTA 2026/2027
-# BasÃ©e sur les noms de tournois (pÃ©renne, sans dates)
-
+# ── Whitelist officielle ATP 500+ / Masters 1000 / Grand Chelem + WTA ─────────
 BETCLIC_WHITELIST = [
-
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-    # GRAND CHELEM (ATP + WTA)
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-    "australian open",
-    "roland-garros",
-    "roland garros",
-    "the championships, wimbledon",
-    "wimbledon",
-    "us open",
-
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    # GRAND CHELEM
+    "australian open", "roland-garros", "roland garros",
+    "the championships, wimbledon", "wimbledon", "us open",
     # ATP MASTERS 1000
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-    "bnp paribas open",                             # Indian Wells
-    "miami open presented by itaÃº",                 # Miami
-    "miami open",
-    "rolex monte-carlo masters",                    # Monte-Carlo
-    "mutua madrid open",                            # Madrid
-    "internazionali bnl d'italia",                  # Rome
-    "national bank open presented by rogers",       # Canada (Montreal/Toronto)
-    "national bank open",
-    "cincinnati open",                              # Cincinnati
-    "western & southern open",
-    "rolex shanghai masters",                       # Shanghai
-    "rolex paris masters",                          # Paris
-    "paris masters",
-
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    "bnp paribas open", "miami open", "rolex monte-carlo masters",
+    "mutua madrid open", "internazionali bnl d'italia",
+    "national bank open presented by rogers", "national bank open",
+    "cincinnati open", "western & southern open",
+    "rolex shanghai masters", "rolex paris masters", "paris masters",
     # ATP 500
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-    "nexo dallas open",                             # Dallas
-    "abn amro open",                                # Rotterdam
-    "rio open presented by claro",                  # Rio
-    "rio open",
-    "qatar exxonmobil open",                        # Doha
-    "dubai duty free tennis championships",         # Dubai
-    "abierto mexicano telcel presentado por hsbc",  # Acapulco
-    "abierto mexicano telcel",
-    "barcelona open banc sabadell",                 # Barcelona
-    "bmw open by bitpanda",                         # Munich
-    "bitpanda hamburg open",                        # Hamburg
-    "gonet geneva open",                            # Geneva (ATP 250 mais inclus)
-    "hsbc championships",                           # Queen's London
-    "terra wortmann open",                          # Halle
-    "mubadala citi dc open",                        # Washington DC
-    "kinoshita group japan open tennis championships", # Tokyo
-    "china open",                                   # Beijing
-    "swiss indoors basel",                          # Basel
-    "erste bank open",                              # Vienna
-
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    "nexo dallas open", "abn amro open", "rio open presented by claro", "rio open",
+    "qatar exxonmobil open", "dubai duty free tennis championships",
+    "abierto mexicano telcel presentado por hsbc", "abierto mexicano telcel",
+    "barcelona open banc sabadell", "bmw open by bitpanda",
+    "bitpanda hamburg open", "gonet geneva open",
+    "hsbc championships", "terra wortmann open",
+    "mubadala citi dc open",
+    "kinoshita group japan open tennis championships",
+    "china open", "swiss indoors basel", "erste bank open",
     # WTA 1000
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-    "united cup",                                   # United Cup
-    "mubadala abu dhabi open",                      # Abu Dhabi
-    "qatar totalenergies open",                     # Doha WTA
-    "bnp paribas open",                             # Indian Wells WTA
-    "miami open",                                   # Miami WTA
-    "porsche tennis grand prix",                    # Stuttgart WTA
-    "mutua madrid open",                            # Madrid WTA
-    "internazionali bnl d'italia",                  # Rome WTA
-    "national bank open",                           # Canada WTA
-    "cincinnati open",                              # Cincinnati WTA
-    "china open",                                   # Beijing WTA
-    "wuhan open",                                   # Wuhan
-    "guadalajara open akron",                       # Guadalajara
-    "guadalajara open",
-
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+    "united cup", "mubadala abu dhabi open", "qatar totalenergies open",
+    "porsche tennis grand prix", "wuhan open",
+    "guadalajara open akron", "guadalajara open",
     # WTA 500
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-    "asb classic",                                  # Auckland
-    "brisbane international presented by anz",      # Brisbane
-    "brisbane international",
-    "dubai duty free tennis championships",         # Dubai WTA
-    "merida open akron",                            # Merida
-    "atx open",                                     # Austin
-    "credit one charleston open",                   # Charleston
-    "porsche tennis grand prix",                    # Stuttgart
-    "internationaux de strasbourg",                 # Strasbourg
-    "strasbourg international",
-    "berlin tennis open",                           # Berlin
-    "lexus nottingham open",                        # Nottingham WTA
-    "bad homburg open",                             # Bad Homburg
-    "lexus eastbourne open",                        # Eastbourne WTA
-    "mubadala dc open",                             # Washington WTA
-    "toray pan pacific open",                       # Tokyo WTA
-    "korea open",                                   # Seoul
-    "singapore tennis open",                        # Singapore
-    "kinoshita group japan open",                   # Osaka WTA
-    "guadalajara open",
-    "sp open",                                      # Sao Paulo WTA
-    "ningbo open",                                  # Ningbo
-
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-    # ATP FINALS / WTA FINALS
-    # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-    "nitto atp finals",
-    "atp finals",
-    "wta finals",
-    "next gen atp finals",
+    "asb classic", "brisbane international presented by anz", "brisbane international",
+    "merida open akron", "atx open",
+    "credit one charleston open", "internationaux de strasbourg",
+    "strasbourg international", "berlin tennis open", "lexus nottingham open",
+    "bad homburg open", "lexus eastbourne open", "mubadala dc open",
+    "toray pan pacific open", "korea open", "singapore tennis open",
+    "kinoshita group japan open", "sp open", "ningbo open",
+    # ATP/WTA FINALS
+    "nitto atp finals", "atp finals", "wta finals", "next gen atp finals",
 ]
 
 def is_betclic(tournament_name):
-    """True si le tournoi est dans la whitelist officielle."""
     t = tournament_name.lower().strip()
     return any(w in t for w in BETCLIC_WHITELIST)
 
-# â”€â”€ Cache â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── Cache ──────────────────────────────────────────────────────────────────────
 
 def load_cache():
     if CACHE_FILE.exists():
@@ -164,14 +90,14 @@ def cache_get(key, max_age_hours=6):
 def cache_set(key, data):
     CACHE[key] = {"cached_at": datetime.now().isoformat(), "data": data}
 
-# â”€â”€ Logging â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── Logging ───────────────────────────────────────────────────────────────────
 
 def log(level, msg):
     entry = {"time": datetime.now().strftime("%H:%M:%S"), "level": level, "msg": msg}
     LOG.append(entry)
     print(f"  [{level}] {msg}")
 
-# â”€â”€ API helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── API helpers ───────────────────────────────────────────────────────────────
 
 def api_get(path, params=None, cache_key=None, cache_hours=6):
     global REQ_COUNT
@@ -193,7 +119,7 @@ def api_get(path, params=None, cache_key=None, cache_hours=6):
                 cache_set(cache_key, result)
             return result
         else:
-            log("WARN", f"HTTP {r.status_code} â†’ {path}")
+            log("WARN", f"HTTP {r.status_code} → {path}")
             return None
     except Exception as e:
         log("ERROR", f"{path}: {e}")
@@ -231,36 +157,30 @@ def api_pages(path, params=None, cache_key=None, max_pages=3):
     return all_items
 
 def api_extend(path, cache_key=None, cache_hours=6):
-   global REQ_COUNT
-   if cache_key:
-       cached = cache_get(cache_key, cache_hours)
-       if cached is not None:
-           return cached
-   if not RAPIDAPI_KEY:
-       return None
-   try:
-       r = requests.get(f"{BASE}/{path}", headers=HEADERS, timeout=15)
-       REQ_COUNT += 1
-       time.sleep(0.2)
-       if r.status_code == 200:
-           d = r.json()
-           log("DEBUG", f"extend {path} → success={d.get('success')} result={str(d.get('result',''))[:80]}")
-           if d.get("success"):
-               result = d.get("result", {})
-               if cache_key:
-                   cache_set(cache_key, result)
-               return result
-           else:
-               log("DEBUG", f"extend {path} → success=False msg={d.get('message','')}")
-       else:
-           log("WARN", f"extend HTTP {r.status_code} → {path}")
-       return None
-   except Exception as e:
-       log("WARN", f"extend {path}: {e}")
-       return None
+    global REQ_COUNT
+    if cache_key:
+        cached = cache_get(cache_key, cache_hours)
+        if cached is not None:
+            return cached
+    if not RAPIDAPI_KEY:
+        return None
+    try:
+        r = requests.get(f"{BASE}/{path}", headers=HEADERS, timeout=15)
+        REQ_COUNT += 1
+        time.sleep(0.2)
+        if r.status_code == 200:
+            d = r.json()
+            if d.get("success"):
+                result = d.get("result", {})
+                if cache_key:
+                    cache_set(cache_key, result)
+                return result
+        return None
+    except Exception as e:
+        log("WARN", f"extend {path}: {e}")
+        return None
 
-
-# â”€â”€ Fixtures â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── Fixtures ──────────────────────────────────────────────────────────────────
 
 def get_fixtures():
     global REQ_COUNT
@@ -272,7 +192,6 @@ def get_fixtures():
         "filter":   "PlayerGroup:singles",
         "pageSize": "100"
     }
-
     total_seen = 0
     rejected   = set()
 
@@ -288,10 +207,8 @@ def get_fixtures():
                 pb = (m.get("player2") or {}).get("name", "")
                 if not pa or not pb or "/" in pa or "/" in pb:
                     continue
-
                 total_seen += 1
                 tournament = (m.get("tournament") or {}).get("name", "")
-
                 if not is_betclic(tournament):
                     rejected.add(tournament)
                     continue
@@ -306,7 +223,6 @@ def get_fixtures():
                         match_time  = (dt + timedelta(hours=2)).strftime("%H:%M")
                     except:
                         pass
-
                 if not is_upcoming:
                     continue
 
@@ -332,13 +248,11 @@ def get_fixtures():
                 })
                 kept += 1
 
-            log("INFO", f"{tour.upper()} {date} â†’ {kept} matchs retenus (sur {len(items or [])} vus)")
+            log("INFO", f"{tour.upper()} {date} → {kept} matchs retenus (sur {len(items or [])} vus)")
 
-    # Log tournois exclus pour dÃ©bug
     if rejected:
         log("DEBUG", f"Exclus : {sorted(rejected)}")
 
-    # DÃ©duplique
     seen, out = set(), []
     for f in fixtures:
         k = (f["player_a"], f["player_b"], f["date"])
@@ -346,17 +260,16 @@ def get_fixtures():
             seen.add(k)
             out.append(f)
 
-    # Tri : ATP avant WTA, puis par tournoi, puis par heure
     out.sort(key=lambda x: (
         0 if x["tour"] == "ATP" else 1,
         x["tournament"],
         x["time"]
     ))
 
-    log("INFO", f"âœ… {len(out)} matchs retenus / {total_seen} analysÃ©s")
+    log("INFO", f"✅ {len(out)} matchs retenus / {total_seen} analysés")
     return out
 
-# â”€â”€ Player data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── Player data ───────────────────────────────────────────────────────────────
 
 def get_player_data(player_id, tour):
     global REQ_COUNT
@@ -383,7 +296,7 @@ def get_player_data(player_id, tour):
 
     return data
 
-# â”€â”€ H2H â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── H2H ──────────────────────────────────────────────────────────────────────
 
 def get_h2h(p1_id, p2_id, tour):
     global REQ_COUNT
@@ -395,16 +308,17 @@ def get_h2h(p1_id, p2_id, tour):
                         cache_key=cache_key, cache_hours=12)
     return result or {}
 
-# â”€â”€ Cotes Bet365 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# ── Cotes Bet365 ──────────────────────────────────────────────────────────────
 
-def get_odds(player_a, player_b, date):
+def _try_get_odds(pa, pb, date, inverted=False):
+    """Tente de récupérer les cotes pour un ordre donné de joueurs."""
     global REQ_COUNT
 
-    ck_event   = f"evid_{player_a[:12]}_{player_b[:12]}_{date}"
+    ck_event   = f"evid_{pa[:12]}_{pb[:12]}_{date}"
     event_data = cache_get(ck_event, 24)
     if event_data is None:
         event_data = api_extend(
-            f"extend/api/event/get/{player_a}/{player_b}/{date}",
+            f"extend/api/event/get/{pa}/{pb}/{date}",
             cache_key=ck_event, cache_hours=24
         ) or {}
 
@@ -437,6 +351,11 @@ def get_odds(player_a, player_b, date):
         o1, o2 = float(od1), float(od2)
         if o1 > 20 or o2 > 20:
             return None
+        # Si ordre inversé, on remet les cotes dans le bon sens
+        # od1 = cote pa (qui est player_b dans l'ordre original)
+        # od2 = cote pb (qui est player_a dans l'ordre original)
+        if inverted:
+            o1, o2 = o2, o1
         return {
             "player_a_odds": o1,
             "player_b_odds": o2,
@@ -446,7 +365,19 @@ def get_odds(player_a, player_b, date):
     except:
         return None
 
-# â”€â”€ Pipeline principal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+def get_odds(player_a, player_b, date):
+    """Récupère les cotes Bet365 en testant les deux ordres de joueurs."""
+    # Essai 1 : ordre normal (player_a / player_b)
+    odds = _try_get_odds(player_a, player_b, date, inverted=False)
+    if odds:
+        return odds
+
+    # Essai 2 : ordre inversé (player_b / player_a)
+    log("INFO", f"  ↩️ Retry cotes ordre inversé : {player_b} / {player_a}")
+    odds = _try_get_odds(player_b, player_a, date, inverted=True)
+    return odds
+
+# ── Pipeline principal ────────────────────────────────────────────────────────
 
 def run():
     global REQ_COUNT
@@ -454,7 +385,7 @@ def run():
 
     fixtures = get_fixtures()
     if not fixtures:
-        log("WARN", "Aucun match trouvÃ© â€” vÃ©rifier la whitelist")
+        log("WARN", "Aucun match trouvé — vérifier la whitelist")
 
     enriched     = []
     players_done = {}
@@ -467,7 +398,7 @@ def run():
         p2_id = f.get("player2_id")
         tour  = f.get("tour", "ATP")
 
-        log("INFO", f"[{i+1}/{len(fixtures)}] {pa} vs {pb} Â· {f['tournament']} Â· {f['time']}")
+        log("INFO", f"[{i+1}/{len(fixtures)}] {pa} vs {pb} · {f['tournament']} · {f['time']}")
 
         if p1_id and p1_id not in players_done:
             players_done[p1_id] = get_player_data(p1_id, tour)
@@ -482,9 +413,9 @@ def run():
         f["odds"] = odds
         if odds:
             odds_ok += 1
-            log("INFO", f"  âœ… Bet365 {pa} {odds['player_a_odds']} / {pb} {odds['player_b_odds']}")
+            log("INFO", f"  ✅ Bet365 {pa} {odds['player_a_odds']} / {pb} {odds['player_b_odds']}")
         else:
-            log("INFO", f"  âš ï¸ Pas de cotes Bet365")
+            log("INFO", f"  ⚠️ Pas de cotes Bet365")
 
         enriched.append(f)
 
@@ -499,7 +430,7 @@ def run():
     )
 
     save_cache(CACHE)
-    log("INFO", f"=== TerminÃ© : {len(enriched)} matchs Â· {odds_ok} cotes Â· {REQ_COUNT} requÃªtes ===")
+    log("INFO", f"=== Terminé : {len(enriched)} matchs · {odds_ok} cotes · {REQ_COUNT} requêtes ===")
 
     Path("data/pipeline_log.json").write_text(
         json.dumps({
