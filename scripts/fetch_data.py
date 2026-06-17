@@ -256,16 +256,16 @@ def get_player_data(player_id, tour):
     data = {}
 
     # Stats service globales — endpoint confirmé : {tour}/player/stats/{id}
-    stats = api_get(
-        f"{t}/player/stats/{player_id}",
+   stats = api_get(
+        f"{t}/player/match-stats/{player_id}",
         cache_key=f"pstats_{player_id}", cache_hours=24
     )
     if stats:
         data["stats"] = stats
 
     # Surface summary — endpoint confirmé : {tour}/player/surface/{id}
-    surf = api_get(
-        f"{t}/player/surface/{player_id}",
+   surf = api_get(
+        f"{t}/player/surface-summary/{player_id}",
         cache_key=f"psurf_{player_id}", cache_hours=24
     )
     if surf:
