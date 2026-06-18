@@ -1,408 +1,518 @@
 {
-  "date": "2026-06-18T07:58:42.300779",
+  "date": "2026-06-18T08:26:24.361476",
   "steps": [
     {
-      "time": "07:56:47",
+      "time": "08:24:54",
       "level": "INFO",
-      "msg": "=== fetch_data.py === 2026-06-18 07:56"
+      "msg": "=== fetch_data.py === 2026-06-18 08:24"
     },
     {
-      "time": "07:56:48",
+      "time": "08:24:55",
       "level": "INFO",
-      "msg": "ATP 2026-06-18 → 8 matchs retenus (sur 165 vus)"
+      "msg": "ATP 2026-06-18 → 8 matchs retenus (sur 168 vus)"
     },
     {
-      "time": "07:56:48",
+      "time": "08:24:56",
       "level": "INFO",
       "msg": "ATP 2026-06-19 → 4 matchs retenus (sur 4 vus)"
     },
     {
-      "time": "07:56:49",
+      "time": "08:24:56",
       "level": "INFO",
-      "msg": "WTA 2026-06-18 → 8 matchs retenus (sur 150 vus)"
+      "msg": "WTA 2026-06-18 → 8 matchs retenus (sur 154 vus)"
     },
     {
-      "time": "07:56:50",
+      "time": "08:24:57",
       "level": "INFO",
       "msg": "WTA 2026-06-19 → 2 matchs retenus (sur 2 vus)"
     },
     {
-      "time": "07:56:50",
+      "time": "08:24:57",
       "level": "DEBUG",
       "msg": "Exclus : ['Asuncion Challenger', 'Dublin Challenger', 'Internazionali Femminili - Brescia', 'Ladies Open - Figueira da Foz', 'M15 Bourg-en-Bresse', 'M15 Constanta', 'M15 Gyula', 'M15 Irvine', 'M15 Kayseri', 'M15 Kursumlijska Banja', 'M15 Maanshan', 'M15 Monastir', 'M15 Mungia-Laukariz', 'M15 Saarlouis', 'M15 Tokyo', 'M25 Klosters', 'M25 Lourinha', 'M25 Milano', 'M25 Samobor', 'M25 Tulsa', 'Nottingham 2 Challenger', 'Parma Challenger', 'Poznan Challenger', 'Royan Challenger', 'W15 Bucharest', 'W15 Dinard', 'W15 Irvine', 'W15 Kayseri', 'W15 Kursumlijska Banja', 'W15 Luque', 'W15 Monastir', 'W15 Sapporo', 'W35 Bolszewo', 'W35 Klosters', 'W35 Mohammedia', 'W35 San Gregorio', 'W35 Taipei', 'W35 Tauste', 'W35 Ystad', 'W35 Zhengzhou', 'W50 Haskovo', 'W75 Blois']"
     },
     {
-      "time": "07:56:50",
+      "time": "08:24:57",
       "level": "INFO",
-      "msg": "✅ 22 matchs retenus / 296 analysés"
+      "msg": "✅ 22 matchs retenus / 303 analysés"
     },
     {
-      "time": "07:56:50",
+      "time": "08:24:57",
       "level": "INFO",
       "msg": "[1/22] Alex De Minaur vs Brandon Nakashima · HSBC Championships - London · 13:00"
     },
     {
-      "time": "07:56:54",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Brandon Nakashima / Alex De Minaur"
+      "time": "08:25:01",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_queens] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:56:55",
+      "time": "08:25:01",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_queens"
+    },
+    {
+      "time": "08:25:01",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:56:55",
+      "time": "08:25:01",
       "level": "INFO",
       "msg": "[2/22] Arthur Fery vs Francisco Cerundolo · HSBC Championships - London · 13:00"
     },
     {
-      "time": "07:57:00",
+      "time": "08:25:05",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/79065/52279"
     },
     {
-      "time": "07:57:01",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Francisco Cerundolo / Arthur Fery"
+      "time": "08:25:05",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_queens] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:02",
+      "time": "08:25:05",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_queens"
+    },
+    {
+      "time": "08:25:05",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:02",
+      "time": "08:25:05",
       "level": "INFO",
       "msg": "[3/22] Corentin Moutet vs Alejandro Davidovich Fokina · HSBC Championships - London · 15:30"
     },
     {
-      "time": "07:57:06",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Alejandro Davidovich Fokina / Corentin Moutet"
+      "time": "08:25:09",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_queens] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:07",
+      "time": "08:25:09",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_queens"
+    },
+    {
+      "time": "08:25:09",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:07",
+      "time": "08:25:09",
       "level": "INFO",
       "msg": "[4/22] Tommy Paul vs Botic Van De Zandschulp · HSBC Championships - London · 17:00"
     },
     {
-      "time": "07:57:12",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Botic Van De Zandschulp / Tommy Paul"
+      "time": "08:25:13",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_queens] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:13",
+      "time": "08:25:13",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_queens"
+    },
+    {
+      "time": "08:25:13",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:13",
+      "time": "08:25:13",
       "level": "INFO",
       "msg": "[5/22] Rinky Hijikata vs Jiri Lehecka · HSBC Championships - London · 18:30"
     },
     {
-      "time": "07:57:16",
+      "time": "08:25:17",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/58149/61838"
     },
     {
-      "time": "07:57:17",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Jiri Lehecka / Rinky Hijikata"
+      "time": "08:25:17",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_queens] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:18",
+      "time": "08:25:17",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_queens"
+    },
+    {
+      "time": "08:25:17",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:18",
+      "time": "08:25:17",
       "level": "INFO",
       "msg": "[6/22] Hamad Medjedovic vs Ugo Humbert · HSBC Championships - London · 20:00"
     },
     {
-      "time": "07:57:22",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Ugo Humbert / Hamad Medjedovic"
+      "time": "08:25:21",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_queens] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:23",
+      "time": "08:25:21",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_queens"
+    },
+    {
+      "time": "08:25:21",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:23",
+      "time": "08:25:21",
       "level": "INFO",
       "msg": "[7/22] Fabian Marozsan vs Taylor Fritz · Terra Wortmann Open - Halle · 14:30"
     },
     {
-      "time": "07:57:27",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Taylor Fritz / Fabian Marozsan"
+      "time": "08:25:25",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_halle] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:28",
+      "time": "08:25:25",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_halle"
+    },
+    {
+      "time": "08:25:25",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:28",
+      "time": "08:25:25",
       "level": "INFO",
       "msg": "[8/22] Daniel Altmaier vs Daniil Medvedev · Terra Wortmann Open - Halle · 14:30"
     },
     {
-      "time": "07:57:32",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Daniil Medvedev / Daniel Altmaier"
+      "time": "08:25:29",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_halle] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:33",
+      "time": "08:25:29",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_halle"
+    },
+    {
+      "time": "08:25:29",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:33",
+      "time": "08:25:29",
       "level": "INFO",
       "msg": "[9/22] Frances Tiafoe vs Felix Auger Aliassime · Terra Wortmann Open - Halle · 14:30"
     },
     {
-      "time": "07:57:37",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Felix Auger Aliassime / Frances Tiafoe"
+      "time": "08:25:33",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_halle] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:38",
+      "time": "08:25:33",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_halle"
+    },
+    {
+      "time": "08:25:33",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:38",
+      "time": "08:25:33",
       "level": "INFO",
       "msg": "[10/22] Ben Shelton vs Ethan Quinn · Terra Wortmann Open - Halle · 16:00"
     },
     {
-      "time": "07:57:42",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Ethan Quinn / Ben Shelton"
+      "time": "08:25:36",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_halle] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:43",
+      "time": "08:25:36",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_halle"
+    },
+    {
+      "time": "08:25:36",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:43",
+      "time": "08:25:36",
       "level": "INFO",
       "msg": "[11/22] Alexander Zverev vs Yannick Hanfmann · Terra Wortmann Open - Halle · 18:30"
     },
     {
-      "time": "07:57:46",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Yannick Hanfmann / Alexander Zverev"
+      "time": "08:25:40",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_halle] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:47",
+      "time": "08:25:40",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_halle"
+    },
+    {
+      "time": "08:25:40",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:47",
+      "time": "08:25:40",
       "level": "INFO",
       "msg": "[12/22] Raphael Collignon vs Mattia Bellucci · Terra Wortmann Open - Halle · 20:00"
     },
     {
-      "time": "07:57:51",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Mattia Bellucci / Raphael Collignon"
+      "time": "08:25:44",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_atp_halle] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:52",
+      "time": "08:25:44",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_halle"
+    },
+    {
+      "time": "08:25:44",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:52",
+      "time": "08:25:44",
       "level": "INFO",
       "msg": "[13/22] Linda Noskova vs Diane Parry · Berlin Tennis Open - Berlin · 14:00"
     },
     {
-      "time": "07:57:56",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Diane Parry / Linda Noskova"
+      "time": "08:25:49",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_wta_berlin] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:57:57",
+      "time": "08:25:49",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_berlin"
+    },
+    {
+      "time": "08:25:49",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:57:57",
+      "time": "08:25:49",
       "level": "INFO",
       "msg": "[14/22] Aryna Sabalenka vs Nikola Bartunkova · Berlin Tennis Open - Berlin · 14:00"
     },
     {
-      "time": "07:58:00",
+      "time": "08:25:52",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/18455/71092"
     },
     {
-      "time": "07:58:01",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Nikola Bartunkova / Aryna Sabalenka"
+      "time": "08:25:52",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_wta_berlin] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:58:02",
+      "time": "08:25:52",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_berlin"
+    },
+    {
+      "time": "08:25:52",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:58:02",
+      "time": "08:25:52",
       "level": "INFO",
       "msg": "[15/22] Elina Svitolina vs Eva Lys · Berlin Tennis Open - Berlin · 15:30"
     },
     {
-      "time": "07:58:06",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Eva Lys / Elina Svitolina"
+      "time": "08:25:56",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_wta_berlin] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:58:07",
+      "time": "08:25:56",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_berlin"
+    },
+    {
+      "time": "08:25:56",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:58:07",
+      "time": "08:25:56",
       "level": "INFO",
       "msg": "[16/22] Madison Keys vs Karolina Muchova · Berlin Tennis Open - Berlin · 18:30"
     },
     {
-      "time": "07:58:11",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Karolina Muchova / Madison Keys"
+      "time": "08:26:01",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_wta_berlin] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:58:11",
+      "time": "08:26:01",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_berlin"
+    },
+    {
+      "time": "08:26:01",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:58:11",
+      "time": "08:26:01",
       "level": "INFO",
       "msg": "[17/22] Alexandra Eala vs Elena Rybakina · Berlin Tennis Open - Berlin · 20:30"
     },
     {
-      "time": "07:58:16",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Elena Rybakina / Alexandra Eala"
+      "time": "08:26:05",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_wta_berlin] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:58:17",
+      "time": "08:26:05",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_berlin"
+    },
+    {
+      "time": "08:26:05",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:58:17",
+      "time": "08:26:05",
       "level": "INFO",
       "msg": "[18/22] Jessica Bouzas Maneiro vs Emma Navarro · Lexus Nottingham Open - Nottingham · 14:00"
     },
     {
-      "time": "07:58:21",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Emma Navarro / Jessica Bouzas Maneiro"
+      "time": "08:26:09",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_wta_nottingham] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:58:22",
+      "time": "08:26:09",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_nottingham"
+    },
+    {
+      "time": "08:26:09",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:58:22",
+      "time": "08:26:09",
       "level": "INFO",
       "msg": "[19/22] Viktorija Golubic vs Zeynep Sonmez · Lexus Nottingham Open - Nottingham · 15:00"
     },
     {
-      "time": "07:58:25",
+      "time": "08:26:12",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/10749/49991"
     },
     {
-      "time": "07:58:26",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Zeynep Sonmez / Viktorija Golubic"
+      "time": "08:26:13",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_wta_nottingham] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:58:27",
+      "time": "08:26:13",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_nottingham"
+    },
+    {
+      "time": "08:26:13",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:58:27",
+      "time": "08:26:13",
       "level": "INFO",
       "msg": "[20/22] Karolina Pliskova vs Caty McNally · Lexus Nottingham Open - Nottingham · 15:30"
     },
     {
-      "time": "07:58:31",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Caty McNally / Karolina Pliskova"
+      "time": "08:26:17",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_wta_nottingham] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:58:32",
+      "time": "08:26:17",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_nottingham"
+    },
+    {
+      "time": "08:26:17",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:58:32",
+      "time": "08:26:17",
       "level": "INFO",
       "msg": "[21/22] Marie Bouzkova vs Hannah Klugman · Lexus Nottingham Open - Nottingham · 17:00"
     },
     {
-      "time": "07:58:35",
+      "time": "08:26:20",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/24572/80418"
     },
     {
-      "time": "07:58:36",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Hannah Klugman / Marie Bouzkova"
+      "time": "08:26:20",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_wta_nottingham] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:58:37",
+      "time": "08:26:20",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_nottingham"
+    },
+    {
+      "time": "08:26:20",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:58:37",
+      "time": "08:26:20",
       "level": "INFO",
       "msg": "[22/22] Ann Li vs Taylah Preston · Lexus Nottingham Open - Nottingham · 18:30"
     },
     {
-      "time": "07:58:40",
+      "time": "08:26:24",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/45866/70326"
     },
     {
-      "time": "07:58:41",
-      "level": "INFO",
-      "msg": "  ↩️ Retry cotes ordre inversé : Taylah Preston / Ann Li"
+      "time": "08:26:24",
+      "level": "DEBUG",
+      "msg": "TheOddsAPI [tennis_wta_nottingham] → HTTP 404 | quota restant : 478"
     },
     {
-      "time": "07:58:42",
+      "time": "08:26:24",
+      "level": "WARN",
+      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_nottingham"
+    },
+    {
+      "time": "08:26:24",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "07:58:42",
+      "time": "08:26:24",
       "level": "INFO",
-      "msg": "=== Terminé : 22 matchs · 0 cotes · 248 requêtes ==="
+      "msg": "=== Terminé : 22 matchs · 0 cotes · 160 requêtes ==="
     }
   ],
-  "requests_used": 248,
+  "requests_used": 160,
   "fixtures_count": 22,
   "odds_available": 0
 }
