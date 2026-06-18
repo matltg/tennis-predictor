@@ -403,10 +403,54 @@ def _get_sport_key(tournament_name: str) -> str | None:
             return sport_key
     return None
 
-def _fetch_odds_api(sport_key: str) -> list:
+def _fetch_odds_api_upcoming() -> list:
     """
-    Appelle GET /v4/sports/{sport_key}/odds et retourne la liste brute.
-    Résultat mis en cache 30 min (les cotes ne bougent pas si vite).
+    Stratégie principale : GET /v4/sports/upcoming/odds
+    Retourne tous les matchs à venir de tous les sports en UNE seule requête.
+    On filtre ensuite côté Python sur le tennis.
+    Cache 30 min — économise le quota (1 requête pour tout le pipeline).
+    """
+    if not THE_ODDS_API_KEY:
+        return []
+    ck = "theoddsapi_upcoming"
+    cached = cache_get(ck, max_age_hours=0.5)
+    if cached is not None:
+        return cached
+    try:
+        r = requests.get(
+            f"{ODDS_API_BASE}/sports/upcoming/odds",
+            params={
+                "apiKey":      THE_ODDS_API_KEY,
+                "bookmakers":  "bet365",   # bookmakers prend priorité sur regions
+                "markets":     "h2h",
+                "oddsFormat":  "decimal",
+            },
+            timeout=10,
+        )
+        remaining = r.headers.get("x-requests-remaining", "?")
+        used      = r.headers.get("x-requests-used", "?")
+        log("INFO", f"TheOddsAPI upcoming → HTTP {r.status_code} | quota : {used} used / {remaining} remaining")
+        if r.status_code == 200:
+            data = r.json()
+            # Filtrer uniquement le tennis pour réduire la taille du cache
+            tennis = [e for e in data if e.get("sport_key", "").startswith("tennis_")]
+            log("INFO", f"TheOddsAPI : {len(tennis)} matchs tennis Bet365 disponibles")
+            cache_set(ck, tennis)
+            return tennis
+        elif r.status_code == 401:
+            log("ERROR", "THE_ODDS_API_KEY invalide ou manquante (HTTP 401)")
+        elif r.status_code == 429:
+            log("WARN", "TheOddsAPI : quota dépassé (HTTP 429)")
+        else:
+            log("WARN", f"TheOddsAPI HTTP {r.status_code} : {r.text[:200]}")
+    except Exception as e:
+        log("ERROR", f"TheOddsAPI upcoming : {e}")
+    return []
+
+def _fetch_odds_api_sport(sport_key: str) -> list:
+    """
+    Fallback : requête ciblée sur un sport_key spécifique.
+    Utilisé seulement si upcoming ne contient pas le tournoi.
     """
     if not THE_ODDS_API_KEY:
         return []
@@ -419,10 +463,9 @@ def _fetch_odds_api(sport_key: str) -> list:
             f"{ODDS_API_BASE}/sports/{sport_key}/odds",
             params={
                 "apiKey":      THE_ODDS_API_KEY,
-                "regions":     "eu",          # bookmakers européens (Bet365 inclus)
+                "bookmakers":  "bet365",
                 "markets":     "h2h",
                 "oddsFormat":  "decimal",
-                "bookmakers":  "bet365",
             },
             timeout=10,
         )
@@ -432,74 +475,91 @@ def _fetch_odds_api(sport_key: str) -> list:
             data = r.json()
             cache_set(ck, data)
             return data
-        elif r.status_code == 401:
-            log("ERROR", "THE_ODDS_API_KEY invalide ou manquante")
         elif r.status_code == 422:
-            log("WARN", f"TheOddsAPI : sport_key '{sport_key}' hors-saison ou inconnu")
+            log("WARN", f"TheOddsAPI : '{sport_key}' hors-saison ou sport_key inconnu")
         else:
             log("WARN", f"TheOddsAPI HTTP {r.status_code} pour {sport_key}")
     except Exception as e:
         log("ERROR", f"TheOddsAPI {sport_key}: {e}")
     return []
 
+# Cache en mémoire pour les events upcoming (évite de re-filtrer à chaque match)
+_UPCOMING_EVENTS_CACHE: list | None = None
+
+def _get_all_tennis_events() -> list:
+    """Retourne les events tennis avec fallback sport_key si upcoming vide."""
+    global _UPCOMING_EVENTS_CACHE
+    if _UPCOMING_EVENTS_CACHE is not None:
+        return _UPCOMING_EVENTS_CACHE
+    _UPCOMING_EVENTS_CACHE = _fetch_odds_api_upcoming()
+    return _UPCOMING_EVENTS_CACHE
+
+def _find_in_events(events: list, player_a: str, player_b: str) -> dict | None:
+    """Cherche un match dans une liste d'events et retourne les cotes Bet365."""
+    for event in events:
+        h_team = event.get("home_team", "")
+        a_team = event.get("away_team", "")
+
+        pa_home = _names_match(h_team, player_a)
+        pa_away = _names_match(a_team, player_a)
+        pb_home = _names_match(h_team, player_b)
+        pb_away = _names_match(a_team, player_b)
+
+        if not ((pa_home and pb_away) or (pa_away and pb_home)):
+            continue
+
+        for bm in event.get("bookmakers", []):
+            if bm.get("key") != "bet365":
+                continue
+            for market in bm.get("markets", []):
+                if market.get("key") != "h2h":
+                    continue
+                outcomes = {o["name"]: o["price"] for o in market.get("outcomes", [])}
+                if pa_home:
+                    od_a = outcomes.get(h_team)
+                    od_b = outcomes.get(a_team)
+                else:
+                    od_a = outcomes.get(a_team)
+                    od_b = outcomes.get(h_team)
+                if od_a and od_b:
+                    return {
+                        "player_a_odds": round(float(od_a), 3),
+                        "player_b_odds": round(float(od_b), 3),
+                        "source":        "bet365",
+                        "sport_key":     event.get("sport_key", ""),
+                        "last_update":   bm.get("last_update", ""),
+                    }
+    return None
+
 def get_odds(player_a: str, player_b: str, date: str, tournament: str = "") -> dict | None:
     """
-    Récupère les cotes Bet365 via The Odds API pour un match donné.
+    Récupère les cotes Bet365 via The Odds API.
 
     Stratégie :
-    1. Détermine le sport_key à partir du nom de tournoi
-    2. Récupère tous les matchs du tournoi (1 requête, mis en cache)
-    3. Cherche le match par nom de joueur (avec normalisation + tolérance abréviations)
-    4. Retourne od1 (player_a) et od2 (player_b)
+    1. upcoming/odds — 1 requête pour TOUS les matchs tennis, mis en cache
+    2. Fallback : requête ciblée avec sport_key si le tournoi n'était pas dans upcoming
     """
     if not THE_ODDS_API_KEY:
         log("WARN", "THE_ODDS_API_KEY non définie — cotes ignorées")
         return None
 
+    # Étape 1 : chercher dans le cache upcoming
+    events = _get_all_tennis_events()
+    result = _find_in_events(events, player_a, player_b)
+    if result:
+        return result
+
+    # Étape 2 : fallback avec sport_key spécifique
     sport_key = _get_sport_key(tournament)
-    if not sport_key:
-        log("DEBUG", f"Pas de sport_key pour '{tournament}' — cotes ignorées")
-        return None
+    if sport_key:
+        fallback_events = _fetch_odds_api_sport(sport_key)
+        result = _find_in_events(fallback_events, player_a, player_b)
+        if result:
+            return result
+        log("DEBUG", f"Pas de cote Bet365 pour {player_a} vs {player_b} ({sport_key})")
+    else:
+        log("DEBUG", f"Pas de sport_key pour '{tournament}' et absent de upcoming")
 
-    events = _fetch_odds_api(sport_key)
-    if not events:
-        return None
-
-    for event in events:
-        h_team = event.get("home_team", "")
-        a_team = event.get("away_team", "")
-
-        # Matcher les deux joueurs indépendamment de l'ordre home/away
-        pa_matches_home = _names_match(h_team, player_a)
-        pa_matches_away = _names_match(a_team, player_a)
-        pb_matches_home = _names_match(h_team, player_b)
-        pb_matches_away = _names_match(a_team, player_b)
-
-        if (pa_matches_home and pb_matches_away) or (pa_matches_away and pb_matches_home):
-            # Trouver les cotes Bet365
-            for bm in event.get("bookmakers", []):
-                if bm.get("key") == "bet365":
-                    for market in bm.get("markets", []):
-                        if market.get("key") == "h2h":
-                            outcomes = {o["name"]: o["price"] for o in market.get("outcomes", [])}
-                            # Résoudre quel outcome correspond à player_a vs player_b
-                            if pa_matches_home:
-                                od_a = outcomes.get(h_team)
-                                od_b = outcomes.get(a_team)
-                            else:
-                                od_a = outcomes.get(a_team)
-                                od_b = outcomes.get(h_team)
-
-                            if od_a and od_b:
-                                return {
-                                    "player_a_odds": round(float(od_a), 3),
-                                    "player_b_odds": round(float(od_b), 3),
-                                    "source":        "bet365",
-                                    "sport_key":     sport_key,
-                                    "last_update":   bm.get("last_update", ""),
-                                }
-
-    log("DEBUG", f"Pas de cote Bet365 trouvée pour {player_a} vs {player_b} ({sport_key})")
     return None
 
 # ── Pipeline principal ────────────────────────────────────────────────────────
