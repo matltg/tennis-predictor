@@ -6,7 +6,7 @@ on:
     - cron: '0 10 * * *'   # 10h00 UTC (12h00 Paris) — refresh cotes + prédictions
   workflow_dispatch:
 
-  permissions:
+permissions:
   contents: write
 
 jobs:
