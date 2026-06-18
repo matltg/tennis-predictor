@@ -1,19 +1,23 @@
 """
 scripts/fetch_data.py
 Whitelist complète ATP 500+ / Masters 1000 / Grand Chelem + WTA équivalents
-Fix cotes : tentative dans les deux ordres (player_a/player_b et inversé)
+Cotes : The Odds API (the-odds-api.com) — Bet365 pré-match ATP/WTA 500+
 """
-import os, json, time, requests
+import os, json, time, re, unicodedata, requests
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY", "")
+RAPIDAPI_KEY    = os.getenv("RAPIDAPI_KEY", "")
+THE_ODDS_API_KEY = os.getenv("THE_ODDS_API_KEY", "")
+
 BASE    = "https://tennis-api-atp-wta-itf.p.rapidapi.com/tennis/v2"
 HEADERS = {
     "X-RapidAPI-Key":  RAPIDAPI_KEY,
     "X-RapidAPI-Host": "tennis-api-atp-wta-itf.p.rapidapi.com",
     "Content-Type":    "application/json"
 }
+
+ODDS_API_BASE = "https://api.the-odds-api.com/v4"
 
 Path("data").mkdir(exist_ok=True)
 CACHE_FILE = Path("data/api_cache.json")
@@ -308,80 +312,203 @@ def get_h2h(p1_id, p2_id, tour):
                         cache_key=cache_key, cache_hours=12)
     return result or {}
 
-# ── Cotes Bet365 ──────────────────────────────────────────────────────────────
+# ── Cotes Bet365 via The Odds API ─────────────────────────────────────────────
+#
+# Mapping : nom de tournoi (whitelist) → sport_key The Odds API
+# https://the-odds-api.com/sports/tennis-odds.html
+#
+TOURNAMENT_TO_SPORT_KEY = {
+    # Grand Chelem
+    "australian open":                       "tennis_atp_aus_open_singles",
+    "roland-garros":                         "tennis_atp_french_open",
+    "roland garros":                         "tennis_atp_french_open",
+    "the championships, wimbledon":          "tennis_atp_wimbledon",
+    "wimbledon":                             "tennis_atp_wimbledon",
+    "us open":                               "tennis_atp_us_open",
+    # ATP Masters 1000
+    "bnp paribas open":                      "tennis_atp_indian_wells",
+    "miami open":                            "tennis_atp_miami_open",
+    "rolex monte-carlo masters":             "tennis_atp_monte_carlo_masters",
+    "mutua madrid open":                     "tennis_atp_madrid_open",
+    "internazionali bnl d'italia":           "tennis_atp_italian_open",
+    "national bank open presented by rogers":"tennis_atp_canadian_open",
+    "national bank open":                    "tennis_atp_canadian_open",
+    "cincinnati open":                       "tennis_atp_cincinnati_open",
+    "western & southern open":               "tennis_atp_cincinnati_open",
+    "rolex shanghai masters":                "tennis_atp_shanghai_masters",
+    "rolex paris masters":                   "tennis_atp_paris_masters",
+    "paris masters":                         "tennis_atp_paris_masters",
+    # ATP 500
+    "qatar exxonmobil open":                 "tennis_atp_qatar_open",
+    "dubai duty free tennis championships":  "tennis_atp_dubai",
+    "barcelona open banc sabadell":          "tennis_atp_barcelona_open",
+    "bmw open by bitpanda":                  "tennis_atp_munich",
+    "bitpanda hamburg open":                 "tennis_atp_hamburg_open",
+    "hsbc championships":                    "tennis_atp_queens",
+    "terra wortmann open":                   "tennis_atp_halle",
+    "swiss indoors basel":                   "tennis_atp_swiss_indoors_basel",
+    "erste bank open":                       "tennis_atp_erste_bank_open",
+    "china open":                            "tennis_atp_china_open",
+    # WTA 1000 / 500 — The Odds API couvre les principaux
+    "porsche tennis grand prix":             "tennis_wta_stuttgart",
+    "wuhan open":                            "tennis_wta_wuhan_open",
+    "berlin tennis open":                    "tennis_wta_berlin",
+    "lexus nottingham open":                 "tennis_wta_nottingham",
+    "bad homburg open":                      "tennis_wta_bad_homburg",
+    "lexus eastbourne open":                 "tennis_wta_eastbourne",
+    "guadalajara open akron":                "tennis_wta_guadalajara",
+    "guadalajara open":                      "tennis_wta_guadalajara",
+    "toray pan pacific open":                "tennis_wta_pan_pacific_open",
+    # ATP/WTA Finals
+    "nitto atp finals":                      "tennis_atp_finals",
+    "atp finals":                            "tennis_atp_finals",
+    "wta finals":                            "tennis_wta_finals",
+}
 
-def _try_get_odds(pa, pb, date, inverted=False):
-    """Tente de récupérer les cotes pour un ordre donné de joueurs."""
-    global REQ_COUNT
+def _normalize_name(name: str) -> str:
+    """'Félix Auger-Aliassime' → 'felix auger aliassime'"""
+    n = unicodedata.normalize("NFD", name)
+    n = "".join(c for c in n if unicodedata.category(c) != "Mn")
+    n = n.lower()
+    n = re.sub(r"[^a-z\s]", " ", n)
+    return re.sub(r"\s+", " ", n).strip()
 
-    ck_event   = f"evid_{pa[:12]}_{pb[:12]}_{date}"
-    event_data = cache_get(ck_event, 24)
-    if event_data is None:
-        event_data = api_extend(
-            f"extend/api/event/get/{pa}/{pb}/{date}",
-            cache_key=ck_event, cache_hours=24
-        ) or {}
+def _names_match(api_name: str, fixture_name: str) -> bool:
+    """
+    Vérifie si deux noms de joueurs correspondent,
+    tolérant les abréviations (ex: 'A. Zverev' ↔ 'Alexander Zverev').
+    """
+    a = _normalize_name(api_name)
+    b = _normalize_name(fixture_name)
+    if a == b:
+        return True
+    a_parts = set(a.split())
+    b_parts = set(b.split())
+    # Le nom de famille doit matcher + au moins un autre token (prénom ou initiale)
+    common = a_parts & b_parts
+    return len(common) >= 2 or (
+        len(common) == 1 and len(a_parts) >= 2 and len(b_parts) >= 2
+        and max(len(p) for p in common) >= 4  # pas juste une initiale
+    )
 
-    if not event_data or not event_data.get("id"):
-        return None
+def _get_sport_key(tournament_name: str) -> str | None:
+    """Retourne le sport_key The Odds API pour un nom de tournoi."""
+    t = tournament_name.lower().strip()
+    # Recherche exacte d'abord
+    if t in TOURNAMENT_TO_SPORT_KEY:
+        return TOURNAMENT_TO_SPORT_KEY[t]
+    # Recherche partielle (substring)
+    for key, sport_key in TOURNAMENT_TO_SPORT_KEY.items():
+        if key in t or t in key:
+            return sport_key
+    return None
 
-    event_id  = event_data["id"]
-    ck_odds   = f"odds_{event_id}"
-    odds_data = cache_get(ck_odds, 2)
-    if odds_data is None:
-        odds_data = api_extend(
-            f"extend/api/odds/summary/{event_id}",
-            cache_key=ck_odds, cache_hours=2
-        ) or {}
-
-    if not odds_data:
-        return None
-
-    bet365  = odds_data.get("Bet365", {})
-    ftr     = bet365.get("Full Time Result", {})
-    start   = ftr.get("start", {}) or {}
-    kickoff = ftr.get("kickoff", {}) or {}
-
-    od1 = start.get("od1") or kickoff.get("od1")
-    od2 = start.get("od2") or kickoff.get("od2")
-    if not od1 or not od2:
-        return None
-
+def _fetch_odds_api(sport_key: str) -> list:
+    """
+    Appelle GET /v4/sports/{sport_key}/odds et retourne la liste brute.
+    Résultat mis en cache 30 min (les cotes ne bougent pas si vite).
+    """
+    if not THE_ODDS_API_KEY:
+        return []
+    ck = f"theoddsapi_{sport_key}"
+    cached = cache_get(ck, max_age_hours=0.5)
+    if cached is not None:
+        return cached
     try:
-        o1, o2 = float(od1), float(od2)
-        if o1 > 20 or o2 > 20:
-            return None
-        # Si ordre inversé, on remet les cotes dans le bon sens
-        # od1 = cote pa (qui est player_b dans l'ordre original)
-        # od2 = cote pb (qui est player_a dans l'ordre original)
-        if inverted:
-            o1, o2 = o2, o1
-        return {
-            "player_a_odds": o1,
-            "player_b_odds": o2,
-            "source":        "bet365",
-            "type":          "start" if start.get("od1") else "kickoff",
-        }
-    except:
+        r = requests.get(
+            f"{ODDS_API_BASE}/sports/{sport_key}/odds",
+            params={
+                "apiKey":      THE_ODDS_API_KEY,
+                "regions":     "eu",          # bookmakers européens (Bet365 inclus)
+                "markets":     "h2h",
+                "oddsFormat":  "decimal",
+                "bookmakers":  "bet365",
+            },
+            timeout=10,
+        )
+        remaining = r.headers.get("x-requests-remaining", "?")
+        log("DEBUG", f"TheOddsAPI [{sport_key}] → HTTP {r.status_code} | quota restant : {remaining}")
+        if r.status_code == 200:
+            data = r.json()
+            cache_set(ck, data)
+            return data
+        elif r.status_code == 401:
+            log("ERROR", "THE_ODDS_API_KEY invalide ou manquante")
+        elif r.status_code == 422:
+            log("WARN", f"TheOddsAPI : sport_key '{sport_key}' hors-saison ou inconnu")
+        else:
+            log("WARN", f"TheOddsAPI HTTP {r.status_code} pour {sport_key}")
+    except Exception as e:
+        log("ERROR", f"TheOddsAPI {sport_key}: {e}")
+    return []
+
+def get_odds(player_a: str, player_b: str, date: str, tournament: str = "") -> dict | None:
+    """
+    Récupère les cotes Bet365 via The Odds API pour un match donné.
+
+    Stratégie :
+    1. Détermine le sport_key à partir du nom de tournoi
+    2. Récupère tous les matchs du tournoi (1 requête, mis en cache)
+    3. Cherche le match par nom de joueur (avec normalisation + tolérance abréviations)
+    4. Retourne od1 (player_a) et od2 (player_b)
+    """
+    if not THE_ODDS_API_KEY:
+        log("WARN", "THE_ODDS_API_KEY non définie — cotes ignorées")
         return None
 
-def get_odds(player_a, player_b, date):
-    """Récupère les cotes Bet365 en testant les deux ordres de joueurs."""
-    # Essai 1 : ordre normal (player_a / player_b)
-    odds = _try_get_odds(player_a, player_b, date, inverted=False)
-    if odds:
-        return odds
+    sport_key = _get_sport_key(tournament)
+    if not sport_key:
+        log("DEBUG", f"Pas de sport_key pour '{tournament}' — cotes ignorées")
+        return None
 
-    # Essai 2 : ordre inversé (player_b / player_a)
-    log("INFO", f"  ↩️ Retry cotes ordre inversé : {player_b} / {player_a}")
-    odds = _try_get_odds(player_b, player_a, date, inverted=True)
-    return odds
+    events = _fetch_odds_api(sport_key)
+    if not events:
+        return None
+
+    for event in events:
+        h_team = event.get("home_team", "")
+        a_team = event.get("away_team", "")
+
+        # Matcher les deux joueurs indépendamment de l'ordre home/away
+        pa_matches_home = _names_match(h_team, player_a)
+        pa_matches_away = _names_match(a_team, player_a)
+        pb_matches_home = _names_match(h_team, player_b)
+        pb_matches_away = _names_match(a_team, player_b)
+
+        if (pa_matches_home and pb_matches_away) or (pa_matches_away and pb_matches_home):
+            # Trouver les cotes Bet365
+            for bm in event.get("bookmakers", []):
+                if bm.get("key") == "bet365":
+                    for market in bm.get("markets", []):
+                        if market.get("key") == "h2h":
+                            outcomes = {o["name"]: o["price"] for o in market.get("outcomes", [])}
+                            # Résoudre quel outcome correspond à player_a vs player_b
+                            if pa_matches_home:
+                                od_a = outcomes.get(h_team)
+                                od_b = outcomes.get(a_team)
+                            else:
+                                od_a = outcomes.get(a_team)
+                                od_b = outcomes.get(h_team)
+
+                            if od_a and od_b:
+                                return {
+                                    "player_a_odds": round(float(od_a), 3),
+                                    "player_b_odds": round(float(od_b), 3),
+                                    "source":        "bet365",
+                                    "sport_key":     sport_key,
+                                    "last_update":   bm.get("last_update", ""),
+                                }
+
+    log("DEBUG", f"Pas de cote Bet365 trouvée pour {player_a} vs {player_b} ({sport_key})")
+    return None
 
 # ── Pipeline principal ────────────────────────────────────────────────────────
 
 def run():
     global REQ_COUNT
     log("INFO", f"=== fetch_data.py === {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    if not THE_ODDS_API_KEY:
+        log("WARN", "⚠️  THE_ODDS_API_KEY non définie — les cotes Bet365 seront absentes")
 
     fixtures = get_fixtures()
     if not fixtures:
@@ -409,7 +536,7 @@ def run():
         f["player_b_data"] = players_done.get(p2_id, {})
         f["h2h"]           = get_h2h(p1_id, p2_id, tour)
 
-        odds = get_odds(pa, pb, f["date"])
+        odds = get_odds(pa, pb, f["date"], tournament=f.get("tournament", ""))
         f["odds"] = odds
         if odds:
             odds_ok += 1
