@@ -23,6 +23,9 @@
   --red:     #ff4757;
   --red2:    rgba(255,71,87,0.10);
   --orange:  #ffb300;
+  --orange2: rgba(255,179,0,0.10);
+  --blue:    #40c4ff;
+  --blue2:   rgba(64,196,255,0.10);
   --mono:    'SF Mono','Fira Code','Cascadia Code',monospace;
   --r:       8px;
 }
@@ -73,8 +76,13 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,12,16,0.96);backdrop-fil
 .sh-line{flex:1;height:1px;background:var(--border);}
 .sh-count{font-size:10px;color:var(--text3);font-family:var(--mono);}
 
+/* DATE SEPARATOR */
+.date-sep{display:flex;align-items:center;gap:10px;margin:20px 0 4px;}
+.date-sep-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);white-space:nowrap;padding:2px 8px;border-radius:4px;background:var(--bg3);border:1px solid var(--border);}
+.date-sep-line{flex:1;height:1px;background:var(--border);}
+
 /* TOURNAMENT HEADER */
-.tourn-head{display:flex;align-items:center;gap:10px;margin:28px 0 10px;cursor:pointer;user-select:none;}
+.tourn-head{display:flex;align-items:center;gap:10px;margin:16px 0 8px;cursor:pointer;user-select:none;}
 .tourn-head:hover .tourn-name{color:var(--accent);}
 .tourn-name{font-size:15px;font-weight:800;letter-spacing:-.2px;color:var(--accent);white-space:nowrap;transition:color .15s;}
 .tourn-line{flex:1;height:1px;background:var(--border);}
@@ -82,21 +90,30 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,12,16,0.96);backdrop-fil
 .tourn-count{font-size:10px;color:var(--text3);font-family:var(--mono);}
 .tourn-chevron{width:14px;height:14px;color:var(--text3);transition:transform .2s;flex-shrink:0;}
 .tourn-chevron.open{transform:rotate(180deg);}
-.tourn-body{overflow:hidden;transition:opacity .2s;}
 .tourn-body.collapsed{display:none;}
 
 /* MATCH CARD */
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:8px;overflow:hidden;transition:border-color .2s;}
-.card.ev-play{border-color:rgba(200,255,0,.22);}
-.card.ev-play:hover{border-color:rgba(200,255,0,.45);}
+.card.ev-play{border-color:rgba(200,255,0,.28);box-shadow:0 0 0 1px rgba(200,255,0,.06);}
+.card.ev-play:hover{border-color:rgba(200,255,0,.5);}
 .card:not(.ev-play):hover{border-color:var(--border2);}
 
+/* CONFIDENCE BANNER — barre colorée en haut de la carte selon confiance */
+.conf-bar{height:3px;width:100%;}
+.conf-1{background:var(--text3);}
+.conf-2{background:var(--orange);}
+.conf-3{background:var(--orange);}
+.conf-4{background:var(--accent);}
+.conf-5{background:var(--accent);box-shadow:0 0 8px rgba(200,255,0,.4);}
+
 /* Card header */
-.card-head{display:flex;align-items:flex-start;gap:10px;padding:13px 14px 10px;flex-wrap:wrap;}
+.card-head{display:flex;align-items:flex-start;gap:10px;padding:12px 14px 10px;flex-wrap:wrap;}
 .card-players{font-size:14px;font-weight:700;flex:1;letter-spacing:-.2px;}
 .card-players em{font-weight:400;font-style:normal;color:var(--text3);}
 .card-meta{font-size:11px;color:var(--text3);margin-top:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
 .surf-tag{display:inline-flex;align-items:center;gap:3px;font-size:10px;padding:2px 7px;border-radius:10px;background:var(--bg3);border:1px solid var(--border);color:var(--text3);}
+.time-tag{font-size:10px;font-weight:700;color:var(--text2);font-family:var(--mono);}
+.date-tomorrow{font-size:9px;background:var(--orange2);color:var(--orange);border-radius:3px;padding:1px 5px;font-weight:700;letter-spacing:.04em;}
 
 /* Badge EV */
 .ev-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;font-family:var(--mono);white-space:nowrap;flex-shrink:0;}
@@ -104,37 +121,55 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,12,16,0.96);backdrop-fil
 .ev-neg{background:var(--red2);color:var(--red);border:1px solid rgba(255,71,87,.2);}
 .ev-neu{background:var(--bg3);color:var(--text3);border:1px solid var(--border);}
 
-/* Stars */
-.stars{display:inline-flex;gap:2px;margin-left:4px;}
-.star{width:8px;height:8px;border-radius:50%;}
-.star.on{background:var(--accent);}
-.star.off{background:var(--bg4);}
+/* CONFIDENCE DISPLAY */
+.conf-display{display:flex;align-items:center;gap:6px;padding:6px 14px 0;}
+.conf-stars{display:inline-flex;gap:3px;}
+.conf-star{width:10px;height:10px;border-radius:50%;}
+.conf-star.on-5{background:var(--accent);box-shadow:0 0 4px rgba(200,255,0,.5);}
+.conf-star.on-4{background:var(--accent);}
+.conf-star.on-3{background:var(--orange);}
+.conf-star.on-2{background:var(--orange);opacity:.7;}
+.conf-star.on-1{background:var(--text3);}
+.conf-star.off{background:var(--bg4);}
+.conf-label{font-size:10px;color:var(--text3);font-family:var(--mono);}
+.conf-label.high{color:var(--accent);}
+.conf-label.med{color:var(--orange);}
+.conf-label.low{color:var(--text3);}
 
 /* Predictions grid */
-.pred-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);}
+.pred-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);margin-top:8px;}
 @media(max-width:480px){.pred-grid{grid-template-columns:1fr;}}
 .pred-cell{padding:10px 14px;border-right:1px solid var(--border);}
 .pred-cell:last-child{border-right:none;}
-.pred-label{font-size:9px;color:var(--text3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:6px;}
-.pred-main{font-size:15px;font-weight:700;font-family:var(--mono);letter-spacing:-.3px;}
-.pred-sub{font-size:10px;color:var(--text3);margin-top:2px;}
-.pred-rec{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-top:4px;font-family:var(--mono);}
-.rec-over{background:rgba(200,255,0,.12);color:var(--accent);}
-.rec-under{background:rgba(0,230,118,.10);color:var(--green);}
-.rec-2sets{background:rgba(200,255,0,.12);color:var(--accent);}
-.rec-3sets{background:rgba(255,179,0,.10);color:var(--orange);}
-.rec-neutral{background:var(--bg3);color:var(--text3);}
+.pred-label{font-size:9px;color:var(--text3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px;}
+.pred-main{font-size:16px;font-weight:700;font-family:var(--mono);letter-spacing:-.3px;line-height:1.2;}
+.pred-pct{font-size:11px;color:var(--text2);margin-top:2px;display:flex;align-items:center;gap:5px;}
+
+/* Pred recommendation pill */
+.pred-rec{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;margin-top:5px;font-family:var(--mono);}
+.rec-over{background:var(--accent2);color:var(--accent);border:1px solid rgba(200,255,0,.2);}
+.rec-under{background:var(--green2);color:var(--green);border:1px solid rgba(0,230,118,.2);}
+.rec-2sets{background:var(--accent2);color:var(--accent);border:1px solid rgba(200,255,0,.2);}
+.rec-3sets{background:var(--orange2);color:var(--orange);border:1px solid rgba(255,179,0,.2);}
+.rec-neutral{background:var(--bg3);color:var(--text3);border:1px solid var(--border);}
+
+/* Pred confidence mini stars */
+.mini-stars{display:inline-flex;gap:2px;vertical-align:middle;}
+.mini-star{width:6px;height:6px;border-radius:50%;}
+.mini-star.on{background:var(--accent);}
+.mini-star.on-orange{background:var(--orange);}
+.mini-star.off{background:var(--bg4);}
 
 /* Reason bar */
-.reason-bar{margin:0 14px 12px;padding:7px 10px;background:var(--bg3);border-radius:6px;font-size:11px;color:var(--text2);font-family:var(--mono);border-left:2px solid var(--accent2);}
+.reason-bar{margin:0 14px 10px;padding:6px 10px;background:var(--bg3);border-radius:6px;font-size:11px;color:var(--text2);font-family:var(--mono);border-left:2px solid var(--accent2);}
 .reason-bar.dim{border-left-color:var(--border);}
 
 /* Features toggle */
 .feat-toggle{font-size:10px;color:var(--text3);cursor:pointer;padding:6px 14px 10px;display:flex;align-items:center;gap:5px;border-top:1px solid var(--border);}
 .feat-toggle:hover{color:var(--text2);}
-.feat-panel{padding:10px 14px 12px;border-top:1px solid var(--border);background:var(--bg);display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+.feat-panel{padding:10px 14px 12px;border-top:1px solid var(--border);background:var(--bg);display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
 .fp-item{font-size:10px;}
-.fp-label{color:var(--text3);}
+.fp-label{color:var(--text3);margin-bottom:1px;}
 .fp-val{font-family:var(--mono);color:var(--text2);}
 
 /* Empty */
@@ -202,7 +237,42 @@ footer{border-top:1px solid var(--border);padding:12px 20px;font-size:10px;color
 <script>
 const $=id=>document.getElementById(id);
 const SURF={'Grass':'🌿 Gazon','Clay':'🟫 Terre','Hard':'⬛ Dur','I.hard':'⬛ Dur Indoor'};
-const STARS=n=>[...Array(5)].map((_,i)=>`<span class="star ${i<n?'on':'off'}"></span>`).join('');
+
+// Date helpers
+const TODAY = new Date().toISOString().slice(0,10);
+function friendlyDate(d){
+  if(!d) return '';
+  const dt = new Date(d+'T12:00:00');
+  return dt.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
+}
+function isToday(d){ return d===TODAY; }
+function isTomorrow(d){
+  const t=new Date(); t.setDate(t.getDate()+1);
+  return d===t.toISOString().slice(0,10);
+}
+
+// Confidence stars — couleur selon niveau
+function confStars(n, size=8){
+  const color = n>=4?'on-4 on-5':'on-3';
+  return [...Array(5)].map((_,i)=>`<span class="mini-star ${i<n?(n>=4?'on':'on-orange'):'off'}" style="width:${size}px;height:${size}px"></span>`).join('');
+}
+
+// Confidence label
+function confLabel(n){
+  if(n>=5) return {text:'Très élevée',cls:'high'};
+  if(n>=4) return {text:'Élevée',cls:'high'};
+  if(n>=3) return {text:'Moyenne',cls:'med'};
+  if(n>=2) return {text:'Faible',cls:'low'};
+  return {text:'Très faible',cls:'low'};
+}
+
+// Confidence bar color class
+function confBarClass(n){
+  if(n>=4) return 'conf-4';
+  if(n>=3) return 'conf-3';
+  if(n>=2) return 'conf-2';
+  return 'conf-1';
+}
 
 const now = new Date();
 $('navDate').textContent = now.toLocaleDateString('fr-FR',{weekday:'short',day:'numeric',month:'short'});
@@ -218,7 +288,7 @@ function loading(on){
   if(!on)prog(0);
 }
 function showInfo(){
-  toast('Pipeline automatique chaque nuit à 02h00 UTC · Sources : RapidAPI + TML-Database');
+  toast('Pipeline automatique chaque nuit à 04h00 UTC · Sources : RapidAPI + TML-Database + MCP');
 }
 
 async function load(){
@@ -253,51 +323,75 @@ function render(data){
     return;
   }
 
-  // Trier par heure d'abord, puis grouper par tournoi
+  // Trier : date d'abord, puis heure
   const sorted = [...matches].sort((a,b)=>{
+    const da = a.date||'9999';
+    const db = b.date||'9999';
+    if(da!==db) return da.localeCompare(db);
     const ta = a.time==='TBD'?'99:99':a.time;
     const tb = b.time==='TBD'?'99:99':b.time;
     return ta.localeCompare(tb);
   });
 
-  // Grouper par tournoi (ordre d'apparition après tri horaire)
-  const byTournament = [];
-  const seenTournaments = {};
+  // Grouper par date puis par tournoi
+  const byDate = {};
   for(const m of sorted){
-    const t = m.tournament||'Inconnu';
-    if(!(t in seenTournaments)){
-      seenTournaments[t] = byTournament.length;
-      byTournament.push({name:t, matches:[]});
-    }
-    byTournament[seenTournaments[t]].matches.push(m);
+    const d = m.date||'';
+    if(!byDate[d]) byDate[d]=[];
+    byDate[d].push(m);
   }
 
-  const html = byTournament.map((group, idx)=>{
-    const tid     = 'tourn_'+idx;
-    const evInGroup = group.matches.filter(m=>m.winner.ev_status==='play').length;
-    const evBadge = evInGroup>0
-      ? `<span style="font-size:10px;background:var(--accent2);color:var(--accent);border:1px solid rgba(200,255,0,.3);border-radius:10px;padding:1px 7px;font-family:var(--mono)">${evInGroup} EV+</span>`
-      : '';
-    const chevron = `<svg class="tourn-chevron open" id="chev_${tid}" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4.5l5 5 5-5"/></svg>`;
-    return `<div class="tourn-head" onclick="toggleTournament('${tid}')">
-        <span class="tourn-name">${group.name}</span>
+  let html = '';
+  let tournIdx = 0;
+
+  for(const [date, dayMatches] of Object.entries(byDate)){
+    const today   = isToday(date);
+    const tomorrow = isTomorrow(date);
+    const dayLabel = today ? 'Aujourd\'hui' : tomorrow ? 'Demain' : friendlyDate(date);
+
+    html += `<div class="date-sep">
+      <span class="date-sep-label">${dayLabel} · ${friendlyDate(date)}</span>
+      <div class="date-sep-line"></div>
+    </div>`;
+
+    // Grouper par tournoi dans ce jour
+    const byTourn = {};
+    const tournOrder = [];
+    for(const m of dayMatches){
+      const t = m.tournament||'Inconnu';
+      if(!byTourn[t]){ byTourn[t]=[]; tournOrder.push(t); }
+      byTourn[t].push(m);
+    }
+
+    for(const tournName of tournOrder){
+      const group = byTourn[tournName];
+      const tid   = 'tourn_'+tournIdx++;
+      const evInGroup = group.filter(m=>m.winner.ev_status==='play').length;
+      const evBadge = evInGroup>0
+        ? `<span style="font-size:10px;background:var(--accent2);color:var(--accent);border:1px solid rgba(200,255,0,.3);border-radius:10px;padding:1px 7px;font-family:var(--mono);font-weight:700">${evInGroup} EV+</span>`
+        : '';
+      const chevron = `<svg class="tourn-chevron open" id="chev_${tid}" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4.5l5 5 5-5"/></svg>`;
+
+      html += `<div class="tourn-head" onclick="toggleTournament('${tid}')">
+        <span class="tourn-name">${tournName}</span>
         <div class="tourn-line"></div>
         <div class="tourn-meta">
           ${evBadge}
-          <span class="tourn-count">${group.matches.length} match${group.matches.length>1?'s':''}</span>
+          <span class="tourn-count">${group.length} match${group.length>1?'s':''}</span>
           ${chevron}
         </div>
       </div>
       <div class="tourn-body" id="${tid}">
-        ${group.matches.map(m=>cardHTML(m, m.winner.ev_status==='play')).join('')}
+        ${group.map(m=>cardHTML(m, m.winner.ev_status==='play', tomorrow)).join('')}
       </div>`;
-  }).join('');
+    }
+  }
 
   $('evList').innerHTML = html;
   $('footStatus').textContent=`${ev.length} EV+ · ${data.summary.matches_with_odds||0} cotes · v${data.model_version}`;
 }
 
-function cardHTML(m, isEV){
+function cardHTML(m, isEV, isTomorrow){
   const w    = m.winner;
   const ou   = m.over_under;
   const sets = m.sets;
@@ -306,25 +400,36 @@ function cardHTML(m, isEV){
   const opp  = w.favorite==='player_a'?m.player_b:m.player_a;
   const prob = Math.round((w.favorite==='player_a'?w.prob_a:w.prob_b)*100);
   const surf = SURF[m.surface]||m.surface;
-  const conf = STARS(w.confidence||1);
+  const conf = w.confidence||1;
+  const cl   = confLabel(conf);
 
   // Badge EV
-  const sign      = w.edge_pct>0?'+':'';
+  const sign       = w.edge_pct>0?'+':'';
   const badgeClass = w.has_odds?(w.edge_pct>=5?'ev-pos':w.edge_pct<0?'ev-neg':'ev-neu'):'ev-neu';
   const badgeText  = w.has_odds?`${sign}${w.edge_pct?.toFixed(1)}% EV`:'cotes—';
 
-  // Over/Under
-  const ouRec   = ou.recommendation==='OVER'?'rec-over':ou.recommendation==='UNDER'?'rec-under':'rec-neutral';
-  const ouLabel = ou.recommendation==='OVER'?`Over ${ou.line}`:ou.recommendation==='UNDER'?`Under ${ou.line}`:`${ou.line} jeux`;
-  const ouProb  = ou.recommendation==='OVER'?Math.round(ou.prob_over*100):Math.round(ou.prob_under*100);
-  const ouConf  = STARS(ou.confidence||1);
+  // ── VAINQUEUR ──
+  const favName = fav.split(' ').pop();
+  const winStars = confStars(conf, 9);
 
-  // Sets
-  const setsRec  = sets.recommendation==='2 SETS'?'rec-2sets':sets.recommendation==='3 SETS'?'rec-3sets':'rec-neutral';
-  const setsProb = sets.recommendation==='2 SETS'?Math.round(sets.prob_2sets*100):Math.round(sets.prob_3sets*100);
-  const setsConf = STARS(sets.confidence||1);
+  // ── OVER/UNDER ──
+  // Affichage : "Over 20.5" ou "Under 20.5" avec % de confiance
+  const ouRec    = ou.recommendation;
+  const ouConf   = ou.confidence||1;
+  const ouProb   = ouRec==='OVER'?Math.round(ou.prob_over*100):Math.round(ou.prob_under*100);
+  const ouLine   = ou.line;
+  const ouLabel  = ouRec==='OVER'?`Over ${ouLine}`:ouRec==='UNDER'?`Under ${ouLine}`:`${ouLine} jeux`;
+  const ouClass  = ouRec==='OVER'?'rec-over':ouRec==='UNDER'?'rec-under':'rec-neutral';
+  const ouStars  = confStars(ouConf, 7);
 
-  // Features
+  // ── SETS ──
+  const setsRec  = sets.recommendation;
+  const setsConf = sets.confidence||1;
+  const setsProb = setsRec==='2 SETS'?Math.round(sets.prob_2sets*100):Math.round(sets.prob_3sets*100);
+  const setsClass = setsRec==='2 SETS'?'rec-2sets':setsRec==='3 SETS'?'rec-3sets':'rec-neutral';
+  const setsStars = confStars(setsConf, 7);
+
+  // ── FEATURES ──
   const featHTML = `
     <div class="feat-panel" id="feat_${m.id}" style="display:none">
       <div class="fp-item"><div class="fp-label">Elo global</div><div class="fp-val">${feat.elo_global_diff>0?'+':''}${feat.elo_global_diff}</div></div>
@@ -335,38 +440,62 @@ function cardHTML(m, isEV){
       <div class="fp-item"><div class="fp-label">Forme B</div><div class="fp-val">${feat.winrate_10_b!=null?feat.winrate_10_b+'%':'—'}</div></div>
       <div class="fp-item"><div class="fp-label">Surf% A</div><div class="fp-val">${feat.surf_winrate_a!=null?feat.surf_winrate_a+'%':'—'}</div></div>
       <div class="fp-item"><div class="fp-label">H2H</div><div class="fp-val">${feat.h2h_total>0?feat.h2h_wins_a+'/'+feat.h2h_total:'—'}</div></div>
+      <div class="fp-item"><div class="fp-label">BP saved A</div><div class="fp-val">${feat.bp_saved_a!=null?feat.bp_saved_a+'%':'—'}</div></div>
+      <div class="fp-item"><div class="fp-label">Market prob</div><div class="fp-val">${feat.market_prob_a!=null?Math.round(feat.market_prob_a*100)+'%':'—'}</div></div>
     </div>`;
 
+  const tomorrowTag = isTomorrow?`<span class="date-tomorrow">DEMAIN</span>`:'';
+
   return`<div class="card ${isEV?'ev-play':''}" id="card_${m.id}">
+    <div class="conf-bar ${confBarClass(conf)}"></div>
     <div class="card-head">
-      <div>
-        <div class="card-players">${fav} <em>vs</em> ${opp} <span class="stars">${conf}</span></div>
+      <div style="flex:1">
+        <div class="card-players">${fav} <em>vs</em> ${opp}</div>
         <div class="card-meta">
-          <span>${m.tournament}</span>·<span>${m.round}</span>·<span>${m.time}</span>
+          <span>${m.tournament}</span>·<span>${m.round}</span>·
+          <span class="time-tag">${m.time}</span>
+          ${tomorrowTag}
           <span class="surf-tag">${surf}</span>
         </div>
       </div>
       <span class="ev-badge ${badgeClass}">${badgeText}</span>
     </div>
 
+    <div class="conf-display">
+      ${winStars}
+      <span class="conf-label ${cl.cls}">${cl.text}</span>
+      <span class="conf-label" style="margin-left:4px;opacity:.5">${conf}/5</span>
+    </div>
+
     <div class="pred-grid">
       <div class="pred-cell">
         <div class="pred-label">Vainqueur</div>
-        <div class="pred-main" style="color:var(--accent)">${fav.split(' ').pop()} · ${prob}%</div>
-        <div class="pred-sub">${w.has_odds?`Bet365 ${w.market_odds} · juste ${w.fair_odds}`:'cote non disponible'}</div>
+        <div class="pred-main" style="color:var(--accent)">${favName} · ${prob}%</div>
+        <div class="pred-pct">
+          ${winStars}
+          <span style="color:var(--text3)">${w.has_odds?`Bet365 ${w.market_odds} · juste ${w.fair_odds}`:'cote non disponible'}</span>
+        </div>
         ${w.kelly_pct>0?`<span class="pred-rec rec-over">Stake ${w.kelly_pct}%</span>`:''}
       </div>
+
       <div class="pred-cell">
-        <div class="pred-label">Over/Under jeux</div>
-        <div class="pred-main">${ou.expected_games} jeux</div>
-        <div class="pred-sub">${ouProb}% <span class="stars">${ouConf}</span></div>
-        <span class="pred-rec ${ouRec}">${ouLabel}</span>
+        <div class="pred-label">Over / Under jeux</div>
+        <div class="pred-main" style="color:${ouRec==='OVER'?'var(--accent)':ouRec==='UNDER'?'var(--green)':'var(--text2)'}">${ouLabel}</div>
+        <div class="pred-pct">
+          ${ouStars}
+          <span style="color:var(--text3)">${ouProb}% de confiance</span>
+        </div>
+        <span class="pred-rec ${ouClass}">${ouRec==='NEUTRE'?'Neutre':ouLabel}</span>
       </div>
+
       <div class="pred-cell">
         <div class="pred-label">Nombre de sets</div>
-        <div class="pred-main">${sets.recommendation==='NEUTRE'?'Incertain':sets.recommendation}</div>
-        <div class="pred-sub">${setsProb}% <span class="stars">${setsConf}</span></div>
-        <span class="pred-rec ${setsRec}">${sets.recommendation}</span>
+        <div class="pred-main" style="color:${setsRec==='2 SETS'?'var(--accent)':setsRec==='3 SETS'?'var(--orange)':'var(--text2)'}">${setsRec==='NEUTRE'?'Incertain':setsRec}</div>
+        <div class="pred-pct">
+          ${setsStars}
+          <span style="color:var(--text3)">${setsProb}% de confiance</span>
+        </div>
+        <span class="pred-rec ${setsClass}">${setsRec==='NEUTRE'?'Neutre':setsRec}</span>
       </div>
     </div>
 
