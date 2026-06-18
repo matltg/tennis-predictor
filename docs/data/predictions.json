@@ -1,14 +1,128 @@
 {
-  "generated_at": "2026-06-17T19:35:08.172280",
-  "date": "2026-06-17",
-  "model_version": "2.0.0",
+  "generated_at": "2026-06-18T04:41:06.999467",
+  "date": "2026-06-18",
+  "model_version": "2.1.0",
   "summary": {
-    "matches_analysed": 17,
+    "matches_analysed": 22,
     "ev_plus_count": 0,
     "total_kelly_pct": 0.0,
-    "matches_with_odds": 1
+    "matches_with_odds": 0
   },
   "matches": [
+    {
+      "id": "2026-06-19_Alex_De_Minaur_Brandon_Nakashima",
+      "player_a": "Alex De Minaur",
+      "player_b": "Brandon Nakashima",
+      "favorite": "player_a",
+      "tournament": "HSBC Championships - London",
+      "tournament_rank": "Main tour",
+      "surface": "Grass",
+      "round": "1/4",
+      "time": "13:00",
+      "date": "2026-06-19",
+      "winner": {
+        "prob_a": 0.6149,
+        "prob_b": 0.3851,
+        "favorite": "player_a",
+        "confidence": 4,
+        "fair_odds": 1.63,
+        "market_odds": null,
+        "edge_pct": null,
+        "kelly_pct": 0.0,
+        "has_odds": false,
+        "ev_status": "skip",
+        "reason": "Elo grass +105 · Win rate surface +6.7%",
+        "market_prob": null
+      },
+      "over_under": {
+        "expected_games": 19.9,
+        "line": 20.0,
+        "prob_over": 0.492,
+        "prob_under": 0.508,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "sets": {
+        "prob_2sets": 0.67,
+        "prob_3sets": 0.33,
+        "recommendation": "2 SETS",
+        "confidence": 4
+      },
+      "features": {
+        "elo_global_diff": 165,
+        "elo_surface_diff": 105,
+        "hold_pct_a": 64.7,
+        "hold_pct_b": 67.3,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 69.4,
+        "surf_winrate_b": 62.7,
+        "h2h_total": 2,
+        "h2h_wins_a": 1,
+        "avg_games_a": null,
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 60.6,
+        "bp_saved_b": 65.4
+      }
+    },
+    {
+      "id": "2026-06-19_Arthur_Fery_Francisco_Cerundolo",
+      "player_a": "Arthur Fery",
+      "player_b": "Francisco Cerundolo",
+      "favorite": "player_b",
+      "tournament": "HSBC Championships - London",
+      "tournament_rank": "Main tour",
+      "surface": "Grass",
+      "round": "1/4",
+      "time": "13:00",
+      "date": "2026-06-19",
+      "winner": {
+        "prob_a": 0.4327,
+        "prob_b": 0.5673,
+        "favorite": "player_b",
+        "confidence": 4,
+        "fair_odds": 1.76,
+        "market_odds": null,
+        "edge_pct": null,
+        "kelly_pct": 0.0,
+        "has_odds": false,
+        "ev_status": "skip",
+        "reason": "Léger avantage Elo",
+        "market_prob": null
+      },
+      "over_under": {
+        "expected_games": 18.8,
+        "line": 19.0,
+        "prob_over": 0.484,
+        "prob_under": 0.516,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "sets": {
+        "prob_2sets": 0.7,
+        "prob_3sets": 0.3,
+        "recommendation": "2 SETS",
+        "confidence": 4
+      },
+      "features": {
+        "elo_global_diff": -217,
+        "elo_surface_diff": 4,
+        "hold_pct_a": 59.8,
+        "hold_pct_b": 61.8,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 48.8,
+        "surf_winrate_b": 50.0,
+        "h2h_total": 0,
+        "h2h_wins_a": 0,
+        "avg_games_a": null,
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 65.3,
+        "bp_saved_b": 61.7
+      }
+    },
     {
       "id": "2026-06-18_Tommy_Paul_Botic_Van_De_Zandschulp",
       "player_a": "Tommy Paul",
@@ -21,37 +135,38 @@
       "time": "17:00",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.6111,
-        "prob_b": 0.3889,
+        "prob_a": 0.6795,
+        "prob_b": 0.3205,
         "favorite": "player_a",
-        "confidence": 3,
-        "fair_odds": 1.64,
+        "confidence": 4,
+        "fair_odds": 1.47,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Elo grass +153 · Win rate surface +20.6%"
+        "reason": "Elo grass +153 · Win rate surface +20.6%",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 21.2,
-        "line": 21.0,
-        "prob_over": 0.5168,
-        "prob_under": 0.4832,
+        "expected_games": 18.8,
+        "line": 19.0,
+        "prob_over": 0.484,
+        "prob_under": 0.516,
         "recommendation": "NEUTRE",
-        "confidence": 2
+        "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.7988,
-        "prob_3sets": 0.2012,
+        "prob_2sets": 0.755,
+        "prob_3sets": 0.245,
         "recommendation": "2 SETS",
-        "confidence": 2
+        "confidence": 4
       },
       "features": {
         "elo_global_diff": 310,
         "elo_surface_diff": 153,
-        "hold_pct_a": 63.9,
-        "hold_pct_b": 62.7,
+        "hold_pct_a": 64.9,
+        "hold_pct_b": 56.1,
         "winrate_10_a": null,
         "winrate_10_b": null,
         "surf_winrate_a": 65.4,
@@ -59,7 +174,10 @@
         "h2h_total": 2,
         "h2h_wins_a": 0,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 63.7,
+        "bp_saved_b": 60.1
       }
     },
     {
@@ -74,37 +192,38 @@
       "time": "18:30",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.1824,
-        "prob_b": 0.8176,
+        "prob_a": 0.3471,
+        "prob_b": 0.6529,
         "favorite": "player_b",
-        "confidence": 3,
-        "fair_odds": 1.22,
+        "confidence": 4,
+        "fair_odds": 1.53,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Elo grass -131"
+        "reason": "Elo grass -131",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 20.1,
+        "expected_games": 19.8,
         "line": 20.0,
-        "prob_over": 0.5096,
-        "prob_under": 0.4904,
+        "prob_over": 0.484,
+        "prob_under": 0.516,
         "recommendation": "NEUTRE",
-        "confidence": 2
+        "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.7113,
-        "prob_3sets": 0.2887,
+        "prob_2sets": 0.7,
+        "prob_3sets": 0.3,
         "recommendation": "2 SETS",
-        "confidence": 2
+        "confidence": 4
       },
       "features": {
         "elo_global_diff": -258,
         "elo_surface_diff": -131,
-        "hold_pct_a": 61.7,
-        "hold_pct_b": 64.5,
+        "hold_pct_a": 59.8,
+        "hold_pct_b": 66.1,
         "winrate_10_a": null,
         "winrate_10_b": null,
         "surf_winrate_a": 58.0,
@@ -112,7 +231,10 @@
         "h2h_total": 0,
         "h2h_wins_a": 0,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 59.9,
+        "bp_saved_b": 63.8
       }
     },
     {
@@ -127,37 +249,38 @@
       "time": "14:30",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.1311,
-        "prob_b": 0.8689,
+        "prob_a": 0.291,
+        "prob_b": 0.709,
         "favorite": "player_b",
-        "confidence": 3,
-        "fair_odds": 1.15,
+        "confidence": 4,
+        "fair_odds": 1.41,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Elo grass -318 · Win rate surface -28.1%"
+        "reason": "Elo grass -318 · Win rate surface -28.1%",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 24.7,
-        "line": 24.5,
-        "prob_over": 0.5176,
-        "prob_under": 0.4824,
+        "expected_games": 19.9,
+        "line": 20.0,
+        "prob_over": 0.492,
+        "prob_under": 0.508,
         "recommendation": "NEUTRE",
-        "confidence": 2
+        "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.7063,
-        "prob_3sets": 0.2937,
+        "prob_2sets": 0.717,
+        "prob_3sets": 0.283,
         "recommendation": "2 SETS",
-        "confidence": 2
+        "confidence": 4
       },
       "features": {
         "elo_global_diff": -162,
         "elo_surface_diff": -318,
-        "hold_pct_a": 63.0,
-        "hold_pct_b": 67.2,
+        "hold_pct_a": 63.5,
+        "hold_pct_b": 69.5,
         "winrate_10_a": null,
         "winrate_10_b": null,
         "surf_winrate_a": 37.5,
@@ -165,7 +288,124 @@
         "h2h_total": 2,
         "h2h_wins_a": 0,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 58.8,
+        "bp_saved_b": 68.0
+      }
+    },
+    {
+      "id": "2026-06-19_Daniel_Altmaier_Daniil_Medvedev",
+      "player_a": "Daniel Altmaier",
+      "player_b": "Daniil Medvedev",
+      "favorite": "player_b",
+      "tournament": "Terra Wortmann Open - Halle",
+      "tournament_rank": "Main tour",
+      "surface": "Grass",
+      "round": "1/4",
+      "time": "14:30",
+      "date": "2026-06-19",
+      "winner": {
+        "prob_a": 0.2785,
+        "prob_b": 0.7215,
+        "favorite": "player_b",
+        "confidence": 4,
+        "fair_odds": 1.39,
+        "market_odds": null,
+        "edge_pct": null,
+        "kelly_pct": 0.0,
+        "has_odds": false,
+        "ev_status": "skip",
+        "reason": "Elo grass -281 · Win rate surface -32.0%",
+        "market_prob": null
+      },
+      "over_under": {
+        "expected_games": 19.5,
+        "line": 19.5,
+        "prob_over": 0.5,
+        "prob_under": 0.5,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "sets": {
+        "prob_2sets": 0.755,
+        "prob_3sets": 0.245,
+        "recommendation": "2 SETS",
+        "confidence": 4
+      },
+      "features": {
+        "elo_global_diff": -254,
+        "elo_surface_diff": -281,
+        "hold_pct_a": 62.3,
+        "hold_pct_b": 65.3,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 37.9,
+        "surf_winrate_b": 69.9,
+        "h2h_total": 2,
+        "h2h_wins_a": 0,
+        "avg_games_a": null,
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 60.4,
+        "bp_saved_b": 62.9
+      }
+    },
+    {
+      "id": "2026-06-19_Frances_Tiafoe_Felix_Auger_Aliassime",
+      "player_a": "Frances Tiafoe",
+      "player_b": "Felix Auger Aliassime",
+      "favorite": "player_a",
+      "tournament": "Terra Wortmann Open - Halle",
+      "tournament_rank": "Main tour",
+      "surface": "Grass",
+      "round": "1/4",
+      "time": "14:30",
+      "date": "2026-06-19",
+      "winner": {
+        "prob_a": 0.5798,
+        "prob_b": 0.4202,
+        "favorite": "player_a",
+        "confidence": 4,
+        "fair_odds": 1.72,
+        "market_odds": null,
+        "edge_pct": null,
+        "kelly_pct": 0.0,
+        "has_odds": false,
+        "ev_status": "skip",
+        "reason": "Elo grass +66 · H2H 0/3",
+        "market_prob": null
+      },
+      "over_under": {
+        "expected_games": 19.6,
+        "line": 19.5,
+        "prob_over": 0.508,
+        "prob_under": 0.492,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "sets": {
+        "prob_2sets": 0.728,
+        "prob_3sets": 0.272,
+        "recommendation": "2 SETS",
+        "confidence": 4
+      },
+      "features": {
+        "elo_global_diff": 173,
+        "elo_surface_diff": 66,
+        "hold_pct_a": 65.6,
+        "hold_pct_b": 65.9,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 59.0,
+        "surf_winrate_b": 63.3,
+        "h2h_total": 3,
+        "h2h_wins_a": 0,
+        "avg_games_a": null,
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 62.9,
+        "bp_saved_b": 63.2
       }
     },
     {
@@ -180,37 +420,38 @@
       "time": "16:00",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.5542,
-        "prob_b": 0.4458,
+        "prob_a": 0.6282,
+        "prob_b": 0.3718,
         "favorite": "player_a",
-        "confidence": 3,
-        "fair_odds": 1.8,
+        "confidence": 4,
+        "fair_odds": 1.59,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Elo grass +65"
+        "reason": "Elo grass +65",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 20.5,
-        "line": 20.5,
-        "prob_over": 0.5008,
-        "prob_under": 0.4992,
+        "expected_games": 19.6,
+        "line": 19.5,
+        "prob_over": 0.508,
+        "prob_under": 0.492,
         "recommendation": "NEUTRE",
-        "confidence": 2
+        "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.6975,
-        "prob_3sets": 0.3025,
+        "prob_2sets": 0.655,
+        "prob_3sets": 0.345,
         "recommendation": "2 SETS",
-        "confidence": 2
+        "confidence": 4
       },
       "features": {
         "elo_global_diff": 308,
         "elo_surface_diff": 65,
-        "hold_pct_a": 68.3,
-        "hold_pct_b": 63.3,
+        "hold_pct_a": 67.8,
+        "hold_pct_b": 61.7,
         "winrate_10_a": null,
         "winrate_10_b": null,
         "surf_winrate_a": 60.7,
@@ -218,7 +459,10 @@
         "h2h_total": 1,
         "h2h_wins_a": 1,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 68.8,
+        "bp_saved_b": 61.5
       }
     },
     {
@@ -233,37 +477,38 @@
       "time": "18:30",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.6152,
-        "prob_b": 0.3848,
+        "prob_a": 0.6955,
+        "prob_b": 0.3045,
         "favorite": "player_a",
-        "confidence": 3,
-        "fair_odds": 1.63,
+        "confidence": 4,
+        "fair_odds": 1.44,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Elo grass +217 · Win rate surface +16.7%"
+        "reason": "Elo grass +217 · Win rate surface +16.7%",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 23.7,
-        "line": 23.5,
-        "prob_over": 0.5184,
-        "prob_under": 0.4816,
+        "expected_games": 20.2,
+        "line": 20.0,
+        "prob_over": 0.516,
+        "prob_under": 0.484,
         "recommendation": "NEUTRE",
-        "confidence": 2
+        "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.665,
-        "prob_3sets": 0.335,
+        "prob_2sets": 0.655,
+        "prob_3sets": 0.345,
         "recommendation": "2 SETS",
-        "confidence": 2
+        "confidence": 4
       },
       "features": {
         "elo_global_diff": 256,
         "elo_surface_diff": 217,
-        "hold_pct_a": 66.5,
-        "hold_pct_b": 64.3,
+        "hold_pct_a": 68.6,
+        "hold_pct_b": 63.3,
         "winrate_10_a": null,
         "winrate_10_b": null,
         "surf_winrate_a": 66.7,
@@ -271,60 +516,10 @@
         "h2h_total": 1,
         "h2h_wins_a": 1,
         "avg_games_a": null,
-        "avg_games_b": null
-      }
-    },
-    {
-      "id": "2026-06-17_Talia_Gibson_Qinwen_Zheng",
-      "player_a": "Talia Gibson",
-      "player_b": "Qinwen Zheng",
-      "favorite": "player_b",
-      "tournament": "Lexus Nottingham Open - Nottingham",
-      "tournament_rank": "Main tour",
-      "surface": "Grass",
-      "round": "Second",
-      "time": "22:15",
-      "date": "2026-06-17",
-      "winner": {
-        "prob_a": 0.3876,
-        "prob_b": 0.6124,
-        "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.63,
-        "market_odds": 1.363,
-        "edge_pct": -12.13,
-        "kelly_pct": 0.0,
-        "has_odds": true,
-        "ev_status": "skip",
-        "reason": "Win rate surface +12.8%"
-      },
-      "over_under": {
-        "expected_games": 19.9,
-        "line": 20.0,
-        "prob_over": 0.4928,
-        "prob_under": 0.5072,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "sets": {
-        "prob_2sets": 0.505,
-        "prob_3sets": 0.495,
-        "recommendation": "NEUTRE",
-        "confidence": 1
-      },
-      "features": {
-        "elo_global_diff": 0,
-        "elo_surface_diff": 0,
-        "hold_pct_a": 59.6,
-        "hold_pct_b": 60.0,
-        "winrate_10_a": null,
-        "winrate_10_b": null,
-        "surf_winrate_a": 48.1,
-        "surf_winrate_b": 35.3,
-        "h2h_total": 1,
-        "h2h_wins_a": 1,
-        "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 65.3,
+        "bp_saved_b": 59.3
       }
     },
     {
@@ -339,37 +534,38 @@
       "time": "15:30",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.3077,
-        "prob_b": 0.6923,
+        "prob_a": 0.4776,
+        "prob_b": 0.5224,
         "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.44,
+        "confidence": 3,
+        "fair_odds": 1.91,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Win rate surface +6.8% · H2H 0/4"
+        "reason": "Win rate surface +6.8% · H2H 0/4",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 19.3,
+        "expected_games": 19.5,
         "line": 19.5,
-        "prob_over": 0.4836,
-        "prob_under": 0.5164,
+        "prob_over": 0.5,
+        "prob_under": 0.5,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.6406,
-        "prob_3sets": 0.3594,
+        "prob_2sets": 0.612,
+        "prob_3sets": 0.388,
         "recommendation": "2 SETS",
-        "confidence": 1
+        "confidence": 3
       },
       "features": {
         "elo_global_diff": -57,
         "elo_surface_diff": 18,
-        "hold_pct_a": 60.2,
-        "hold_pct_b": 61.5,
+        "hold_pct_a": 61.0,
+        "hold_pct_b": 62.6,
         "winrate_10_a": null,
         "winrate_10_b": null,
         "surf_winrate_a": 56.8,
@@ -377,7 +573,10 @@
         "h2h_total": 4,
         "h2h_wins_a": 0,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 62.8,
+        "bp_saved_b": 63.3
       }
     },
     {
@@ -392,37 +591,38 @@
       "time": "20:00",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.2695,
-        "prob_b": 0.7305,
+        "prob_a": 0.4157,
+        "prob_b": 0.5843,
         "favorite": "player_b",
-        "confidence": 2,
-        "fair_odds": 1.37,
+        "confidence": 3,
+        "fair_odds": 1.71,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Elo grass -70"
+        "reason": "Elo grass -70",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 21.2,
-        "line": 21.0,
-        "prob_over": 0.52,
-        "prob_under": 0.48,
+        "expected_games": 19.7,
+        "line": 19.5,
+        "prob_over": 0.516,
+        "prob_under": 0.484,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.6881,
-        "prob_3sets": 0.3119,
+        "prob_2sets": 0.688,
+        "prob_3sets": 0.312,
         "recommendation": "2 SETS",
-        "confidence": 1
+        "confidence": 4
       },
       "features": {
         "elo_global_diff": -133,
         "elo_surface_diff": -70,
-        "hold_pct_a": 64.4,
-        "hold_pct_b": 65.6,
+        "hold_pct_a": 65.9,
+        "hold_pct_b": 66.2,
         "winrate_10_a": null,
         "winrate_10_b": null,
         "surf_winrate_a": 58.8,
@@ -430,14 +630,17 @@
         "h2h_total": 1,
         "h2h_wins_a": 0,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 66.6,
+        "bp_saved_b": 63.6
       }
     },
     {
       "id": "2026-06-18_Raphael_Collignon_Mattia_Bellucci",
       "player_a": "Raphael Collignon",
       "player_b": "Mattia Bellucci",
-      "favorite": "player_b",
+      "favorite": "player_a",
       "tournament": "Terra Wortmann Open - Halle",
       "tournament_rank": "Main tour",
       "surface": "Grass",
@@ -445,37 +648,38 @@
       "time": "20:00",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.4069,
-        "prob_b": 0.5931,
-        "favorite": "player_b",
+        "prob_a": 0.5134,
+        "prob_b": 0.4866,
+        "favorite": "player_a",
         "confidence": 2,
-        "fair_odds": 1.69,
+        "fair_odds": 1.95,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Win rate surface +8.4%"
+        "reason": "Win rate surface +8.4%",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 19.8,
-        "line": 20.0,
-        "prob_over": 0.48,
-        "prob_under": 0.52,
+        "expected_games": 19.3,
+        "line": 19.5,
+        "prob_over": 0.484,
+        "prob_under": 0.516,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.6388,
-        "prob_3sets": 0.3612,
+        "prob_2sets": 0.609,
+        "prob_3sets": 0.391,
         "recommendation": "2 SETS",
-        "confidence": 1
+        "confidence": 3
       },
       "features": {
         "elo_global_diff": 54,
         "elo_surface_diff": -14,
-        "hold_pct_a": 63.2,
-        "hold_pct_b": 63.8,
+        "hold_pct_a": 62.5,
+        "hold_pct_b": 63.6,
         "winrate_10_a": null,
         "winrate_10_b": null,
         "surf_winrate_a": 66.7,
@@ -483,7 +687,10 @@
         "h2h_total": 2,
         "h2h_wins_a": 0,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 66.5,
+        "bp_saved_b": 66.2
       }
     },
     {
@@ -498,29 +705,30 @@
       "time": "14:00",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.3682,
-        "prob_b": 0.6318,
+        "prob_a": 0.4985,
+        "prob_b": 0.5015,
         "favorite": "player_b",
         "confidence": 2,
-        "fair_odds": 1.58,
+        "fair_odds": 1.99,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Win rate surface -7.6% · H2H 2/4"
+        "reason": "Win rate surface -7.6% · H2H 2/4",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 20.0,
-        "line": 20.0,
-        "prob_over": 0.5008,
-        "prob_under": 0.4992,
+        "expected_games": 18.6,
+        "line": 18.5,
+        "prob_over": 0.508,
+        "prob_under": 0.492,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.555,
-        "prob_3sets": 0.445,
+        "prob_2sets": 0.505,
+        "prob_3sets": 0.495,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
@@ -536,14 +744,74 @@
         "h2h_total": 4,
         "h2h_wins_a": 2,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 57.4,
+        "bp_saved_b": 54.3
+      }
+    },
+    {
+      "id": "2026-06-19_Aryna_Sabalenka_Nikola_Bartunkova",
+      "player_a": "Aryna Sabalenka",
+      "player_b": "Nikola Bartunkova",
+      "favorite": "player_b",
+      "tournament": "Berlin Tennis Open - Berlin",
+      "tournament_rank": "Main tour",
+      "surface": "Grass",
+      "round": "1/4",
+      "time": "14:00",
+      "date": "2026-06-19",
+      "winner": {
+        "prob_a": 0.4988,
+        "prob_b": 0.5012,
+        "favorite": "player_b",
+        "confidence": 2,
+        "fair_odds": 2.0,
+        "market_odds": null,
+        "edge_pct": null,
+        "kelly_pct": 0.0,
+        "has_odds": false,
+        "ev_status": "skip",
+        "reason": "Win rate surface -8.3%",
+        "market_prob": null
+      },
+      "over_under": {
+        "expected_games": 18.6,
+        "line": 18.5,
+        "prob_over": 0.508,
+        "prob_under": 0.492,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "sets": {
+        "prob_2sets": 0.5,
+        "prob_3sets": 0.5,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "features": {
+        "elo_global_diff": 0,
+        "elo_surface_diff": 0,
+        "hold_pct_a": 60.6,
+        "hold_pct_b": 57.2,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 66.7,
+        "surf_winrate_b": 75.0,
+        "h2h_total": 0,
+        "h2h_wins_a": 0,
+        "avg_games_a": null,
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 59.9,
+        "bp_saved_b": 55.1
       }
     },
     {
       "id": "2026-06-18_Elina_Svitolina_Eva_Lys",
       "player_a": "Elina Svitolina",
       "player_b": "Eva Lys",
-      "favorite": "player_b",
+      "favorite": "player_a",
       "tournament": "Berlin Tennis Open - Berlin",
       "tournament_rank": "Main tour",
       "surface": "Grass",
@@ -551,29 +819,30 @@
       "time": "15:30",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.3806,
-        "prob_b": 0.6194,
-        "favorite": "player_b",
+        "prob_a": 0.5022,
+        "prob_b": 0.4978,
+        "favorite": "player_a",
         "confidence": 2,
-        "fair_odds": 1.61,
+        "fair_odds": 1.99,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Léger avantage Elo"
+        "reason": "Léger avantage Elo",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 16.4,
-        "line": 16.5,
-        "prob_over": 0.496,
-        "prob_under": 0.504,
+        "expected_games": 18.1,
+        "line": 18.0,
+        "prob_over": 0.508,
+        "prob_under": 0.492,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.505,
-        "prob_3sets": 0.495,
+        "prob_2sets": 0.455,
+        "prob_3sets": 0.545,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
@@ -589,14 +858,17 @@
         "h2h_total": 1,
         "h2h_wins_a": 1,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 56.2,
+        "bp_saved_b": 51.7
       }
     },
     {
       "id": "2026-06-18_Madison_Keys_Karolina_Muchova",
       "player_a": "Madison Keys",
       "player_b": "Karolina Muchova",
-      "favorite": "player_b",
+      "favorite": "player_a",
       "tournament": "Berlin Tennis Open - Berlin",
       "tournament_rank": "Main tour",
       "surface": "Grass",
@@ -604,29 +876,30 @@
       "time": "18:30",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.3886,
-        "prob_b": 0.6114,
-        "favorite": "player_b",
+        "prob_a": 0.5039,
+        "prob_b": 0.4961,
+        "favorite": "player_a",
         "confidence": 2,
-        "fair_odds": 1.64,
+        "fair_odds": 1.98,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Win rate surface +13.1%"
+        "reason": "Win rate surface +13.1%",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 21.5,
-        "line": 21.5,
-        "prob_over": 0.5032,
-        "prob_under": 0.4968,
+        "expected_games": 18.8,
+        "line": 19.0,
+        "prob_over": 0.484,
+        "prob_under": 0.516,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.505,
-        "prob_3sets": 0.495,
+        "prob_2sets": 0.455,
+        "prob_3sets": 0.545,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
@@ -642,7 +915,10 @@
         "h2h_total": 2,
         "h2h_wins_a": 2,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 59.1,
+        "bp_saved_b": 58.4
       }
     },
     {
@@ -657,30 +933,31 @@
       "time": "20:30",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.3709,
-        "prob_b": 0.6291,
+        "prob_a": 0.498,
+        "prob_b": 0.502,
         "favorite": "player_b",
         "confidence": 2,
-        "fair_odds": 1.59,
+        "fair_odds": 1.99,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Léger avantage Elo"
+        "reason": "Léger avantage Elo",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 18.8,
-        "line": 19.0,
-        "prob_over": 0.4824,
-        "prob_under": 0.5176,
+        "expected_games": 18.5,
+        "line": 18.5,
+        "prob_over": 0.5,
+        "prob_under": 0.5,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.605,
-        "prob_3sets": 0.395,
-        "recommendation": "2 SETS",
+        "prob_2sets": 0.555,
+        "prob_3sets": 0.445,
+        "recommendation": "NEUTRE",
         "confidence": 1
       },
       "features": {
@@ -695,7 +972,67 @@
         "h2h_total": 1,
         "h2h_wins_a": 0,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 54.5,
+        "bp_saved_b": 60.2
+      }
+    },
+    {
+      "id": "2026-06-19_Jessica_Bouzas_Maneiro_Emma_Navarro",
+      "player_a": "Jessica Bouzas Maneiro",
+      "player_b": "Emma Navarro",
+      "favorite": "player_b",
+      "tournament": "Lexus Nottingham Open - Nottingham",
+      "tournament_rank": "Main tour",
+      "surface": "Grass",
+      "round": "1/4",
+      "time": "14:00",
+      "date": "2026-06-19",
+      "winner": {
+        "prob_a": 0.4978,
+        "prob_b": 0.5022,
+        "favorite": "player_b",
+        "confidence": 2,
+        "fair_odds": 1.99,
+        "market_odds": null,
+        "edge_pct": null,
+        "kelly_pct": 0.0,
+        "has_odds": false,
+        "ev_status": "skip",
+        "reason": "Win rate surface -5.1%",
+        "market_prob": null
+      },
+      "over_under": {
+        "expected_games": 18.1,
+        "line": 18.0,
+        "prob_over": 0.508,
+        "prob_under": 0.492,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "sets": {
+        "prob_2sets": 0.455,
+        "prob_3sets": 0.545,
+        "recommendation": "NEUTRE",
+        "confidence": 1
+      },
+      "features": {
+        "elo_global_diff": 0,
+        "elo_surface_diff": 0,
+        "hold_pct_a": 54.4,
+        "hold_pct_b": 57.0,
+        "winrate_10_a": null,
+        "winrate_10_b": null,
+        "surf_winrate_a": 62.5,
+        "surf_winrate_b": 67.6,
+        "h2h_total": 1,
+        "h2h_wins_a": 1,
+        "avg_games_a": null,
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 52.5,
+        "bp_saved_b": 55.5
       }
     },
     {
@@ -710,29 +1047,30 @@
       "time": "15:00",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.369,
-        "prob_b": 0.631,
+        "prob_a": 0.4984,
+        "prob_b": 0.5016,
         "favorite": "player_b",
         "confidence": 2,
-        "fair_odds": 1.58,
+        "fair_odds": 1.99,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Win rate surface -6.3%"
+        "reason": "Win rate surface -6.3%",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 18.5,
-        "line": 18.5,
-        "prob_over": 0.4976,
-        "prob_under": 0.5024,
+        "expected_games": 18.0,
+        "line": 18.0,
+        "prob_over": 0.5,
+        "prob_under": 0.5,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.55,
-        "prob_3sets": 0.45,
+        "prob_2sets": 0.5,
+        "prob_3sets": 0.5,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
@@ -748,14 +1086,17 @@
         "h2h_total": 0,
         "h2h_wins_a": 0,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 53.5,
+        "bp_saved_b": 53.0
       }
     },
     {
       "id": "2026-06-18_Karolina_Pliskova_Caty_McNally",
       "player_a": "Karolina Pliskova",
       "player_b": "Caty McNally",
-      "favorite": "player_b",
+      "favorite": "player_a",
       "tournament": "Lexus Nottingham Open - Nottingham",
       "tournament_rank": "Main tour",
       "surface": "Grass",
@@ -763,29 +1104,30 @@
       "time": "15:30",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.3745,
-        "prob_b": 0.6256,
-        "favorite": "player_b",
+        "prob_a": 0.5006,
+        "prob_b": 0.4994,
+        "favorite": "player_a",
         "confidence": 2,
-        "fair_odds": 1.6,
+        "fair_odds": 2.0,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Léger avantage Elo"
+        "reason": "Léger avantage Elo",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 18.7,
+        "expected_games": 18.5,
         "line": 18.5,
-        "prob_over": 0.5192,
-        "prob_under": 0.4808,
+        "prob_over": 0.5,
+        "prob_under": 0.5,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.505,
-        "prob_3sets": 0.495,
+        "prob_2sets": 0.455,
+        "prob_3sets": 0.545,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
@@ -801,14 +1143,17 @@
         "h2h_total": 1,
         "h2h_wins_a": 1,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 60.5,
+        "bp_saved_b": 54.5
       }
     },
     {
       "id": "2026-06-18_Marie_Bouzkova_Hannah_Klugman",
       "player_a": "Marie Bouzkova",
       "player_b": "Hannah Klugman",
-      "favorite": "player_b",
+      "favorite": "player_a",
       "tournament": "Lexus Nottingham Open - Nottingham",
       "tournament_rank": "Main tour",
       "surface": "Grass",
@@ -816,29 +1161,30 @@
       "time": "17:00",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.399,
-        "prob_b": 0.601,
-        "favorite": "player_b",
+        "prob_a": 0.5069,
+        "prob_b": 0.4931,
+        "favorite": "player_a",
         "confidence": 2,
-        "fair_odds": 1.66,
+        "fair_odds": 1.97,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Win rate surface +23.6%"
+        "reason": "Win rate surface +23.6%",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 18.9,
-        "line": 19.0,
-        "prob_over": 0.4952,
-        "prob_under": 0.5048,
+        "expected_games": 18.3,
+        "line": 18.5,
+        "prob_over": 0.484,
+        "prob_under": 0.516,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.55,
-        "prob_3sets": 0.45,
+        "prob_2sets": 0.5,
+        "prob_3sets": 0.5,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
@@ -854,7 +1200,10 @@
         "h2h_total": 0,
         "h2h_wins_a": 0,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 55.9,
+        "bp_saved_b": 54.2
       }
     },
     {
@@ -869,29 +1218,30 @@
       "time": "18:30",
       "date": "2026-06-18",
       "winner": {
-        "prob_a": 0.368,
-        "prob_b": 0.632,
+        "prob_a": 0.4982,
+        "prob_b": 0.5018,
         "favorite": "player_b",
         "confidence": 2,
-        "fair_odds": 1.58,
+        "fair_odds": 1.99,
         "market_odds": null,
         "edge_pct": null,
         "kelly_pct": 0.0,
         "has_odds": false,
         "ev_status": "skip",
-        "reason": "Win rate surface -8.0%"
+        "reason": "Win rate surface -8.0%",
+        "market_prob": null
       },
       "over_under": {
-        "expected_games": 18.7,
-        "line": 18.5,
-        "prob_over": 0.5192,
-        "prob_under": 0.4808,
+        "expected_games": 18.2,
+        "line": 18.0,
+        "prob_over": 0.516,
+        "prob_under": 0.484,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
       "sets": {
-        "prob_2sets": 0.55,
-        "prob_3sets": 0.45,
+        "prob_2sets": 0.5,
+        "prob_3sets": 0.5,
         "recommendation": "NEUTRE",
         "confidence": 1
       },
@@ -907,7 +1257,10 @@
         "h2h_total": 0,
         "h2h_wins_a": 0,
         "avg_games_a": null,
-        "avg_games_b": null
+        "avg_games_b": null,
+        "market_prob_a": null,
+        "bp_saved_a": 54.2,
+        "bp_saved_b": 52.9
       }
     }
   ]

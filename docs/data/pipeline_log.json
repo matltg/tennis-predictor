@@ -1,318 +1,408 @@
 {
-  "date": "2026-06-17T19:35:08.098840",
+  "date": "2026-06-18T04:41:06.913741",
   "steps": [
     {
-      "time": "19:34:00",
+      "time": "04:39:44",
       "level": "INFO",
-      "msg": "=== fetch_data.py === 2026-06-17 19:34"
+      "msg": "=== fetch_data.py === 2026-06-18 04:39"
     },
     {
-      "time": "19:34:01",
+      "time": "04:39:45",
       "level": "INFO",
-      "msg": "ATP 2026-06-17 → 0 matchs retenus (sur 251 vus)"
+      "msg": "ATP 2026-06-18 → 8 matchs retenus (sur 154 vus)"
     },
     {
-      "time": "19:34:02",
+      "time": "04:39:45",
       "level": "INFO",
-      "msg": "ATP 2026-06-18 → 8 matchs retenus (sur 45 vus)"
+      "msg": "ATP 2026-06-19 → 4 matchs retenus (sur 4 vus)"
     },
     {
-      "time": "19:34:03",
+      "time": "04:39:46",
       "level": "INFO",
-      "msg": "WTA 2026-06-17 → 1 matchs retenus (sur 211 vus)"
+      "msg": "WTA 2026-06-18 → 8 matchs retenus (sur 142 vus)"
     },
     {
-      "time": "19:34:03",
+      "time": "04:39:47",
       "level": "INFO",
-      "msg": "WTA 2026-06-18 → 8 matchs retenus (sur 40 vus)"
+      "msg": "WTA 2026-06-19 → 2 matchs retenus (sur 2 vus)"
     },
     {
-      "time": "19:34:03",
+      "time": "04:39:47",
       "level": "DEBUG",
       "msg": "Exclus : ['Asuncion Challenger', 'Dublin Challenger', 'Internazionali Femminili - Brescia', 'Ladies Open - Figueira da Foz', 'M15 Bourg-en-Bresse', 'M15 Constanta', 'M15 Gyula', 'M15 Irvine', 'M15 Kayseri', 'M15 Kursumlijska Banja', 'M15 Maanshan', 'M15 Monastir', 'M15 Mungia-Laukariz', 'M15 Saarlouis', 'M15 Tokyo', 'M25 Klosters', 'M25 Lourinha', 'M25 Milano', 'M25 Samobor', 'M25 Tulsa', 'Nottingham 2 Challenger', 'Parma Challenger', 'Poznan Challenger', 'Royan Challenger', 'W15 Bucharest', 'W15 Dinard', 'W15 Irvine', 'W15 Kayseri', 'W15 Kursumlijska Banja', 'W15 Luque', 'W15 Monastir', 'W15 Sapporo', 'W35 Bolszewo', 'W35 Klosters', 'W35 Mohammedia', 'W35 San Gregorio', 'W35 Taipei', 'W35 Tauste', 'W35 Ystad', 'W35 Zhengzhou', 'W50 Haskovo', 'W75 Blois']"
     },
     {
-      "time": "19:34:03",
+      "time": "04:39:47",
       "level": "INFO",
-      "msg": "✅ 17 matchs retenus / 497 analysés"
+      "msg": "✅ 22 matchs retenus / 279 analysés"
     },
     {
-      "time": "19:34:03",
+      "time": "04:39:47",
       "level": "INFO",
-      "msg": "[1/17] Corentin Moutet vs Alejandro Davidovich Fokina · HSBC Championships - London · 15:30"
+      "msg": "[1/22] Alex De Minaur vs Brandon Nakashima · HSBC Championships - London · 13:00"
     },
     {
-      "time": "19:34:07",
+      "time": "04:39:50",
+      "level": "INFO",
+      "msg": "  ↩️ Retry cotes ordre inversé : Brandon Nakashima / Alex De Minaur"
+    },
+    {
+      "time": "04:39:50",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "04:39:50",
+      "level": "INFO",
+      "msg": "[2/22] Arthur Fery vs Francisco Cerundolo · HSBC Championships - London · 13:00"
+    },
+    {
+      "time": "04:39:53",
+      "level": "WARN",
+      "msg": "HTTP 500 → atp/h2h/stats/79065/52279"
+    },
+    {
+      "time": "04:39:53",
+      "level": "INFO",
+      "msg": "  ↩️ Retry cotes ordre inversé : Francisco Cerundolo / Arthur Fery"
+    },
+    {
+      "time": "04:39:54",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "04:39:54",
+      "level": "INFO",
+      "msg": "[3/22] Corentin Moutet vs Alejandro Davidovich Fokina · HSBC Championships - London · 15:30"
+    },
+    {
+      "time": "04:39:57",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Alejandro Davidovich Fokina / Corentin Moutet"
     },
     {
-      "time": "19:34:07",
+      "time": "04:39:58",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:07",
+      "time": "04:39:58",
       "level": "INFO",
-      "msg": "[2/17] Tommy Paul vs Botic Van De Zandschulp · HSBC Championships - London · 17:00"
+      "msg": "[4/22] Tommy Paul vs Botic Van De Zandschulp · HSBC Championships - London · 17:00"
     },
     {
-      "time": "19:34:10",
+      "time": "04:40:01",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Botic Van De Zandschulp / Tommy Paul"
     },
     {
-      "time": "19:34:12",
+      "time": "04:40:02",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:12",
+      "time": "04:40:02",
       "level": "INFO",
-      "msg": "[3/17] Rinky Hijikata vs Jiri Lehecka · HSBC Championships - London · 18:30"
+      "msg": "[5/22] Rinky Hijikata vs Jiri Lehecka · HSBC Championships - London · 18:30"
     },
     {
-      "time": "19:34:14",
+      "time": "04:40:04",
       "level": "WARN",
       "msg": "HTTP 500 → atp/h2h/stats/58149/61838"
     },
     {
-      "time": "19:34:14",
+      "time": "04:40:05",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Jiri Lehecka / Rinky Hijikata"
     },
     {
-      "time": "19:34:16",
+      "time": "04:40:05",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:16",
+      "time": "04:40:05",
       "level": "INFO",
-      "msg": "[4/17] Hamad Medjedovic vs Ugo Humbert · HSBC Championships - London · 20:00"
+      "msg": "[6/22] Hamad Medjedovic vs Ugo Humbert · HSBC Championships - London · 20:00"
     },
     {
-      "time": "19:34:18",
+      "time": "04:40:08",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Ugo Humbert / Hamad Medjedovic"
     },
     {
-      "time": "19:34:19",
+      "time": "04:40:09",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:19",
+      "time": "04:40:09",
       "level": "INFO",
-      "msg": "[5/17] Fabian Marozsan vs Taylor Fritz · Terra Wortmann Open - Halle · 14:30"
+      "msg": "[7/22] Fabian Marozsan vs Taylor Fritz · Terra Wortmann Open - Halle · 14:30"
     },
     {
-      "time": "19:34:22",
+      "time": "04:40:12",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Taylor Fritz / Fabian Marozsan"
     },
     {
-      "time": "19:34:22",
+      "time": "04:40:12",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:22",
+      "time": "04:40:12",
       "level": "INFO",
-      "msg": "[6/17] Ben Shelton vs Ethan Quinn · Terra Wortmann Open - Halle · 16:00"
+      "msg": "[8/22] Daniel Altmaier vs Daniil Medvedev · Terra Wortmann Open - Halle · 14:30"
     },
     {
-      "time": "19:34:26",
+      "time": "04:40:15",
+      "level": "INFO",
+      "msg": "  ↩️ Retry cotes ordre inversé : Daniil Medvedev / Daniel Altmaier"
+    },
+    {
+      "time": "04:40:16",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "04:40:16",
+      "level": "INFO",
+      "msg": "[9/22] Frances Tiafoe vs Felix Auger Aliassime · Terra Wortmann Open - Halle · 14:30"
+    },
+    {
+      "time": "04:40:19",
+      "level": "INFO",
+      "msg": "  ↩️ Retry cotes ordre inversé : Felix Auger Aliassime / Frances Tiafoe"
+    },
+    {
+      "time": "04:40:20",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "04:40:20",
+      "level": "INFO",
+      "msg": "[10/22] Ben Shelton vs Ethan Quinn · Terra Wortmann Open - Halle · 16:00"
+    },
+    {
+      "time": "04:40:23",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Ethan Quinn / Ben Shelton"
     },
     {
-      "time": "19:34:26",
+      "time": "04:40:23",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:26",
+      "time": "04:40:23",
       "level": "INFO",
-      "msg": "[7/17] Alexander Zverev vs Yannick Hanfmann · Terra Wortmann Open - Halle · 18:30"
+      "msg": "[11/22] Alexander Zverev vs Yannick Hanfmann · Terra Wortmann Open - Halle · 18:30"
     },
     {
-      "time": "19:34:29",
+      "time": "04:40:27",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Yannick Hanfmann / Alexander Zverev"
     },
     {
-      "time": "19:34:30",
+      "time": "04:40:27",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:30",
+      "time": "04:40:27",
       "level": "INFO",
-      "msg": "[8/17] Raphael Collignon vs Mattia Bellucci · Terra Wortmann Open - Halle · 20:00"
+      "msg": "[12/22] Raphael Collignon vs Mattia Bellucci · Terra Wortmann Open - Halle · 20:00"
     },
     {
-      "time": "19:34:33",
+      "time": "04:40:30",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Mattia Bellucci / Raphael Collignon"
     },
     {
-      "time": "19:34:34",
+      "time": "04:40:31",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:34",
+      "time": "04:40:31",
       "level": "INFO",
-      "msg": "[9/17] Linda Noskova vs Diane Parry · Berlin Tennis Open - Berlin · 14:00"
+      "msg": "[13/22] Linda Noskova vs Diane Parry · Berlin Tennis Open - Berlin · 14:00"
     },
     {
-      "time": "19:34:37",
+      "time": "04:40:34",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Diane Parry / Linda Noskova"
     },
     {
-      "time": "19:34:38",
+      "time": "04:40:34",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:38",
+      "time": "04:40:34",
       "level": "INFO",
-      "msg": "[10/17] Elina Svitolina vs Eva Lys · Berlin Tennis Open - Berlin · 15:30"
+      "msg": "[14/22] Aryna Sabalenka vs Nikola Bartunkova · Berlin Tennis Open - Berlin · 14:00"
     },
     {
-      "time": "19:34:41",
+      "time": "04:40:37",
+      "level": "WARN",
+      "msg": "HTTP 500 → wta/h2h/stats/18455/71092"
+    },
+    {
+      "time": "04:40:37",
+      "level": "INFO",
+      "msg": "  ↩️ Retry cotes ordre inversé : Nikola Bartunkova / Aryna Sabalenka"
+    },
+    {
+      "time": "04:40:38",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "04:40:38",
+      "level": "INFO",
+      "msg": "[15/22] Elina Svitolina vs Eva Lys · Berlin Tennis Open - Berlin · 15:30"
+    },
+    {
+      "time": "04:40:41",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Eva Lys / Elina Svitolina"
     },
     {
-      "time": "19:34:42",
+      "time": "04:40:42",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:42",
+      "time": "04:40:42",
       "level": "INFO",
-      "msg": "[11/17] Madison Keys vs Karolina Muchova · Berlin Tennis Open - Berlin · 18:30"
+      "msg": "[16/22] Madison Keys vs Karolina Muchova · Berlin Tennis Open - Berlin · 18:30"
     },
     {
-      "time": "19:34:45",
+      "time": "04:40:44",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Karolina Muchova / Madison Keys"
     },
     {
-      "time": "19:34:46",
+      "time": "04:40:45",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:46",
+      "time": "04:40:45",
       "level": "INFO",
-      "msg": "[12/17] Alexandra Eala vs Elena Rybakina · Berlin Tennis Open - Berlin · 20:30"
+      "msg": "[17/22] Alexandra Eala vs Elena Rybakina · Berlin Tennis Open - Berlin · 20:30"
     },
     {
-      "time": "19:34:49",
+      "time": "04:40:48",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Elena Rybakina / Alexandra Eala"
     },
     {
-      "time": "19:34:50",
+      "time": "04:40:49",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:50",
+      "time": "04:40:49",
       "level": "INFO",
-      "msg": "[13/17] Viktorija Golubic vs Zeynep Sonmez · Lexus Nottingham Open - Nottingham · 15:00"
+      "msg": "[18/22] Jessica Bouzas Maneiro vs Emma Navarro · Lexus Nottingham Open - Nottingham · 14:00"
     },
     {
-      "time": "19:34:52",
+      "time": "04:40:51",
+      "level": "INFO",
+      "msg": "  ↩️ Retry cotes ordre inversé : Emma Navarro / Jessica Bouzas Maneiro"
+    },
+    {
+      "time": "04:40:52",
+      "level": "INFO",
+      "msg": "  ⚠️ Pas de cotes Bet365"
+    },
+    {
+      "time": "04:40:52",
+      "level": "INFO",
+      "msg": "[19/22] Viktorija Golubic vs Zeynep Sonmez · Lexus Nottingham Open - Nottingham · 15:00"
+    },
+    {
+      "time": "04:40:54",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/10749/49991"
     },
     {
-      "time": "19:34:52",
+      "time": "04:40:55",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Zeynep Sonmez / Viktorija Golubic"
     },
     {
-      "time": "19:34:53",
+      "time": "04:40:56",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:53",
+      "time": "04:40:56",
       "level": "INFO",
-      "msg": "[14/17] Karolina Pliskova vs Caty McNally · Lexus Nottingham Open - Nottingham · 15:30"
+      "msg": "[20/22] Karolina Pliskova vs Caty McNally · Lexus Nottingham Open - Nottingham · 15:30"
     },
     {
-      "time": "19:34:56",
+      "time": "04:40:58",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Caty McNally / Karolina Pliskova"
     },
     {
-      "time": "19:34:57",
+      "time": "04:40:59",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:34:57",
+      "time": "04:40:59",
       "level": "INFO",
-      "msg": "[15/17] Marie Bouzkova vs Hannah Klugman · Lexus Nottingham Open - Nottingham · 17:00"
+      "msg": "[21/22] Marie Bouzkova vs Hannah Klugman · Lexus Nottingham Open - Nottingham · 17:00"
     },
     {
-      "time": "19:34:59",
+      "time": "04:41:01",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/24572/80418"
     },
     {
-      "time": "19:35:00",
+      "time": "04:41:02",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Hannah Klugman / Marie Bouzkova"
     },
     {
-      "time": "19:35:01",
+      "time": "04:41:03",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:35:01",
+      "time": "04:41:03",
       "level": "INFO",
-      "msg": "[16/17] Ann Li vs Taylah Preston · Lexus Nottingham Open - Nottingham · 18:30"
+      "msg": "[22/22] Ann Li vs Taylah Preston · Lexus Nottingham Open - Nottingham · 18:30"
     },
     {
-      "time": "19:35:03",
+      "time": "04:41:05",
       "level": "WARN",
       "msg": "HTTP 500 → wta/h2h/stats/45866/70326"
     },
     {
-      "time": "19:35:04",
+      "time": "04:41:06",
       "level": "INFO",
       "msg": "  ↩️ Retry cotes ordre inversé : Taylah Preston / Ann Li"
     },
     {
-      "time": "19:35:05",
+      "time": "04:41:06",
       "level": "INFO",
       "msg": "  ⚠️ Pas de cotes Bet365"
     },
     {
-      "time": "19:35:05",
+      "time": "04:41:06",
       "level": "INFO",
-      "msg": "[17/17] Talia Gibson vs Qinwen Zheng · Lexus Nottingham Open - Nottingham · 22:15"
-    },
-    {
-      "time": "19:35:08",
-      "level": "INFO",
-      "msg": "  ✅ Bet365 Talia Gibson 3.2 / Qinwen Zheng 1.363"
-    },
-    {
-      "time": "19:35:08",
-      "level": "INFO",
-      "msg": "=== Terminé : 17 matchs · 1 cotes · 189 requêtes ==="
+      "msg": "=== Terminé : 22 matchs · 0 cotes · 248 requêtes ==="
     }
   ],
-  "requests_used": 189,
-  "fixtures_count": 17,
-  "odds_available": 1
+  "requests_used": 248,
+  "fixtures_count": 22,
+  "odds_available": 0
 }
