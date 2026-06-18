@@ -6,6 +6,9 @@ on:
     - cron: '0 10 * * *'   # 10h00 UTC (12h00 Paris) — refresh cotes + prédictions
   workflow_dispatch:
 
+  permissions:
+  contents: write
+
 jobs:
   predict:
     runs-on: ubuntu-latest
