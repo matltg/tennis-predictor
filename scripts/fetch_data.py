@@ -421,7 +421,7 @@ def _fetch_odds_api_upcoming() -> list:
             f"{ODDS_API_BASE}/sports/upcoming/odds",
             params={
                 "apiKey":      THE_ODDS_API_KEY,
-                "bookmakers":  "bet365",   # bookmakers prend priorité sur regions
+                "regions":     "eu,uk",    # tous bookmakers EU+UK (Bet365, Unibet, Pinnacle…)
                 "markets":     "h2h",
                 "oddsFormat":  "decimal",
             },
@@ -432,9 +432,9 @@ def _fetch_odds_api_upcoming() -> list:
         log("INFO", f"TheOddsAPI upcoming → HTTP {r.status_code} | quota : {used} used / {remaining} remaining")
         if r.status_code == 200:
             data = r.json()
-            # Filtrer uniquement le tennis pour réduire la taille du cache
             tennis = [e for e in data if e.get("sport_key", "").startswith("tennis_")]
-            log("INFO", f"TheOddsAPI : {len(tennis)} matchs tennis Bet365 disponibles")
+            bm_names = sorted({bm["title"] for e in tennis for bm in e.get("bookmakers", [])})
+            log("INFO", f"TheOddsAPI : {len(tennis)} matchs tennis | bookmakers : {', '.join(bm_names) or 'aucun'}")
             cache_set(ck, tennis)
             return tennis
         elif r.status_code == 401:
@@ -463,7 +463,7 @@ def _fetch_odds_api_sport(sport_key: str) -> list:
             f"{ODDS_API_BASE}/sports/{sport_key}/odds",
             params={
                 "apiKey":      THE_ODDS_API_KEY,
-                "bookmakers":  "bet365",
+                "regions":     "eu,uk",
                 "markets":     "h2h",
                 "oddsFormat":  "decimal",
             },
@@ -494,8 +494,11 @@ def _get_all_tennis_events() -> list:
     _UPCOMING_EVENTS_CACHE = _fetch_odds_api_upcoming()
     return _UPCOMING_EVENTS_CACHE
 
+# Bookmakers préférés dans l'ordre de priorité (le premier disponible est utilisé)
+BOOKMAKER_PRIORITY = ["bet365", "unibet", "pinnacle", "betfair_ex_eu", "william_hill", "betway", "bwin", "marathonbet"]
+
 def _find_in_events(events: list, player_a: str, player_b: str) -> dict | None:
-    """Cherche un match dans une liste d'events et retourne les cotes Bet365."""
+    """Cherche un match dans une liste d'events et retourne les cotes du meilleur bookmaker dispo."""
     for event in events:
         h_team = event.get("home_team", "")
         a_team = event.get("away_team", "")
@@ -508,9 +511,13 @@ def _find_in_events(events: list, player_a: str, player_b: str) -> dict | None:
         if not ((pa_home and pb_away) or (pa_away and pb_home)):
             continue
 
-        for bm in event.get("bookmakers", []):
-            if bm.get("key") != "bet365":
-                continue
+        bookmakers = event.get("bookmakers", [])
+        # Trier par priorité, garder les autres en fallback
+        bm_by_key = {bm["key"]: bm for bm in bookmakers}
+        ordered = [bm_by_key[k] for k in BOOKMAKER_PRIORITY if k in bm_by_key]
+        ordered += [bm for bm in bookmakers if bm["key"] not in BOOKMAKER_PRIORITY]
+
+        for bm in ordered:
             for market in bm.get("markets", []):
                 if market.get("key") != "h2h":
                     continue
@@ -525,7 +532,7 @@ def _find_in_events(events: list, player_a: str, player_b: str) -> dict | None:
                     return {
                         "player_a_odds": round(float(od_a), 3),
                         "player_b_odds": round(float(od_b), 3),
-                        "source":        "bet365",
+                        "source":        bm.get("title", bm.get("key", "?")),
                         "sport_key":     event.get("sport_key", ""),
                         "last_update":   bm.get("last_update", ""),
                     }
@@ -556,9 +563,9 @@ def get_odds(player_a: str, player_b: str, date: str, tournament: str = "") -> d
         result = _find_in_events(fallback_events, player_a, player_b)
         if result:
             return result
-        log("DEBUG", f"Pas de cote Bet365 pour {player_a} vs {player_b} ({sport_key})")
+        log("DEBUG", f"Pas de cote trouvée pour {player_a} vs {player_b} ({sport_key})")
     else:
-        log("DEBUG", f"Pas de sport_key pour '{tournament}' et absent de upcoming")
+        log("DEBUG", f"Pas de cote trouvée pour {player_a} vs {player_b} ('{tournament}' absent de upcoming)")
 
     return None
 
