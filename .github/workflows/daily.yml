@@ -36,6 +36,7 @@ jobs:
       - name: Run fetch_data.py
         env:
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+          THE_ODDS_API_KEY: ${{ secrets.THE_ODDS_API_KEY }}
         run: python scripts/fetch_data.py
 
       - name: Run run_model.py
