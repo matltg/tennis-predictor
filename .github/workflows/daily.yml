@@ -2,8 +2,7 @@ name: Daily Tennis Predictions
 
 on:
   schedule:
-    - cron: '0 2 * * *'    # 02h00 UTC (04h00 Paris) — run principal complet
-    - cron: '0 10 * * *'   # 10h00 UTC (12h00 Paris) — refresh cotes + prédictions
+    - cron: '0 4 * * *'   # 04h00 UTC (06h00 Paris) — run unique quotidien
   workflow_dispatch:
 
 permissions:
@@ -29,7 +28,7 @@ jobs:
           for year in 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024 2025 2026; do
             curl -sf "$BASE/${year}.csv" -o "/tmp/tml/atp_${year}.csv" && echo "$year OK" || echo "$year non disponible"
           done
-          ls /tmp/tml/*.csv | wc -l
+          echo "Fichiers TML : $(ls /tmp/tml/*.csv | wc -l)"
 
       - name: Run compute_elo.py
         run: python scripts/compute_elo.py
