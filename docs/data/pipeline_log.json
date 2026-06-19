@@ -1,453 +1,48 @@
 {
-  "date": "2026-06-19T09:13:28.457946",
+  "date": "2026-06-19T14:30:41.417212",
   "steps": [
     {
-      "time": "09:12:31",
+      "time": "14:30:39",
       "level": "INFO",
-      "msg": "=== fetch_data.py === 2026-06-19 09:12"
+      "msg": "=== fetch_data.py === 2026-06-19 14:30"
     },
     {
-      "time": "09:12:31",
+      "time": "14:30:40",
       "level": "INFO",
-      "msg": "ATP 2026-06-19 → 8 matchs retenus (sur 92 vus)"
+      "msg": "ATP 2026-06-19 → 0 matchs retenus (sur 0 vus)"
     },
     {
-      "time": "09:12:32",
+      "time": "14:30:40",
       "level": "INFO",
-      "msg": "ATP 2026-06-20 → 0 matchs retenus (sur 1 vus)"
+      "msg": "ATP 2026-06-20 → 0 matchs retenus (sur 0 vus)"
     },
     {
-      "time": "09:12:32",
+      "time": "14:30:41",
       "level": "INFO",
-      "msg": "WTA 2026-06-19 → 8 matchs retenus (sur 89 vus)"
+      "msg": "WTA 2026-06-19 → 0 matchs retenus (sur 0 vus)"
     },
     {
-      "time": "09:12:33",
+      "time": "14:30:41",
       "level": "INFO",
       "msg": "WTA 2026-06-20 → 0 matchs retenus (sur 0 vus)"
     },
     {
-      "time": "09:12:33",
-      "level": "DEBUG",
-      "msg": "Exclus : ['Asuncion Challenger', 'Dublin Challenger', 'Internazionali Femminili - Brescia', 'Ladies Open - Figueira da Foz', 'M15 Bourg-en-Bresse', 'M15 Constanta', 'M15 Gyula', 'M15 Irvine', 'M15 Kayseri', 'M15 Kursumlijska Banja', 'M15 Maanshan', 'M15 Monastir', 'M15 Mungia-Laukariz', 'M15 Saarlouis', 'M15 Tokyo', 'M25 Klosters', 'M25 Lourinha', 'M25 Milano', 'M25 Samobor', 'M25 Tulsa', 'Nottingham 2 Challenger', 'Parma Challenger', 'Poznan Challenger', 'Royan Challenger', 'W15 Bucharest', 'W15 Dinard', 'W15 Irvine', 'W15 Kayseri', 'W15 Kursumlijska Banja', 'W15 Luque', 'W15 Monastir', 'W15 Sapporo', 'W35 Bolszewo', 'W35 Klosters', 'W35 Mohammedia', 'W35 San Gregorio', 'W35 Taipei', 'W35 Tauste', 'W35 Ystad', 'W35 Zhengzhou', 'W50 Haskovo', 'W75 Blois']"
-    },
-    {
-      "time": "09:12:33",
+      "time": "14:30:41",
       "level": "INFO",
-      "msg": "✅ 16 matchs retenus / 161 analysés"
+      "msg": "✅ 0 matchs retenus / 0 analysés"
     },
     {
-      "time": "09:12:33",
-      "level": "INFO",
-      "msg": "[1/16] Alex De Minaur vs Brandon Nakashima · HSBC Championships - London · 15:30"
-    },
-    {
-      "time": "09:12:37",
-      "level": "INFO",
-      "msg": "TheOddsAPI upcoming → HTTP 200 | quota : 28 used / 472 remaining"
-    },
-    {
-      "time": "09:12:37",
-      "level": "INFO",
-      "msg": "TheOddsAPI : 2 matchs tennis | bookmakers : 1xBet, 888sport, Bet Victor, BetAnything, BetOnline.ag, Betclic (FR), Betfair, Betfair Sportsbook, Betfred (UK), Betsson, Betway, BoyleSports, Casumo, Coolbet, Coral, Everygame, GTbets, Grosvenor, Ladbrokes, LeoVegas, LeoVegas (SE), LiveScore Bet, Marathon Bet, Matchbook, Nordic Bet, PMU (FR), Paddy Power, Pinnacle, Sky Bet, Smarkets, Tipico, Unibet (FR), Unibet (NL), Unibet (SE), Unibet (UK), Virgin Bet, William Hill, Winamax (DE), Winamax (FR)"
-    },
-    {
-      "time": "09:12:37",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_atp_queens] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:12:37",
+      "time": "14:30:41",
       "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_queens"
+      "msg": "Aucun match trouvé — vérifier la whitelist"
     },
     {
-      "time": "09:12:37",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Alex De Minaur vs Brandon Nakashima (tennis_atp_queens)"
-    },
-    {
-      "time": "09:12:37",
+      "time": "14:30:41",
       "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:12:37",
-      "level": "INFO",
-      "msg": "[2/16] Hamad Medjedovic vs Ugo Humbert · HSBC Championships - London · 17:00"
-    },
-    {
-      "time": "09:12:41",
-      "level": "INFO",
-      "msg": "  ✅ Bet365 Hamad Medjedovic 2.34 / Ugo Humbert 1.72"
-    },
-    {
-      "time": "09:12:41",
-      "level": "INFO",
-      "msg": "[3/16] Arthur Fery vs Francisco Cerundolo · HSBC Championships - London · 17:30"
-    },
-    {
-      "time": "09:12:45",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/79065/52279"
-    },
-    {
-      "time": "09:12:45",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_atp_queens] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:12:45",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_queens"
-    },
-    {
-      "time": "09:12:45",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Arthur Fery vs Francisco Cerundolo (tennis_atp_queens)"
-    },
-    {
-      "time": "09:12:45",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:12:45",
-      "level": "INFO",
-      "msg": "[4/16] Tommy Paul vs Alejandro Davidovich Fokina · HSBC Championships - London · 19:00"
-    },
-    {
-      "time": "09:12:49",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_atp_queens] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:12:49",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_queens"
-    },
-    {
-      "time": "09:12:49",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Tommy Paul vs Alejandro Davidovich Fokina (tennis_atp_queens)"
-    },
-    {
-      "time": "09:12:49",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:12:49",
-      "level": "INFO",
-      "msg": "[5/16] Ben Shelton vs Taylor Fritz · Terra Wortmann Open - Halle · 14:30"
-    },
-    {
-      "time": "09:12:52",
-      "level": "INFO",
-      "msg": "  ✅ Bet365 Ben Shelton 2.12 / Taylor Fritz 1.81"
-    },
-    {
-      "time": "09:12:52",
-      "level": "INFO",
-      "msg": "[6/16] Alexander Zverev vs Raphael Collignon · Terra Wortmann Open - Halle · 16:00"
-    },
-    {
-      "time": "09:12:56",
-      "level": "WARN",
-      "msg": "HTTP 500 → atp/h2h/stats/24008/84235"
-    },
-    {
-      "time": "09:12:56",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_atp_halle] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:12:56",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_halle"
-    },
-    {
-      "time": "09:12:56",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Alexander Zverev vs Raphael Collignon (tennis_atp_halle)"
-    },
-    {
-      "time": "09:12:56",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:12:56",
-      "level": "INFO",
-      "msg": "[7/16] Daniel Altmaier vs Daniil Medvedev · Terra Wortmann Open - Halle · 17:30"
-    },
-    {
-      "time": "09:12:59",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_atp_halle] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:12:59",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_halle"
-    },
-    {
-      "time": "09:12:59",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Daniel Altmaier vs Daniil Medvedev (tennis_atp_halle)"
-    },
-    {
-      "time": "09:12:59",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:12:59",
-      "level": "INFO",
-      "msg": "[8/16] Frances Tiafoe vs Felix Auger Aliassime · Terra Wortmann Open - Halle · 19:00"
-    },
-    {
-      "time": "09:13:03",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_atp_halle] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:13:03",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_atp_halle"
-    },
-    {
-      "time": "09:13:03",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Frances Tiafoe vs Felix Auger Aliassime (tennis_atp_halle)"
-    },
-    {
-      "time": "09:13:03",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:13:03",
-      "level": "INFO",
-      "msg": "[9/16] Jessica Pegula vs Madison Keys · Berlin Tennis Open - Berlin · 14:00"
-    },
-    {
-      "time": "09:13:06",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_wta_berlin] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:13:06",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_berlin"
-    },
-    {
-      "time": "09:13:06",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Jessica Pegula vs Madison Keys (tennis_wta_berlin)"
-    },
-    {
-      "time": "09:13:06",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:13:06",
-      "level": "INFO",
-      "msg": "[10/16] Linda Noskova vs Paula Badosa Gibert · Berlin Tennis Open - Berlin · 15:30"
-    },
-    {
-      "time": "09:13:09",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_wta_berlin] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:13:09",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_berlin"
-    },
-    {
-      "time": "09:13:09",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Linda Noskova vs Paula Badosa Gibert (tennis_wta_berlin)"
-    },
-    {
-      "time": "09:13:09",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:13:09",
-      "level": "INFO",
-      "msg": "[11/16] Aryna Sabalenka vs Nikola Bartunkova · Berlin Tennis Open - Berlin · 18:30"
-    },
-    {
-      "time": "09:13:12",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/18455/71092"
-    },
-    {
-      "time": "09:13:12",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_wta_berlin] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:13:12",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_berlin"
-    },
-    {
-      "time": "09:13:12",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Aryna Sabalenka vs Nikola Bartunkova (tennis_wta_berlin)"
-    },
-    {
-      "time": "09:13:12",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:13:12",
-      "level": "INFO",
-      "msg": "[12/16] Elina Svitolina vs Alexandra Eala · Berlin Tennis Open - Berlin · 20:30"
-    },
-    {
-      "time": "09:13:15",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/11371/67792"
-    },
-    {
-      "time": "09:13:15",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_wta_berlin] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:13:15",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_berlin"
-    },
-    {
-      "time": "09:13:15",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Elina Svitolina vs Alexandra Eala (tennis_wta_berlin)"
-    },
-    {
-      "time": "09:13:15",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:13:15",
-      "level": "INFO",
-      "msg": "[13/16] Marie Bouzkova vs Tatjana Maria · Lexus Nottingham Open - Nottingham · 15:00"
-    },
-    {
-      "time": "09:13:19",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_wta_nottingham] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:13:19",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_nottingham"
-    },
-    {
-      "time": "09:13:19",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Marie Bouzkova vs Tatjana Maria (tennis_wta_nottingham)"
-    },
-    {
-      "time": "09:13:19",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:13:19",
-      "level": "INFO",
-      "msg": "[14/16] Karolina Pliskova vs Talia Gibson · Lexus Nottingham Open - Nottingham · 16:30"
-    },
-    {
-      "time": "09:13:22",
-      "level": "WARN",
-      "msg": "HTTP 500 → wta/h2h/stats/7982/63749"
-    },
-    {
-      "time": "09:13:22",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_wta_nottingham] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:13:22",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_nottingham"
-    },
-    {
-      "time": "09:13:22",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Karolina Pliskova vs Talia Gibson (tennis_wta_nottingham)"
-    },
-    {
-      "time": "09:13:22",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:13:22",
-      "level": "INFO",
-      "msg": "[15/16] Jessica Bouzas Maneiro vs Emma Navarro · Lexus Nottingham Open - Nottingham · 18:00"
-    },
-    {
-      "time": "09:13:25",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_wta_nottingham] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:13:25",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_nottingham"
-    },
-    {
-      "time": "09:13:25",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Jessica Bouzas Maneiro vs Emma Navarro (tennis_wta_nottingham)"
-    },
-    {
-      "time": "09:13:25",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:13:25",
-      "level": "INFO",
-      "msg": "[16/16] Ann Li vs Viktorija Golubic · Lexus Nottingham Open - Nottingham · 19:30"
-    },
-    {
-      "time": "09:13:28",
-      "level": "DEBUG",
-      "msg": "TheOddsAPI [tennis_wta_nottingham] → HTTP 404 | quota restant : 472"
-    },
-    {
-      "time": "09:13:28",
-      "level": "WARN",
-      "msg": "TheOddsAPI HTTP 404 pour tennis_wta_nottingham"
-    },
-    {
-      "time": "09:13:28",
-      "level": "DEBUG",
-      "msg": "Pas de cote trouvée pour Ann Li vs Viktorija Golubic (tennis_wta_nottingham)"
-    },
-    {
-      "time": "09:13:28",
-      "level": "INFO",
-      "msg": "  ⚠️ Pas de cotes Bet365"
-    },
-    {
-      "time": "09:13:28",
-      "level": "INFO",
-      "msg": "=== Terminé : 16 matchs · 2 cotes · 116 requêtes ==="
+      "msg": "=== Terminé : 0 matchs · 0 cotes · 4 requêtes ==="
     }
   ],
-  "requests_used": 116,
-  "fixtures_count": 16,
-  "odds_available": 2
+  "requests_used": 4,
+  "fixtures_count": 0,
+  "odds_available": 0
 }
