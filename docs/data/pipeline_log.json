@@ -1,43 +1,43 @@
 {
-  "date": "2026-08-27T14:59:52.660337",
+  "date": "2026-08-28T15:55:12.359624",
   "steps": [
     {
-      "time": "14:59:50",
+      "time": "15:55:10",
       "level": "INFO",
-      "msg": "=== fetch_data.py === 2026-08-27 14:59"
+      "msg": "=== fetch_data.py === 2026-08-28 15:55"
     },
     {
-      "time": "14:59:51",
-      "level": "INFO",
-      "msg": "ATP 2026-08-27 → 0 matchs retenus (sur 0 vus)"
-    },
-    {
-      "time": "14:59:51",
+      "time": "15:55:11",
       "level": "INFO",
       "msg": "ATP 2026-08-28 → 0 matchs retenus (sur 0 vus)"
     },
     {
-      "time": "14:59:52",
+      "time": "15:55:11",
       "level": "INFO",
-      "msg": "WTA 2026-08-27 → 0 matchs retenus (sur 0 vus)"
+      "msg": "ATP 2026-08-29 → 0 matchs retenus (sur 0 vus)"
     },
     {
-      "time": "14:59:52",
+      "time": "15:55:12",
       "level": "INFO",
       "msg": "WTA 2026-08-28 → 0 matchs retenus (sur 0 vus)"
     },
     {
-      "time": "14:59:52",
+      "time": "15:55:12",
+      "level": "INFO",
+      "msg": "WTA 2026-08-29 → 0 matchs retenus (sur 0 vus)"
+    },
+    {
+      "time": "15:55:12",
       "level": "INFO",
       "msg": "✅ 0 matchs retenus / 0 analysés"
     },
     {
-      "time": "14:59:52",
+      "time": "15:55:12",
       "level": "WARN",
       "msg": "Aucun match trouvé — vérifier la whitelist"
     },
     {
-      "time": "14:59:52",
+      "time": "15:55:12",
       "level": "INFO",
       "msg": "=== Terminé : 0 matchs · 0 cotes · 4 requêtes ==="
     }
